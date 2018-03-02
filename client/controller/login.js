@@ -2,6 +2,20 @@ import loginMessages from "../utils/login-messages.js";
 
 Template.login.events({
 
+  'click .facebook': function(e) {
+    console.log("ENTERED HERE");
+     e.preventDefault();
+
+     Meteor.loginWithFacebook({requestPermissions: ['public_profile', 'email']}, function(err){
+         if (err) {
+             console.log('Handle errors here: ', err);
+         }
+         console.log("PROFILE: ",Session.get("testUser"));
+
+
+     });
+ },
+
   "submit form": function(event){
     event.preventDefault();
     var loginEmail = event.target.loginEmail.value;
