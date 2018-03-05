@@ -1,8 +1,6 @@
 <template name="islandMap">
 
-
   MAP
-
 
     <style>
        #map {
@@ -10,7 +8,11 @@
         width: 100%;
        }
     </style>
+
     <h3>My Google Maps Demo</h3>
+
+  {{> filter}}
+
     <div id="map"></div>
 
 <div id="mapDisplay">
@@ -25,6 +27,12 @@
     </script>
 
 
+</template>
 
-
+<template name="filter">
+  <form action="">
+    <input class="allChecked" type="checkbox" name="allChecked" value="Yes">Uncheck all<br>
+    <input class="historicMonuments" checked="checked" type="checkbox" name="historicMonuments" value="Yes">Historic Monuments<br>
+    <input type="checkbox" name="vehicle" value="Car">I have a car
+  </form>
 </template>
