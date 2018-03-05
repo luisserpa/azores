@@ -1,22 +1,15 @@
 var historicMoments = [
   {
-    "title": "Stockholm",
-    "lat": 59.3,
-    "lng": 18.1,
-    "description": "Stockholm is the capital and the largest city of Sweden and constitutes the most populated urban area in Scandinavia with a population of 2.1 million in the metropolitan area (2010)"
-  },
-  {
-    "title": "Oslo",
-    "lat": 59.9,
-    "lng": 10.8,
-    "description": "Oslo is a municipality, and the capital and most populous city of Norway with a metropolitan population of 1,442,318 (as of 2010)."
-  },
-  {
-    "title": "Copenhagen",
-    "lat": 55.7,
-    "lng": 12.6,
-    "description": "Copenhagen is the capital of Denmark and its most populous city, with a metropolitan population of 1,931,467 (as of 1 January 2012)."
+    "titlePt": "Igreja da Sé",
+    "titleEn": "Sé Church",
+    "lat": 38.655,
+    "lng": -27.221,
+    "visited":false,
+    "icon":"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    "descriptionPt": "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
+    "descriptionEn": "Sé church in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago."
   }
-]
+
+];
 
 export default historicMoments;
