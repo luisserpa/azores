@@ -10,7 +10,8 @@ Template.login.events({
          if (err) {
              console.log('Handle errors here: ', err);
          }
-         console.log("PROFILE: ",Session.get("testUser"));
+
+         console.log("NAME: ",Meteor.user().services.facebook.name);
 
 
      });
