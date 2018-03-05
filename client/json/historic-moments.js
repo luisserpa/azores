@@ -1,4 +1,4 @@
-var json = [
+var historicMoments = [
   {
     "title": "Stockholm",
     "lat": 59.3,
@@ -19,4 +19,4 @@ var json = [
   }
 ]
 
-export default json;
+export default historicMoments;

@@ -1,7 +1,9 @@
-import json from "../json/historic-moments.js";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import historicMoments from "../json/historic-moments.js";
 
 Template.islandMap.rendered=function(){
-  Session.set("mapJSON",json);
+  Session.set("mapHistoricMoments",historicMoments);
 }
 
 Template.islandMap.helpers({
@@ -15,10 +17,24 @@ Template.islandMap.helpers({
             center: uluru
           });
 
-          Session.get("mapJSON").forEach(function(element){
+          Session.get("mapHistoricMoments").forEach(function(element){
             var marker = new google.maps.Marker({
               position: {lat: element.lat, lng: element.lng},
               map: map
+            });
+            google.maps.event.addListener(marker,'click',function() {
+              var para = document.createElement("P");
+              var aTag = document.createElement("a");
+              var t = document.createTextNode(element.description);
+              aTag.setAttribute("href","Teste");
+              aTag.innerHTML="HELLO";
+              para.appendChild(aTag);
+              para.appendChild(document.createElement("P"));
+              para.appendChild(t);
+              var infowindow = new google.maps.InfoWindow({
+                content:para
+              });
+              infowindow.open(map,marker);
             });
             console.log("ELEMENT: ",element);
           });
