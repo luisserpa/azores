@@ -39,9 +39,13 @@ var startMap = function(){
 
                  google.maps.event.addListener(marker,'click',function() {
                    var para = document.createElement("P");
-                   var aTag = document.createElement("a");
+                   var aTag = document.createElement("button");
                    var t = document.createTextNode(description);
-                   aTag.setAttribute("href","Teste");
+                   //Carefull with the set of the href
+                   aTag.setAttribute("href","#");
+                   aTag.setAttribute("class","render");
+                   aTag.setAttribute("id",element.titlePt);
+                   aTag.setAttribute("value",element.titlePt);
                    aTag.innerHTML=title;
                    para.appendChild(aTag);
                    para.appendChild(document.createElement("P"));

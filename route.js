@@ -19,3 +19,12 @@ Router.route("/islandmap", function  (){
     this.render("islandmap");
   }
 });
+
+Router.route("/renderpage", function  (){
+  if(Session.get("sessionUser")===undefined){
+    Session.set("sessionLanguage",undefined);
+    this.render("landingpage");
+  } else {
+    this.render("renderpage");
+  }
+});

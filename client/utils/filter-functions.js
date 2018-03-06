@@ -33,8 +33,4 @@ var filterFunctions = {
 
 }
 
-
-
-
-
 export default filterFunctions;

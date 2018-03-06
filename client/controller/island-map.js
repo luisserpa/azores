@@ -56,3 +56,17 @@ Template.filter.events({
   }
 
 });
+
+Template.islandmap.events({
+
+  "click .render":function(event){
+    var titleId = (event.target.id);
+    console.log("VALUE ID: ",titleId);
+    var placeToRender = historicMonuments.filter(function( obj ) {
+      return obj.titlePt == titleId;
+    });
+    Session.set("placeToRender",placeToRender[0]);
+    Router.go("/renderpage");
+  }
+
+});
