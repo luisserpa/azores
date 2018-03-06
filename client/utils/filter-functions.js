@@ -1,18 +1,20 @@
+import startMap from "../map/mapRender.js";
+
 var filterFunctions = {
 
    checkAll: function(classFilter,index){
     $("."+classFilter).prop("checked", false);
-    filterMonuments(classFilter,index);
+    this.filterMonuments(classFilter,index);
     var checkedValue = $('.allChecked:checked').val();
     var filter=Session.get("filterMonuments");
     if(checkedValue === "Yes"){
       filter[index]=true;
       document.getElementById(classFilter).checked = false;
-      filterMonuments(classFilter,index);
+      this.filterMonuments(classFilter,index);
     }else{
       filter[index]=false;
       document.getElementById(classFilter).checked = true;
-      filterMonuments(classFilter,index);
+      this.filterMonuments(classFilter,index);
     }
 
   },
@@ -26,6 +28,7 @@ var filterFunctions = {
       filterMonuments[index]=false;
     }
     Session.set("filterMonuments",filterMonuments);
+    initMap();
   }
 
 }
