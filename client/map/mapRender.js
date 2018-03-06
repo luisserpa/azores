@@ -55,7 +55,6 @@ var startMap = function(){
                    });
                    infowindow.open(map,marker);
                  });
-                 console.log("ELEMENT: ",element);
                });
              }
 
