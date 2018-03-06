@@ -8,7 +8,7 @@ import filterFunctions from "../utils/filter-functions.js";
 import startMap from "../map/mapRender.js";
 
 
-Template.islandMap.rendered=function(){
+Template.islandmap.rendered=function(){
   var filterMonuments =[true,true,true,true];
   Session.set("filterMonuments",filterMonuments);
   var places = [historicMonuments,naturalMonuments,hotels,food];
@@ -18,7 +18,7 @@ Template.islandMap.rendered=function(){
   Session.set("mapZoom",13);
 }
 
-Template.islandMap.helpers({
+Template.islandmap.helpers({
 
   markers(){
      return startMap();

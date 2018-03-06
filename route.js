@@ -16,6 +16,6 @@ Router.route("/islandmap", function  (){
     Session.set("sessionLanguage",undefined);
     this.render("landingpage");
   } else {
-    this.render("islandMap");
+    this.render("islandmap");
   }
 });
