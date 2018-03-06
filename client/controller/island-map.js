@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import historicMonuments from "../json/historic-monuments.js";
 import naturalMonuments from "../json/natural-monuments.js";
+import hotels from "../json/hotels.js";
+import food from "../json/food.js";
+import filterFunctions from "../utils/filter-functions.js";
 
 
 Template.islandMap.rendered=function(){
-  var filterMonuments =[false,false,false,false];
+  var filterMonuments =[true,true,true,true];
   Session.set("filterMonuments",filterMonuments);
-  var places = [historicMonuments,naturalMonuments];
+  var places = [historicMonuments,naturalMonuments,hotels,food];
+  var filterPlaces = ["historicMonuments","naturalMonuments","hotels","food"];
   Session.set("mapPlaces",places);
+  Session.set("filterPlaces",filterPlaces);
 }
 
 Template.islandMap.helpers({
@@ -76,33 +81,28 @@ Template.islandMap.helpers({
 Template.filter.events({
 
   "click .allChecked": function(event){
-    $(".historicMonuments").prop("checked", false);
-    filterMonuments("historicMonuments",0);
-    var checkedValue = $('.allChecked:checked').val();
-    var filter=Session.get("filterMonuments");
-    if(checkedValue === "Yes"){
-      filter[0]=true;
-    }else{
-      filter[0]=false;
-    }
+    var filterPlaces = Session.get("filterPlaces");
+    filterPlaces.forEach(function(value,i){
+      console.log("VALUE: ",value);
+      filterFunctions.checkAll(value,i);
+    });
 
   },
 
   "click .historicMonuments": function(event){
-    filterMonuments("historicMonuments",0);
+    filterFunctions.filterMonuments("historicMonuments",0);
+  },
+
+  "click .naturalMonuments": function(event){
+    filterFunctions.filterMonuments("naturalMonuments",1);
+  },
+
+  "click .hotels": function(event){
+    filterFunctions.filterMonuments("hotels",2);
+  },
+
+  "click .food": function(event){
+    filterFunctions.filterMonuments("food",3);
   }
 
 });
-
-function filterMonuments(classFilter,index){
-  console.log("ENTERED THE FILTER");
-  var checkedValue = $('.'+classFilter+':checked').val();
-  var filterMonuments=Session.get("filterMonuments");
-  if (checkedValue === "Yes"){
-    filterMonuments[index]=true;
-  }else{
-    filterMonuments[index]=false;
-  }
-  Session.set("filterMonuments",filterMonuments);
-  console.log("MONUMENTS: ",Session.get("filterMonuments"));
-}
