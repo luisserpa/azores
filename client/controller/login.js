@@ -93,7 +93,8 @@ Template.login.helpers({
       return true;
     }else{
       return false;
-    }
+    };
+
   }
 
 });

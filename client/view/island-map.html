@@ -1,3 +1,46 @@
+<<<<<<< HEAD
 <template name="islandmap">
+=======
+<template name="islandMap">
+
+{{> header}}
+
+>>>>>>> 7661b5c025e2b4d1ff9f8437c2796eb1566d0bf0
   MAP
+
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+
+    <h3>My Google Maps Demo</h3>
+
+  {{> filter}}
+
+    <div id="map"></div>
+
+<div id="mapDisplay">
+  <script>
+    {{markers}}
+  </script>
+
+</div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFesdr-q5keaEXasmMOJCphcrucwBWYH8&callback=initMap">
+    </script>
+
+
+</template>
+
+<template name="filter">
+  <form action="">
+    <input class="allChecked" type="checkbox" name="allChecked" value="Yes">Uncheck all<br>
+    <input id="historicMonuments" class="historicMonuments" checked="checked" type="checkbox" name="historicMonuments" value="Yes">Historic Monuments<br>
+    <input id="naturalMonuments" class="naturalMonuments" checked="checked" type="checkbox" name="naturalMonuments" value="Yes">Natural Monuments<br>
+    <input id="hotels" class="hotels" checked="checked" type="checkbox" name="hotels" value="Yes">Lodging<br>
+    <input id="food" class="food" checked="checked" type="checkbox" name="food" value="Yes">Dinning<br>
+  </form>
 </template>

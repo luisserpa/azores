@@ -4,6 +4,7 @@
 
 <body>
   <script>
+<<<<<<< HEAD
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '575816526107182',
@@ -24,4 +25,26 @@
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
   </script>
+=======
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId      : '575816526107182',
+         cookie     : true,
+         xfbml      : true,
+         version    : 'v2.12'
+       });
+
+       FB.AppEvents.logPageView();
+
+     };
+
+     (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+   </script>
+>>>>>>> 7661b5c025e2b4d1ff9f8437c2796eb1566d0bf0
 </body>

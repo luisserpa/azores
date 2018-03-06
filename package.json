@@ -5,7 +5,15 @@
     "start": "meteor run"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@babel/runtime": "^7.0.0-beta.40",
     "meteor-node-stubs": "^0.3.2"
+=======
+    "@babel/runtime": "^7.0.0-beta.36",
+    "meteor-node-stubs": "^0.3.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-render-html": "^0.6.0"
+>>>>>>> 7661b5c025e2b4d1ff9f8437c2796eb1566d0bf0
   }
 }
