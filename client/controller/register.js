@@ -1,4 +1,8 @@
 import registerMessages from "../utils/register-messages.js";
+import historicMonuments from "../json/historic-monuments.js";
+import naturalMonuments from "../json/natural-monuments.js";
+import hotels from "../json/hotels.js";
+import food from "../json/food.js";
 
 Template.register.events({
 
@@ -56,7 +60,8 @@ Template.register.events({
           var newUser={
             email: registerEmail,
             displayName: registerDisplayName,
-            password: registerPassword
+            password: registerPassword,
+            places:[historicMonuments,naturalMonuments,hotels,food]
           };
           Meteor.call("addUser", newUser);
           registerMessages.createSuccess();
