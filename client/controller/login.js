@@ -28,7 +28,7 @@ Template.login.events({
               var newUser={
                 email: response.email,
                 displayName: response.name,
-                password: faceStatus.authResponse.signedRequest.substring(0,10)
+                password: ""
               };
 
               console.log("FACE USER: ", newUser);
@@ -38,7 +38,7 @@ Template.login.events({
             }
 
             Session.set("sessionUser", user);
-            Router.go("/islandMap");
+            Router.go("/islandmap");
 
           }
         });
@@ -57,8 +57,16 @@ Template.login.events({
     var loginPassword = event.target.loginPassword.value;
 
     console.log("EMAIL: ", loginEmail);
+    console.log("PASS: ", loginPassword);
+
+    if (loginPassword === "" || loginPassword === undefined
+        || loginEmail === "" || loginEmail === undefined) {
+          loginMessages();
+          return;
+    }
 
     Meteor.call("findByEmail", loginEmail, function(error, user) {
+      console.log("SEARCHING DB");
       if(!error){
 
         if(user === undefined){
@@ -72,7 +80,7 @@ Template.login.events({
         }
 
         Session.set("sessionUser", user);
-        Router.go("/islandMap");
+        Router.go("/islandmap");
       }
     });
   }
@@ -86,15 +94,17 @@ Template.login.helpers({
     }else{
       return false;
     }
-  },
+  }
 
-  checkFaceStatus() {
+});
+
+Template.login.onRendered(function () {
+
     FB.getLoginStatus(function(response) {
       console.log("FIRST CHECK FACE STATUS: ", response);
       if (response.status === "connected") {
-        Router.go("/islandMap");
+        Router.go("/islandmap");
       }
     });
-  }
 
 });

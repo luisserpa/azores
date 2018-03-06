@@ -11,11 +11,11 @@ Router.route("/register", function  (){
   this.render("register");
 });
 
-Router.route("/islandMap", function  (){
+Router.route("/islandmap", function  (){
   if(Session.get("sessionUser")===undefined){
     Session.set("sessionLanguage",undefined);
     this.render("landingpage");
   } else {
-    this.render("islandMap");
+    this.render("islandmap");
   }
 });
