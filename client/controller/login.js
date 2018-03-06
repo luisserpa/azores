@@ -38,7 +38,7 @@ Template.login.events({
         }
 
         Session.set("sessionUser", user);
-        Router.go("/islandMap");
+        Router.go("/islandmap");
       }
     });
   }
