@@ -5,8 +5,22 @@
 </head>
 
 <template name="renderpage">
+
+  <nav>
+	      <ul>
+		          <li><a href="#">Languages</a>
+        <ul>
+            <li><a type="button" class="portuguese"><img src="http://localhost:3000/PT.png" /></a></li>
+
+		         <li><a type="button" class="english"><img src="http://localhost:3000/EN.png"  /></a></li>
+        </ul>
+</li>
+
+      </ul>
+</nav>
+
   <div class="col-3 .text-truncate">
-  <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%"> 
+  <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
   <span>{{> title}}</span>
 </div>
 </div>
