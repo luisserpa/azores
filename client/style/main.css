@@ -53,11 +53,15 @@ body{
 .centeredLogin{
   text-align: center;
   font-family: 'PT Serif', serif;
-  /*color: #5e0087;*/
-  color: #ffffff;
+  color: #ba8b71;
+
   text-decoration: none;
   font-size: 175%;
   font-weight: bold;
+
+  height: 100%;
+  margin: 0;
+  padding: 1em;
 
 
 }

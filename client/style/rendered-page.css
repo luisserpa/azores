@@ -39,4 +39,20 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating > input:checked + label:hover, /* hover current star when changing rating */
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+/****** Text *****/
+.text-truncate {
+
+  display: inline-block;
+  display: block;
+  
+}
+
+
+/****** Images *****/
+.img-center {
+  margin:0 auto;
+  padding: 0 2% 0 2%;
+
+}

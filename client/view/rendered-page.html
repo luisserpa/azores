@@ -1,7 +1,20 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
 <template name="renderpage">
-  {{> title}}
+  <div class="col-3 .text-truncate">
+  <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%;"> 
+  <span>{{> title}}</span>
+</div>
+</div>
+
 
   {{> images}}
+
+
 </template>
 
 <template name="title">
@@ -9,12 +22,13 @@
 </template>
 
 <template name="images">
-  <img src={{images.image_1}} />
+
+  <img class="img-responsive img-center" src={{images.image_1}} />
   <br/>
-  <img src={{images.image_2}} />
+  <img class="img-responsive img-center" src={{images.image_2}} />
   <br/>
 
-  
+
 <fieldset class="rating">
     <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
     <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
@@ -27,5 +41,6 @@
     <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
     <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
 </fieldset>
+
 
 </template>
