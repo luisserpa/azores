@@ -62,9 +62,17 @@ Template.islandmap.events({
   "click .render":function(event){
     var titleId = (event.target.id);
     console.log("VALUE ID: ",titleId);
-    var placeToRender = historicMonuments.filter(function( obj ) {
-      return obj.titlePt == titleId;
+    var placeToRender=[];
+    Session.get("mapPlaces").forEach(function(element,index){
+      //console.log("ENTERED HERE");
+      if(placeToRender.length<=0){
+        placeToRender = element.filter(function( obj ) {
+          Session.set("indexOfPlace",index);
+          return obj.titlePt == titleId;
+          });
+      }
     });
+
     Session.set("placeToRender",placeToRender[0]);
     Router.go("/renderpage");
   }

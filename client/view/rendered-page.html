@@ -1,15 +1,25 @@
 <template name="renderpage">
+  {{> visited}}
+
   {{> title}}
 
   {{> images}}
 
   {{> rating}}
   <br/>
-  {{> visited}}
+
 </template>
 
 <template name="title">
+
+
   {{title}}
+</template>
+
+<template name="checked">
+  {{#if checkbox}}
+  <img src="http://localhost:3000/visited.png"  />
+  {{/if}}
 </template>
 
 <template name="images">
@@ -38,9 +48,14 @@
 
 <template name="visited">
   <p>
-    <form action="">
+    {{#if hideCheckbox}}
+    {{> checked}}
+    {{else}}
+    <form id="hideCheckbox" action="">
       <input id="visitedPlace" class="visitedPlace"  type="checkbox" name="visitedPlace" value="Yes">Mark as visited<br>
     </form>
+    {{/if}}
+
   </p>
 
 </template>
