@@ -1,17 +1,20 @@
 <template name="renderpage">
-  {{> visited}}
+  <p>
+  {{> visited}} {{> rating}}
+
+  </p>
 
   {{> title}}
 
   {{> images}}
 
-  {{> rating}}
+
   <br/>
 
 </template>
 
 <template name="title">
-
+<p></p>
 
   {{title}}
 </template>
@@ -44,10 +47,12 @@
       <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
   </fieldset>
 
+  <br/>
+
 </template>
 
 <template name="visited">
-  <p>
+
     {{#if hideCheckbox}}
     {{> checked}}
     {{else}}
@@ -56,6 +61,6 @@
     </form>
     {{/if}}
 
-  </p>
+
 
 </template>
