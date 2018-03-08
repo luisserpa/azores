@@ -69,13 +69,22 @@
 .rating > input:checked ~ label:hover ~ label {
     color: #ffed85;
   }
+
+  .parent {
+    display: block !important;
+  }
+  .child img {
+    float: left;
+    width: auto;
+
+    height: auto;
+  }
 }
 
 /*MEDIA QUERY SEPARATION LINE SO MY HEAD WORK GOOD*/
 
 @media screen (max-width: 800px) and (min-width: 481px) {
   body {
-    fieldset,
     label {
       margin: 0;
       padding: 0;
@@ -116,7 +125,6 @@
       float: right;
     }
   }
-
   /***** CSS Magic to Highlight Stars on Hover *****/
 
   .rating > input:checked ~ label, /* show gold star when clicked */

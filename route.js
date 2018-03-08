@@ -28,7 +28,6 @@ Router.route("/renderpage", function() {
     }
 });
 
-<<<<<<< HEAD
 Router.route("/counter", function (){
   if(Session.get("sessionUser")===undefined){
     Session.set("sessionLanguage",undefined);
@@ -36,8 +35,4 @@ Router.route("/counter", function (){
   } else {
     this.render("counter");
   }
-=======
-Router.route("/counter", function() {
-    this.render("counter");
->>>>>>> development
 });
