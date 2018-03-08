@@ -1,5 +1,3 @@
-var food = [
-  
-];
+var food = [];
 
 export default food;

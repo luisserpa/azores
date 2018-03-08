@@ -1,5 +1,3 @@
-var hotels = [
-  
-];
+var hotels = [];
 
 export default hotels;
