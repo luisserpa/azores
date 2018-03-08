@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import historicMonuments from "../json/historic-monuments.js";
+import historicMonuments from "../json/historic-monuments.json";
 import naturalMonuments from "../json/natural-monuments.js";
 import hotels from "../json/hotels.js";
 import food from "../json/food.js";

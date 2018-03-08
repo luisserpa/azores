@@ -1,4 +1,4 @@
-import historicMonuments from "../json/historic-monuments.js";
+import historicMonuments from "../json/historic-monuments.json";
 import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
 
@@ -101,13 +101,6 @@ Template.visited.events({
                             if (!error) {
                                 Session.set("sessionUser", updatedUser);
 
-                                /*Test the hidden
-                                var hideCheckbox = document.getElementById(
-                                    "hideCheckbox"
-                                );
-                                hideCheckbox.style.visibility = "hidden";
-                                Session.set("changeBox", true);
-                                */
                                 hideCheckbox.set(true);
                             }
                         }
