@@ -22,7 +22,9 @@
   </div>
 
 
-  {{> description}} {{> images}}
+  {{> description}} 
+  
+  {{> images}}
 
 
   <br/>
@@ -43,7 +45,8 @@
 
 <template name="checked">
   {{#if checkbox}}
-  <img src="http://localhost:3000/visited.png" /> {{/if}}
+  
+  {{/if}}
 </template>
 
 <template name="images">
@@ -85,7 +88,9 @@
 
 <template name="visited">
 
-  {{#if hideCheckbox}} {{> checked}} {{else}}
+  {{#if hideCheckbox}} 
+  <img src="http://localhost:3000/visited.png" /> 
+  {{else}}
   <form id="hideCheckbox" action="">
     <input id="visitedPlace" class="visitedPlace" type="checkbox" name="visitedPlace" value="Yes">Mark as visited
     <br>

@@ -23,7 +23,7 @@ Template.islandmap.rendered = function() {
 };
 
 Template.islandmap.helpers({
-    markers() {
+    mapMarker() {
         return startMap();
     }
 });

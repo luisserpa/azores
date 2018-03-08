@@ -1,11 +1,12 @@
+import historicMonuments from "../json/historic-monuments.js";
 import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
-import historicMonuments from "../json/historic-monuments.js";
 
-var test;
+let hideCheckbox;
 
-Template.renderpage.onCreated(function bodyOnCreated() {
-    test = new ReactiveVar(historicMonuments);
+Template.renderpage.onCreated(function onReder() {
+    hideCheckbox = new ReactiveVar(false);
+    console.log("PASS BY HERE", hideCheckbox.get());
 });
 
 Template.title.helpers({
@@ -28,12 +29,6 @@ Template.description.helpers({
     }
 });
 
-Template.checked.helpers({
-    checkbox() {
-        return Session.get("changeBox");
-    }
-});
-
 Template.images.helpers({
     images() {
         return Session.get("placeToRender");
@@ -45,23 +40,20 @@ Template.visited.rendered = function() {
         Session.get("indexOfPlace")
     ];
     tempPlace.filter(function(obj) {
+        console.log("OBJECT: ", obj);
         if (obj.titlePt === Session.get("placeToRender").titlePt) {
-            var box;
             if (obj.visited === true) {
-                box = true;
-            } else {
-                box = false;
+                console.log("IT'S TRUE");
+                hideCheckbox.set(true);
             }
-            Session.set("changeBox", box);
-            console.log("THE BOX");
         }
     });
 };
 
 Template.visited.helpers({
     hideCheckbox() {
-        console.log("CHANGEBOX: ", Session.get("changeBox"));
-        return Session.get("changeBox");
+        console.log("IN THE HELPERS: ", hideCheckbox.get());
+        return hideCheckbox.get();
     }
 });
 
@@ -102,25 +94,21 @@ Template.visited.events({
             increaseFounds,
             function(error, result) {
                 if (!error) {
-                    console.log("CHECK PLACSE: ", tempPlaces);
-                    console.log(
-                        "USER EMAIL: ",
-                        Session.get("sessionUser").email
-                    );
                     Meteor.call(
                         "findByEmail",
                         Session.get("sessionUser").email,
                         function(error, updatedUser) {
                             if (!error) {
-                                console.log("NEW USER: ", updatedUser);
                                 Session.set("sessionUser", updatedUser);
 
-                                //Test the hidden
+                                /*Test the hidden
                                 var hideCheckbox = document.getElementById(
                                     "hideCheckbox"
                                 );
                                 hideCheckbox.style.visibility = "hidden";
                                 Session.set("changeBox", true);
+                                */
+                                hideCheckbox.set(true);
                             }
                         }
                     );
@@ -141,7 +129,6 @@ Template.rating.events({
             function(error, place) {
                 if (!error) {
                     if (place === undefined) {
-                        console.log("IN THE ERROR");
                         //if the place doesn't exist, then it creates a new one in the database
                         var placeData = {
                             name: Session.get("placeToRender").titlePt,
@@ -149,16 +136,16 @@ Template.rating.events({
                         };
                         Meteor.call("addPlace", placeData);
                     } else {
-                        console.log("IN THE NOT ERRROR");
                         //Makes the update to the place with the new rate
-                        var updatePlace = place.rating.push(userRate);
+                        var updatePlace = place.rating;
+                        updatePlace.push(userRate);
                         Meteor.call(
                             "updatePlace",
                             place._id,
                             updatePlace,
                             function(error, result) {
                                 if (!error) {
-                                    console.log("RESULT: ", result);
+                                    console.log(result);
                                 }
                             }
                         );
