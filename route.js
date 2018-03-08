@@ -28,3 +28,7 @@ Router.route("/renderpage", function  (){
     this.render("renderpage");
   }
 });
+
+Router.route("/counter", function (){
+  this.render("counter");
+});
