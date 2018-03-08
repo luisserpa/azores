@@ -5,24 +5,33 @@
 
 
 <template name="header">
-    <nav class="navbar">
-
-
+   
+  <div class="container-fluid">
+      <div class="row">
+  
+      <div class="col-xs-3">
   <a type="button" class="portuguese">
-    <img src="http://localhost:3000/PT.png" />
+    <img id="ptsmall" src="http://localhost:3000/PT.png" />
   </a>
+  </div>
 
+  
 
-
+  <div class="col-xs-3">
   <a type="button" class="english">
     <img src="http://localhost:3000/EN.png" />
   </a>
+</div>
 
-  <a href="#" type="text" class="logout">
-      Log Out
-    </a>
- 
+<div class="col-xs-3">
+    <a href="#" type="text" class="logout">
+        Log Out
+      </a>
+    </div> 
 
-</nav>
+
+  
+  </div>
+</div>
 
 </template>
