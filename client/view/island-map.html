@@ -1,5 +1,11 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
 
 <template name="islandmap">
+  <div class="container centeredLogin">
+    <div class="vertical-center">
 
 {{> header}}
 
@@ -29,7 +35,8 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFesdr-q5keaEXasmMOJCphcrucwBWYH8&callback=initMap">
     </script>
 
-
+  </div>
+  </div>
 </template>
 
 <template name="filter">
@@ -40,4 +47,6 @@
     <input id="hotels" class="hotels" checked="checked" type="checkbox" name="hotels" value="Yes">Lodging<br>
     <input id="food" class="food" checked="checked" type="checkbox" name="food" value="Yes">Dinning<br>
   </form>
+
+
 </template>

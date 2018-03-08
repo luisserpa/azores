@@ -1,4 +1,6 @@
 <template name="register">
+  <div class="container centeredLogin">
+    <div class="vertical-center">
 
   <form class="add-user">
     {{#if language}}
@@ -65,9 +67,7 @@
       <input href="/login" type="submit" value="Create Count">
     </p>
     <p>
-      <a type="button" class="backEn">
-        Back
-      </a>
+      <a type="button" class="backEn">Back</a>
     </p>
 
     {{/if}}
@@ -76,4 +76,6 @@
 
   {{> flashMessages}}
 
+</div>
+</div>
 </template>

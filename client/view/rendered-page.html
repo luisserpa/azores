@@ -1,3 +1,9 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
 <template name="renderpage">
   <p>
   {{> visited}} {{> rating}}
@@ -5,6 +11,25 @@
   </p>
 
   {{> title}}
+  <nav>
+	      <ul>
+		          <li><a  style="color: white;" href="#">Change Language </a>
+        <ul>
+            <li><a type="button" class="portuguese"><img src="http://localhost:3000/PT.png" /></a></li>
+
+		         <li><a type="button" class="english"><img src="http://localhost:3000/EN.png"  /></a></li>
+        </ul>
+</li>
+
+      </ul>
+</nav>
+
+  <div class="col-3 .text-truncate">
+  <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
+  <span>{{> title}}</span>
+</div>
+</div>
+
 
   {{> description}}
 
@@ -34,9 +59,10 @@
 </template>
 
 <template name="images">
-  <img src={{images.image_1}} />
+
+  <img class="img-responsive img-center" src={{images.image_1}} />
   <br/>
-  <img src={{images.image_2}} />
+  <img class="img-responsive img-center" src={{images.image_2}} />
   <br/>
 </template>
 
@@ -68,6 +94,7 @@
       <input id="visitedPlace" class="visitedPlace"  type="checkbox" name="visitedPlace" value="Yes">Mark as visited<br>
     </form>
     {{/if}}
+
 
 
 
