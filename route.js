@@ -30,5 +30,10 @@ Router.route("/renderpage", function  (){
 });
 
 Router.route("/counter", function (){
-  this.render("counter");
+  if(Session.get("sessionUser")===undefined){
+    Session.set("sessionLanguage",undefined);
+    this.render("landingpage");
+  } else {
+    this.render("counter");
+  }
 });

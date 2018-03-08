@@ -4,14 +4,23 @@
 
 </head>
 
+
+
 <template name="renderpage">
-  <p>
-  {{> visited}} {{> rating}}
-
-  <div class="row">
 
 
-  {{> header}}
+
+  <div style="display:inline" class="row">
+    <div class="col-xs-3">
+    {{> header}}
+  </div>
+  <div class="col-xs-3">
+  {{> visited}}
+</div>
+<div class="col-xs-3">
+{{> rating}}
+</div>
+
 
   </div>
 
@@ -21,8 +30,14 @@
 </div>
 </div>
 
+<div class="col-3 .text-truncate">
+<div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
 
   {{> description}}
+
+</div>
+</div>
+
 
   {{> images}}
 
