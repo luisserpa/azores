@@ -14,14 +14,8 @@ Meteor.methods({
   }
 });
 
-Accounts.onCreateUser(function (options, user) {
-  console.log("SERVER SIDE");
-    if (!user.services.facebook) {
-      console.log("USER NOT: ", user);
-        return user;
-    }
-    user.username = user.services.facebook.name;
-    user.emails = [{address: user.services.facebook.email}];
-    console.log("USER: ",user);
-    return user;
+Meteor.methods({
+  updateUser:function(userId, visitedPlaces,increaseFounds){
+    Users.update({_id:userId}, {$set:{places:visitedPlaces,founds:increaseFounds}});
+  }
 });
