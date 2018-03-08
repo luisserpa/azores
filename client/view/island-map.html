@@ -4,48 +4,59 @@
 </head>
 
 <template name="islandmap">
+
+
+  <div class="row">
+
+
+    {{> header}}
+
+  </div>
+
   <div class="container centeredLogin">
     <div class="vertical-center">
 
-{{> header}}
+      MAP
 
-  MAP
+      <style>
+        #map {
+          height: 400px;
+          width: 100%;
+        }
+      </style>
 
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
+      <h3>My Google Maps Demo</h3>
 
-    <h3>My Google Maps Demo</h3>
+      {{> filter}}
 
-  {{> filter}}
+      <div id="map"></div>
 
-    <div id="map"></div>
+      <div id="mapDisplay">
+        <script>
+          { { markers } }
+        </script>
 
-<div id="mapDisplay">
-  <script>
-    {{markers}}
-  </script>
+      </div>
 
-</div>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFesdr-q5keaEXasmMOJCphcrucwBWYH8&callback=initMap">
+      </script>
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFesdr-q5keaEXasmMOJCphcrucwBWYH8&callback=initMap">
-    </script>
-
-  </div>
+    </div>
   </div>
 </template>
 
 <template name="filter">
   <form action="">
-    <input class="allChecked" type="checkbox" name="allChecked" value="Yes">Uncheck all<br>
-    <input id="historicMonuments" class="historicMonuments" checked="checked" type="checkbox" name="historicMonuments" value="Yes">Historic Monuments<br>
-    <input id="naturalMonuments" class="naturalMonuments" checked="checked" type="checkbox" name="naturalMonuments" value="Yes">Natural Monuments<br>
-    <input id="hotels" class="hotels" checked="checked" type="checkbox" name="hotels" value="Yes">Lodging<br>
-    <input id="food" class="food" checked="checked" type="checkbox" name="food" value="Yes">Dinning<br>
+    <input class="allChecked" type="checkbox" name="allChecked" value="Yes">Uncheck all
+    <br>
+    <input id="historicMonuments" class="historicMonuments" checked="checked" type="checkbox" name="historicMonuments" value="Yes">Historic Monuments
+    <br>
+    <input id="naturalMonuments" class="naturalMonuments" checked="checked" type="checkbox" name="naturalMonuments" value="Yes">Natural Monuments
+    <br>
+    <input id="hotels" class="hotels" checked="checked" type="checkbox" name="hotels" value="Yes">Lodging
+    <br>
+    <input id="food" class="food" checked="checked" type="checkbox" name="food" value="Yes">Dinning
+    <br>
   </form>
 
 

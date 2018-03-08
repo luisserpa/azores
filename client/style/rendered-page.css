@@ -56,28 +56,3 @@ h1 { font-size: 1.5em; margin: 10px; }
   padding: 0 2% 0 2%;
 
 }
-
-/****** List *****/
-nav ul ul {
-	display: none;
-}
-
-nav ul li:hover > ul {
-		display: block;
-	}
-
-  nav ul {
-  	background: ##198ea7;
-  	background: -webkit-linear-gradient(top, #198ea7 0%,#198ea7 100%);
-  	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-  	padding: 0 20px;
-  	border-radius: 10px;
-  	list-style: none;
-  	position: relative;
-  	display: inline-block;
-    margin-left: 3%;
-
-  }
-  	nav ul:after {
-  		content: ""; clear: both; display: block;
-  	}
