@@ -15,7 +15,7 @@ Meteor.methods({
 });
 
 Meteor.methods({
-  updateUser:function(userId, visitedPlaces){
-    Users.update({_id:userId}, {$set:{places:visitedPlaces}});
+  updateUser:function(userId, visitedPlaces,increaseFounds){
+    Users.update({_id:userId}, {$set:{places:visitedPlaces,founds:increaseFounds}});
   }
 });

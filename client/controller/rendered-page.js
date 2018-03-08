@@ -1,21 +1,26 @@
 import historicMonuments from "../json/historic-monuments.js";
 
-
 Template.title.helpers({
 
   title(){
-    console.log("PLACE ",Session.get("placeToRender"));
+    if(Session.get("language") === "portuguese"){
+      return Session.get("placeToRender").titlePt;
+    }else{
+      return Session.get("placeToRender").titleEn;
+    };
+  }
+
+});
+
+Template.description.helpers({
+
+  description(){
     if(Session.get("language") === "portuguese"){
       return Session.get("placeToRender").longDescriptionPt;
     }else{
       return Session.get("placeToRender").longDescriptionEn;
-    }
+    };
   }
-
-
-
-
-
 
 });
 
@@ -82,14 +87,19 @@ Template.visited.events({
       };
     });
 
+    //Increase the number of monuments founds
+    console.log("FOUNDS: ",Session.get("sessionUser").founds);
+    var increaseFounds = Session.get("sessionUser").founds+1;
+
 
     //Now update this to the use
-    Meteor.call("updateUser",Session.get("sessionUser")._id,tempPlaces,function(error,result){
+    Meteor.call("updateUser",Session.get("sessionUser")._id,tempPlaces,increaseFounds,function(error,result){
           if(!error){
             console.log("CHECK PLACSE: ", tempPlaces);
             console.log("USER EMAIL: ",Session.get("sessionUser").email);
             Meteor.call("findByEmail", Session.get("sessionUser").email,function(error,updatedUser){
               if(!error){
+                console.log("NEW USER: ",updatedUser);
                 Session.set("sessionUser",updatedUser);
 
                 //Test the hidden
