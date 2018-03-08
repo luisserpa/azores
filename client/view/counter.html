@@ -1,0 +1,22 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="counter.css">
+</head>
+
+<template name="counter">
+
+
+  <body>
+
+
+    <h1>Let's count some cows!</h1>
+
+    {{> cowcounter}}
+  </body>
+
+</template>
+
+<template name="cowcounter">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>

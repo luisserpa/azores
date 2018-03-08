@@ -5,34 +5,45 @@
 </head>
 
 <template name="renderpage">
+  <p>
+    {{> visited}} {{> rating}}
+  </p>
+  <div class="row">
 
-  <nav>
-	      <ul>
-		          <li><a  style="color: white;" href="#">Change Language </a>
-        <ul>
-            <li><a type="button" class="portuguese"><img src="http://localhost:3000/PT.png" /></a></li>
 
-		         <li><a type="button" class="english"><img src="http://localhost:3000/EN.png"  /></a></li>
-        </ul>
-</li>
+    {{> header}}
 
-      </ul>
-</nav>
+  </div>
 
   <div class="col-3 .text-truncate">
-  <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
-  <span>{{> title}}</span>
-</div>
-</div>
+    <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
+      <span>{{> title}}</span>
+    </div>
+  </div>
 
 
-  {{> images}}
+  {{> description}} {{> images}}
 
+
+  <br/>
 
 </template>
 
 <template name="title">
+  <p></p>
+
   {{title}}
+</template>
+
+<template name="description">
+  <p></p>
+
+  {{description}}
+</template>
+
+<template name="checked">
+  {{#if checkbox}}
+  <img src="http://localhost:3000/visited.png" /> {{/if}}
 </template>
 
 <template name="images">
@@ -41,20 +52,47 @@
   <br/>
   <img class="img-responsive img-center" src={{images.image_2}} />
   <br/>
+</template>
+
+<template name="rating">
+
+  <fieldset class="rating">
+    <input type="radio" id="star5" class="rate" name="rating" value="5" />
+    <label class="full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4half" class="rate" name="rating" value="4.5" />
+    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    <input type="radio" id="star4" class="rate" name="rating" value="4" />
+    <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3half" class="rate" name="rating" value="3.5" />
+    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    <input type="radio" id="star3" class="rate" name="rating" value="3" />
+    <label class="full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2half" class="rate" name="rating" value="2.5" />
+    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    <input type="radio" id="star2" class="rate" name="rating" value="2" />
+    <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1half" class="rate" name="rating" value="1.5" />
+    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    <input type="radio" id="star1" class="rate" name="rating" value="1" />
+    <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+    <input type="radio" id="starhalf" class="rate" name="rating" value="0.5" />
+    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+  </fieldset>
+
+  <br/>
+
+</template>
+
+<template name="visited">
+
+  {{#if hideCheckbox}} {{> checked}} {{else}}
+  <form id="hideCheckbox" action="">
+    <input id="visitedPlace" class="visitedPlace" type="checkbox" name="visitedPlace" value="Yes">Mark as visited
+    <br>
+  </form>
+  {{/if}}
 
 
-<fieldset class="rating">
-    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-</fieldset>
 
 
 </template>
