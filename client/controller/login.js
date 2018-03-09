@@ -1,4 +1,5 @@
 import loginMessages from "../utils/login-messages.js";
+import loginLanguages from "../json/html-fields/login.json";
 
 Template.login.events({
 
@@ -81,9 +82,9 @@ Template.login.events({
 Template.login.helpers({
     language() {
         if (Session.get("sessionLanguage") === "portuguese") {
-            return true;
+            return loginLanguages.pt;
         } else {
-            return false;
+            return loginLanguages.en;
         }
     }
 });

@@ -1,4 +1,4 @@
-import historicMonuments from "../json/historic-monuments.js";
+import historicMonuments from "../json/historic-monuments.json";
 import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
 
@@ -11,20 +11,20 @@ Template.renderpage.onCreated(function onReder() {
 
 Template.title.helpers({
     title() {
-        if (Session.get("language") === "portuguese") {
-            return Session.get("placeToRender").titlePt;
+        if (Session.get("sessionLanguage") === "portuguese") {
+            return Session.get("placeToRender").pt.title;
         } else {
-            return Session.get("placeToRender").titleEn;
+            return Session.get("placeToRender").en.title;
         }
     }
 });
 
 Template.description.helpers({
     description() {
-        if (Session.get("language") === "portuguese") {
-            return Session.get("placeToRender").longDescriptionPt;
+        if (Session.get("sessionLanguage") === "portuguese") {
+            return Session.get("placeToRender").pt.longDescription;
         } else {
-            return Session.get("placeToRender").longDescriptionEn;
+            return Session.get("placeToRender").en.longDescription;
         }
     }
 });
@@ -36,14 +36,18 @@ Template.images.helpers({
 });
 
 Template.visited.rendered = function() {
-    var tempPlace = Session.get("sessionUser").places[
+    var tempPlaces = Session.get("sessionUser").places[
         Session.get("indexOfPlace")
     ];
-    tempPlace.filter(function(obj) {
-        console.log("OBJECT: ", obj);
-        if (obj.titlePt === Session.get("placeToRender").titlePt) {
-            if (obj.visited === true) {
-                console.log("IT'S TRUE");
+    console.log("USER PLACES: ", Session.get("sessionUser").places);
+    console.log("IS UNDIFINED?", tempPlaces);
+    console.log("INDEX OF PLACE: ", Session.get("indexOfPlace"));
+    Object.keys(tempPlaces).forEach(function(key) {
+        console.log("THE PLACE TO SEE: ", tempPlaces);
+        if (
+            tempPlaces[key].pt.title === Session.get("placeToRender").pt.title
+        ) {
+            if (tempPlaces[key].visited === true) {
                 hideCheckbox.set(true);
             }
         }
@@ -60,37 +64,70 @@ Template.visited.helpers({
 Template.visited.events({
     "click .visitedPlace": function(event) {
         //First we need to get the places of the user.
-        console.log("HERE");
-        var tempPlaces = Session.get("sessionUser").places;
+
+        var tempPlaces = Session.get("sessionUser").places[
+            Session.get("indexOfPlace")
+        ];
+
+        console.log("USER PLACES: ", Session.get("sessionUser").places);
+
         //Then we need to find the place that we need to change
         var placeToChange = [];
         var indexPlace;
-        tempPlaces.forEach(function(place, index) {
+
+        Object.keys(tempPlaces).forEach(function(key, index) {
             if (placeToChange.length <= 0) {
-                placeToChange = place.filter(function(obj) {
+                if (
+                    tempPlaces[key].pt.title ===
+                    Session.get("placeToRender").pt.title
+                ) {
                     indexPlace = index;
-                    return obj.titlePt == Session.get("placeToRender").titlePt;
-                });
+                    placeToChange = tempPlaces[key];
+                }
             }
         });
 
         //Now update the place marking the visible to true
-        placeToChange[0].visited = true;
+        console.log("PLACE TO CHANGE: ", placeToChange);
+        placeToChange.visited = true;
+        Object.keys(tempPlaces).forEach(function(key, index) {
+            if (tempPlaces[key].pt.title === placeToChange.pt.title) {
+                console.log("IS IN THE CHANGE TO TRUE CHECKBOX?");
+                tempPlaces[key].visited = true;
+            }
+        });
+
+        /*
         tempPlaces[indexPlace].forEach(function(element, index) {
             if (element.titlePt === placeToChange[0].titlePt) {
                 tempPlaces[indexPlace].splice(index, 1, placeToChange[0]);
             }
         });
+        */
 
         //Increase the number of monuments founds
         console.log("FOUNDS: ", Session.get("sessionUser").founds);
         var increaseFounds = Session.get("sessionUser").founds + 1;
 
+        console.log("ARRAY TO THE USER? ", tempPlaces);
+        console.log("INDEX PLACE: ", indexPlace);
+
+        console.log("HERE", Session.get("sessionUser").places);
+        console.log("THE TEMP PLACES: ", tempPlaces);
+
+        var updating = Session.get("sessionUser").places;
+        console.log("PLACES OF USER  :", updating);
+        updating.splice(Session.get("indexOfPlace"), 1);
+        console.log("PLACES UPDATED AFTER 1ST SPLICE: ", updating);
+        updating.splice(Session.get("indexOfPlace"), 0, tempPlaces);
+
+        console.log("PLACES UPDATED: ", updating);
+
         //Now update this to the use
         Meteor.call(
             "updateUser",
             Session.get("sessionUser")._id,
-            tempPlaces,
+            updating,
             increaseFounds,
             function(error, result) {
                 if (!error) {
@@ -101,13 +138,6 @@ Template.visited.events({
                             if (!error) {
                                 Session.set("sessionUser", updatedUser);
 
-                                /*Test the hidden
-                                var hideCheckbox = document.getElementById(
-                                    "hideCheckbox"
-                                );
-                                hideCheckbox.style.visibility = "hidden";
-                                Session.set("changeBox", true);
-                                */
                                 hideCheckbox.set(true);
                             }
                         }
@@ -125,17 +155,11 @@ Template.rating.events({
         //Then it checks if the place is already in the database
         Meteor.call(
             "findByNamePt",
-            Session.get("placeToRender").titlePt,
+            Session.get("placeToRender").pt.title,
             function(error, place) {
-                if (!error) {
-                    if (place === undefined) {
-                        //if the place doesn't exist, then it creates a new one in the database
-                        var placeData = {
-                            name: Session.get("placeToRender").titlePt,
-                            rating: [userRate]
-                        };
-                        Meteor.call("addPlace", placeData);
-                    } else {
+                console.log("VALUE OF PLACE: ", place);
+                if (place !== undefined) {
+                    if (!error) {
                         //Makes the update to the place with the new rate
                         var updatePlace = place.rating;
                         updatePlace.push(userRate);
@@ -150,6 +174,8 @@ Template.rating.events({
                             }
                         );
                     }
+                } else {
+                    console.log("NOT IN THE DATABASE");
                 }
             }
         );

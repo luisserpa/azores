@@ -33,41 +33,24 @@
 
       <form>
 
-{{#if language}}
-  <p>
-      Email
-  </p>
-    <input type="email"  name="loginEmail" placeholder="insira o seu email">
-    <p>
-        Palavra Passe
-    </p>
-      <p>
-        <input type="password" name="loginPassword" placeholder="insira a password">
-      </p>
-      <p>
-        <input href ="#" type="submit" value="Entrar">
-      </p>
-      <p>
-        <a href="/register">Inscrever</a>
-      </p>
-
-
-  {{else}}
-  <p>
-    Email
-  </p>
-      <input type="email"  name="loginEmail" placeholder="insert your email">
         <p>
-          <input type="password" name="loginPassword" placeholder="insert your password">
+
+          {{language.emailLabel}}
+        </p>
+        <input type="email" name="loginEmail" placeholder="{{language.email}}">
+        <p>
+          {{language.passwordLabel}}
         </p>
         <p>
-          <input href="#" type="submit" value="Login">
+          <input type="password" name="loginPassword" placeholder="{{language.password}}">
         </p>
         <p>
-          <a href="/register">Sign In</a>
+          <input href="#" type="submit" value="{{language.login}}">
+        </p>
+        <p>
+          <a href="/register">{{language.signIn}}</a>
         </p>
 
-        {{/if}}
 
       </form>
 
