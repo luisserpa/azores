@@ -5,8 +5,9 @@ Template.login.events({
   "click .facebookLogin": function() {
 
     FB.login(function(faceStatus) {
+      console.log("STATUS: ",faceStatus);
       if (faceStatus.authResponse) {
-        console.log("STATUS: ",faceStatus);
+
         console.log('Welcome!  Fetching your information.... ');
 
         FB.api('/me', {fields: 'name, email'}, function(response) {
@@ -34,12 +35,11 @@ Template.login.events({
               console.log("FACE USER: ", newUser);
 
               Meteor.call("addUser", newUser);
-
+              user = newUser;
             }
 
             Session.set("sessionUser", user);
             Router.go("/islandmap");
-
           }
         });
 
@@ -99,7 +99,7 @@ Template.login.helpers({
 
 });
 
-Template.login.onRendered(function () {
+/*Template.login.onRendered(function () {
 
     FB.getLoginStatus(function(response) {
       console.log("FIRST CHECK FACE STATUS: ", response);
@@ -108,4 +108,4 @@ Template.login.onRendered(function () {
       }
     });
 
-});
+});*/
