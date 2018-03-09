@@ -1,17 +1,27 @@
 <head>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="main.css">
 
 </head>
 
+
+
 <template name="renderpage">
-  <p>
-    {{> visited}} {{> rating}}
-  </p>
-  <div class="row">
 
 
-    {{> header}}
+
+  <div style="display:inline" class="row">
+    <div id="flags" class="col-xs-3">
+      {{> header}}
+    </div>
+    <div class="col-xs-3">
+      {{> visited}}
+    </div>
+    <div class="col-xs-3">
+      {{> rating}}
+    </div>
+
 
   </div>
 
@@ -21,6 +31,12 @@
     </div>
   </div>
 
+  <div class="col-3 .text-truncate">
+    <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
+
+
+    </div>
+  </div>
 
   {{> description}} 
   
@@ -50,11 +66,14 @@
 </template>
 
 <template name="images">
-
+  <div id="row">
+    <div class="col-md-6">
   <img class="img-responsive img-center" src={{images.image_1}} />
-  <br/>
+</div>
+<div class="col-md-6">
   <img class="img-responsive img-center" src={{images.image_2}} />
-  <br/>
+</div>
+</div>
 </template>
 
 <template name="rating">
