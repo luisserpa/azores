@@ -16,6 +16,7 @@
         },
         "lat": 38.655,
         "lng": -27.221,
+        "type": "Historic Monument",
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
@@ -42,6 +43,7 @@
 
         "lat": 38.7,
         "lng": -27.4,
+        "type": "Historic Monument",
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",

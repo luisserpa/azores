@@ -12,6 +12,7 @@
         },
         "lat": 38.646,
         "lng": -27.226,
+        "type": "Natural Monument",
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
@@ -30,6 +31,7 @@
         },
         "lat": 38.728,
         "lng": -27.216,
+        "type": "Natural Monument",
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"

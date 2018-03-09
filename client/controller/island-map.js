@@ -19,7 +19,7 @@ Template.islandmap.rendered = function() {
     ];
     Session.set("mapPlaces", places);
     Session.set("filterPlaces", filterPlaces);
-    Session.set("mapZoom", 13);
+    Session.set("mapZoom", 11);
 };
 
 Template.islandmap.helpers({
@@ -56,28 +56,20 @@ Template.filter.events({
 Template.islandmap.events({
     "click .render": function(event) {
         var titleId = event.target.id;
-        console.log("VALUE ID: ", titleId);
         var placeToRender = [];
         Session.get("mapPlaces").forEach(function(element, index) {
-            console.log("ELEMENT: ", element);
             if (placeToRender.length <= 0) {
                 Object.keys(element).forEach(function(key) {
                     placeToRender = element[key];
-                    console.log("PLACE TO RENDER ", placeToRender);
-                    console.log("TITLE ID: ", titleId);
                     if (placeToRender.pt.title === titleId) {
-                        console.log("THE INDEX: ", index);
                         Session.set("indexOfPlace", index);
-                        if (Session.get("sessionLanguage") === "poruguese") {
-                            return placeToRender.pt;
-                        } else {
-                            return placeToRender.en;
-                        }
+                        console.log("INDEX OF PLACE: ", index);
+                        Session.set("placeToRender", placeToRender);
                     }
                 });
             }
         });
-        Session.set("placeToRender", placeToRender);
+
         Router.go("/renderpage");
     }
 });

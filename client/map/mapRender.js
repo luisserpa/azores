@@ -1,6 +1,6 @@
 var startMap = function() {
     return function initMap() {
-        var centerIsland = { lat: 38.663, lng: -27.22 };
+        var centerIsland = { lat: 38.715, lng: -27.22 };
         var map = new google.maps.Map(document.getElementById("map"), {
             zoom: Session.get("mapZoom"),
             center: centerIsland
@@ -38,8 +38,8 @@ var startMap = function() {
                         //Carefull with the set of the href
                         aTag.setAttribute("href", "#");
                         aTag.setAttribute("class", "render");
-                        aTag.setAttribute("id", element.titlePt);
-                        aTag.setAttribute("value", element.titlePt);
+                        aTag.setAttribute("id", element.pt.title);
+                        aTag.setAttribute("value", element.pt.title);
                         aTag.innerHTML = title;
                         para.appendChild(aTag);
                         para.appendChild(document.createElement("P"));
