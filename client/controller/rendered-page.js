@@ -11,21 +11,13 @@ Template.renderpage.onCreated(function onReder() {
 
 Template.title.helpers({
     title() {
-        if (Session.get("language") === "portuguese") {
-            return Session.get("placeToRender").titlePt;
-        } else {
-            return Session.get("placeToRender").titleEn;
-        }
+        return Session.get("placeToRender").title;
     }
 });
 
 Template.description.helpers({
     description() {
-        if (Session.get("language") === "portuguese") {
-            return Session.get("placeToRender").longDescriptionPt;
-        } else {
-            return Session.get("placeToRender").longDescriptionEn;
-        }
+        return Session.get("placeToRender").longDescription;
     }
 });
 
@@ -36,9 +28,11 @@ Template.images.helpers({
 });
 
 Template.visited.rendered = function() {
+    console.log("INDEX: ", Session.get("indexOfPlace"));
     var tempPlace = Session.get("sessionUser").places[
         Session.get("indexOfPlace")
     ];
+    console.log("TEMPPLACE: ", tempPlace);
     tempPlace.filter(function(obj) {
         console.log("OBJECT: ", obj);
         if (obj.titlePt === Session.get("placeToRender").titlePt) {

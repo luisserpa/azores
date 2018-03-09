@@ -9,19 +9,19 @@ var startMap = function() {
         //This starts with all the 4 type of places that the app has
         Session.get("mapPlaces").forEach(function(place, index) {
             //Then it checks if the filter checkbox are selected
-
             if (Session.get("filterMonuments")[index] === true) {
                 //Start the loop to show the icons in the map, that only are checked
-                place.forEach(function(element) {
+                $.each(place, function(index, element) {
+                    console.log("VALUE: ", element);
                     //Initial condition to choose language
                     var title;
                     var description;
                     if (Session.get("sessionLanguage") === "portuguese") {
-                        title = element.titlePt;
-                        description = element.descriptionPt;
+                        title = element.pt.title;
+                        description = element.pt.description;
                     } else {
-                        title = element.titleEn;
-                        description = element.descriptionEn;
+                        title = element.en.title;
+                        description = element.en.description;
                     }
 
                     var marker = new google.maps.Marker({

@@ -1,6 +1,6 @@
 import registerMessages from "../utils/register-messages.js";
 import historicMonuments from "../json/historic-monuments.json";
-import naturalMonuments from "../json/natural-monuments.js";
+import naturalMonuments from "../json/natural-monuments.json";
 import hotels from "../json/hotels.js";
 import food from "../json/food.js";
 import registerLanguages from "../json/html-fields/register.json";

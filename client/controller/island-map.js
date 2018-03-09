@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import historicMonuments from "../json/historic-monuments.json";
-import naturalMonuments from "../json/natural-monuments.js";
+import naturalMonuments from "../json/natural-monuments.json";
 import hotels from "../json/hotels.js";
 import food from "../json/food.js";
 import filterFunctions from "../utils/filter-functions.js";
@@ -32,7 +32,6 @@ Template.filter.events({
     "click .allChecked": function(event) {
         var filterPlaces = Session.get("filterPlaces");
         filterPlaces.forEach(function(value, i) {
-            console.log("VALUE: ", value);
             filterFunctions.checkAll(value, i);
         });
     },
@@ -60,16 +59,25 @@ Template.islandmap.events({
         console.log("VALUE ID: ", titleId);
         var placeToRender = [];
         Session.get("mapPlaces").forEach(function(element, index) {
-            //console.log("ENTERED HERE");
+            console.log("ELEMENT: ", element);
             if (placeToRender.length <= 0) {
-                placeToRender = element.filter(function(obj) {
-                    Session.set("indexOfPlace", index);
-                    return obj.titlePt == titleId;
+                Object.keys(element).forEach(function(key) {
+                    placeToRender = element[key];
+                    console.log("PLACE TO RENDER ", placeToRender);
+                    console.log("TITLE ID: ", titleId);
+                    if (placeToRender.pt.title === titleId) {
+                        console.log("THE INDEX: ", index);
+                        Session.set("indexOfPlace", index);
+                        if (Session.get("sessionLanguage") === "poruguese") {
+                            return placeToRender.pt;
+                        } else {
+                            return placeToRender.en;
+                        }
+                    }
                 });
             }
         });
-
-        Session.set("placeToRender", placeToRender[0]);
+        Session.set("placeToRender", placeToRender);
         Router.go("/renderpage");
     }
 });
