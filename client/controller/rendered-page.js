@@ -97,14 +97,6 @@ Template.visited.events({
             }
         });
 
-        /*
-        tempPlaces[indexPlace].forEach(function(element, index) {
-            if (element.titlePt === placeToChange[0].titlePt) {
-                tempPlaces[indexPlace].splice(index, 1, placeToChange[0]);
-            }
-        });
-        */
-
         //Increase the number of monuments founds
         console.log("FOUNDS: ", Session.get("sessionUser").founds);
         var increaseFounds = Session.get("sessionUser").founds + 1;
