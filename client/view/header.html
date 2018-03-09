@@ -1,38 +1,32 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="header.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="header.css">
 </head>
 
 
 <template name="header">
-   
-  <div style="width: 100%;">
-     
-  
-      <div style="display: inline-block;
-      position: relative; width: 15%;">
-  <a type="button" class="portuguese">
-    <img id="ptsmall" src="http://localhost:3000/PT.png" />
-  </a>
-</div> 
 
-  
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+          <a type="button" class="portuguese">
+            <img id="ptsmall" src="http://localhost:3000/PT.png" />
+          </a>
 
-<div style="display: inline-block;
-position: relative; width: 30%;">
-  <a type="button" class="english">
-    <img src="http://localhost:3000/EN.png" />
-  </a>
-</div>
+          <a type="button" class="english">
+            <img src="http://localhost:3000/EN.png" />
+          </a>
 
-<div style="display: inline-block;
-position: relative; width: 65%;">
-    <a href="#" type="text" class="logout">
-        <img src="http://localhost:3000/PTshiny.png" />
-      </a>
-    </div> 
-
+          <a href="#" type="text" class="logout">
+            <img src="http://localhost:3000/PTshiny.png" />
+          </a>
+      </div>
+    </div>
   </div>
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </template>

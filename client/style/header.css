@@ -1,2 +1,5 @@
 @media screen and (max-width: 799px) and (min-width: 151px) {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
