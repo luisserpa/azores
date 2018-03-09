@@ -9,6 +9,7 @@ Meteor.methods({
 
 Meteor.methods({
     findByNamePt: function(placeName) {
+        console.log("IN THE DATABSAE");
         var place = Places.findOne({ name: placeName });
         return place;
     }

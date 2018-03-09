@@ -1,4 +1,4 @@
-import historicMonuments from "../json/historic-monuments.json";
+import historicMonuments from "../../import/json/historic-monuments.json";
 import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
 
@@ -96,14 +96,6 @@ Template.visited.events({
                 tempPlaces[key].visited = true;
             }
         });
-
-        /*
-        tempPlaces[indexPlace].forEach(function(element, index) {
-            if (element.titlePt === placeToChange[0].titlePt) {
-                tempPlaces[indexPlace].splice(index, 1, placeToChange[0]);
-            }
-        });
-        */
 
         //Increase the number of monuments founds
         console.log("FOUNDS: ", Session.get("sessionUser").founds);
