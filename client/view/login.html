@@ -1,23 +1,37 @@
-<template class="container body" name="landingpage">
-
-<a type="button" class="portuguese">
-  <img src="http://localhost:3000/PT.png" />
-</a>
-
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
 
 
-<a type="button" class="english">
- <img src="http://localhost:3000/EN.png"  />
-</a>
+<template class="body" name="landingpage">
 
+
+  <div class="row">
+    <div class="col-xs-6 col-centered">
+      <a type="button" class="portuguese">
+        <img style="border-radius: 50%;" src="http://localhost:3000/PT.png" />
+      </a>
+    </div>
+
+    <div class="col-xs-6 push-to-bottom">
+      <a type="button" class="english">
+        <img src="http://localhost:3000/EN.png" />
+      </a>
+    </div>
+  </div>
 
 </template>
 
+
+
 <template class="container" name="login">
+  <div class="container centeredLogin">
+    <div class="vertical-center">
 
-<button type="button" class="facebookLogin">Facebook Login</button>
+      <button type="button" class="facebookLogin">Facebook Login</button>
 
-  <form>
+      <form>
 
 {{#if language}}
   <p>
@@ -44,23 +58,21 @@
   </p>
       <input type="email"  name="loginEmail" placeholder="insert your email">
         <p>
-          <p>
-            Password
-          </p>
           <input type="password" name="loginPassword" placeholder="insert your password">
         </p>
         <p>
-          <input href ="#" type="submit" value="Login">
+          <input href="#" type="submit" value="Login">
         </p>
         <p>
           <a href="/register">Sign In</a>
         </p>
 
-    {{/if}}
+        {{/if}}
 
       </form>
 
-    {{> flashMessages}}
+      {{> flashMessages}}
 
-
+    </div>
+  </div>
 </template>

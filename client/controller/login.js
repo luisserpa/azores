@@ -42,70 +42,71 @@ Template.login.events({
             Router.go("/islandmap");
           }
         });
+    },
 
-     });
-    } else {
-     console.log('User cancelled login or did not fully authorize.');
-    }
-});
+    "submit form": function(event) {
+        event.preventDefault();
+        var loginEmail = event.target.loginEmail.value;
+        var loginPassword = event.target.loginPassword.value;
 
-  },
+        console.log("EMAIL: ", loginEmail);
+        console.log("PASS: ", loginPassword);
 
-  "submit form": function(event){
-    event.preventDefault();
-    var loginEmail = event.target.loginEmail.value;
-    var loginPassword = event.target.loginPassword.value;
-
-    console.log("EMAIL: ", loginEmail);
-    console.log("PASS: ", loginPassword);
-
-    if (loginPassword === "" || loginPassword === undefined
-        || loginEmail === "" || loginEmail === undefined) {
-          loginMessages();
-          return;
-    }
-
-    Meteor.call("findByEmail", loginEmail, function(error, user) {
-      console.log("SEARCHING DB");
-      if(!error){
-
-        if(user === undefined){
-          loginMessages();
-          return;
+        if (
+            loginPassword === "" ||
+            loginPassword === undefined ||
+            loginEmail === "" ||
+            loginEmail === undefined
+        ) {
+            loginMessages();
+            return;
         }
 
-        if(user.password !== loginPassword){
-          loginMessages();
-          return;
-        }
+        Meteor.call("findByEmail", loginEmail, function(error, user) {
+            console.log("SEARCHING DB");
+            if (!error) {
+                if (user === undefined) {
+                    loginMessages();
+                    return;
+                }
 
-        Session.set("sessionUser", user);
-        Router.go("/islandmap");
-      }
-    });
-  }
+                if (user.password !== loginPassword) {
+                    loginMessages();
+                    return;
+                }
+
+                Session.set("sessionUser", user);
+                Router.go("/islandmap");
+            }
+        });
+    }
 });
 
 Template.login.helpers({
-
-  language(){
-    if(Session.get("sessionLanguage") === "portuguese"){
-      return true;
-    }else{
-      return false;
-    };
-
-  }
-
+    language() {
+        if (Session.get("sessionLanguage") === "portuguese") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 });
 
+<<<<<<< HEAD
 /*Template.login.onRendered(function () {
 
+=======
+Template.login.onRendered(function() {
+>>>>>>> development
     FB.getLoginStatus(function(response) {
-      console.log("FIRST CHECK FACE STATUS: ", response);
-      if (response.status === "connected") {
-        Router.go("/islandmap");
-      }
+        console.log("FIRST CHECK FACE STATUS: ", response);
+        if (response.status === "connected") {
+            Router.go("/islandmap");
+        }
     });
+<<<<<<< HEAD
 
 });*/
+=======
+});
+>>>>>>> development

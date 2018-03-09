@@ -1,79 +1,81 @@
 <template name="register">
+  <div class="container centeredLogin">
+    <div class="vertical-center">
 
-  <form class="add-user">
-    {{#if language}}
-    <p>
-      Email
-    </p>
-    <p>
-      <input type="email" name="registerEmail" placeholder="insira o seu email">
-    </p>
-    <p>
-      Nome Utilizador
-    </p>
-    <p>
-      <input type="text" name="registerDisplayName" placeholder="insira o seu nome de uilizador">
-    </p>
-    <p>
-      Palavra Passe
-    </p>
-    <p>
-      <input type="password" name="registerPassword" placeholder="insia a sua palavra passe">
-    </p>
-    <p>
-      Repita a palavra passe
-    </p>
-    <p>
-      <input type="password" name="repeatPassword" placeholder="Repita a palavra passe">
-    </p>
-    <p>
-      <input href="/login" type="submit" value="Criar conta">
-    </p>
-    <p>
-      <a type="button" class="backPt">
-        Retroceder
-      </a>
-    </p>
+      <form class="add-user">
+        {{#if language}}
+        <p>
+          Email
+        </p>
+        <p>
+          <input type="email" name="registerEmail" placeholder="insira o seu email">
+        </p>
+        <p>
+          Nome Utilizador
+        </p>
+        <p>
+          <input type="text" name="registerDisplayName" placeholder="insira o seu nome de uilizador">
+        </p>
+        <p>
+          Palavra Passe
+        </p>
+        <p>
+          <input type="password" name="registerPassword" placeholder="insia a sua palavra passe">
+        </p>
+        <p>
+          Repita a palavra passe
+        </p>
+        <p>
+          <input type="password" name="repeatPassword" placeholder="Repita a palavra passe">
+        </p>
+        <p>
+          <input href="/login" type="submit" value="Criar conta">
+        </p>
+        <p>
+          <a type="button" class="backPt">
+            Retroceder
+          </a>
+        </p>
 
-    {{else}}
+        {{else}}
 
-    <p>
-      Email
-    </p>
-    <p>
-      <input type="email" name="registerEmail" placeholder="enter your email">
-    </p>
-    <p>
-      Display name
-    </p>
-    <p>
-      <input type="text" name="registerDisplayName" placeholder="enter your display name">
-    </p>
-    <p>
-      Password
-    </p>
-    <p>
-      <input type="password" name="registerPassword" placeholder="enter your password">
-    </p>
-    <p>
-      Retype Password
-    </p>
-    <p>
-      <input type="password" name="repeatPassword" placeholder="enter again your password">
-    </p>
-    <p>
-      <input href="/login" type="submit" value="Create Count">
-    </p>
-    <p>
-      <a type="button" class="backEn">
-        Back
-      </a>
-    </p>
+        <p>
+          Email
+        </p>
+        <p>
+          <input type="email" name="registerEmail" placeholder="enter your email">
+        </p>
+        <p>
+          Display name
+        </p>
+        <p>
+          <input type="text" name="registerDisplayName" placeholder="enter your display name">
+        </p>
+        <p>
+          Password
+        </p>
+        <p>
+          <input type="password" name="registerPassword" placeholder="enter your password">
+        </p>
+        <p>
+          Retype Password
+        </p>
+        <p>
+          <input type="password" name="repeatPassword" placeholder="enter again your password">
+        </p>
+        <p>
+          <input href="/login" type="submit" value="Create Count">
+        </p>
+        <p>
+          <a type="button" class="backEn">Back</a>
+        </p>
 
-    {{/if}}
+        {{/if}}
 
-  </form>
+      </form>
 
-  {{> flashMessages}}
+      {{> flashMessages}}
 
+    </div>
+  </div>
 </template>
