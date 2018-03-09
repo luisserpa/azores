@@ -5,52 +5,47 @@ Template.login.events({
   "click .facebookLogin": function() {
 
     FB.login(function(faceStatus) {
-      console.log("STATUS: ",faceStatus);
-      if (faceStatus.authResponse) {
+        console.log("STATUS: ",faceStatus);
+        if (faceStatus.authResponse) {
 
-        console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', {fields: 'name, email'}, function(response) {
+            console.log("RESPONSE: ", response);
 
-        FB.api('/me', {fields: 'name, email'}, function(response) {
-          console.log("RESPONSE: ", response);
-          console.log("MAIL: ", response.email);
-        console.log('Good to see you, ' + response.name + '.');
+                if (response.email === undefined) {
+                return;
+                }
 
-          if (response.email === undefined) {
-            console.log("MAIL UNDEFINED");
-              return;
-          }
+                Meteor.call("findByEmail", response.email, function(error, user) {
 
-       Meteor.call("findByEmail", response.email, function(error, user) {
+                    if(!error){
 
-          if(!error){
+                        if(user === undefined){
 
-            if(user === undefined){
+                            var newUser={
+                                email: response.email,
+                                displayName: response.name,
+                                password: ""
+                                };
 
-              var newUser={
-                email: response.email,
-                displayName: response.name,
-                password: ""
-              };
+                            console.log("FACE USER: ", newUser);
 
-              console.log("FACE USER: ", newUser);
+                            Meteor.call("addUser", newUser);
+                            user = newUser;
+                        }
 
-              Meteor.call("addUser", newUser);
-              user = newUser;
-            }
-
-            Session.set("sessionUser", user);
-            Router.go("/islandmap");
-          }
-        });
-    },
+                        Session.set("sessionUser", user);
+                        Router.go("/islandmap");
+                    }
+                }); 
+            });
+        } 
+    }); 
+   }, 
 
     "submit form": function(event) {
         event.preventDefault();
         var loginEmail = event.target.loginEmail.value;
         var loginPassword = event.target.loginPassword.value;
-
-        console.log("EMAIL: ", loginEmail);
-        console.log("PASS: ", loginPassword);
 
         if (
             loginPassword === "" ||
@@ -63,7 +58,7 @@ Template.login.events({
         }
 
         Meteor.call("findByEmail", loginEmail, function(error, user) {
-            console.log("SEARCHING DB");
+
             if (!error) {
                 if (user === undefined) {
                     loginMessages();
@@ -80,7 +75,8 @@ Template.login.events({
             }
         });
     }
-});
+
+}); 
 
 Template.login.helpers({
     language() {
@@ -92,21 +88,13 @@ Template.login.helpers({
     }
 });
 
-<<<<<<< HEAD
 /*Template.login.onRendered(function () {
 
-=======
-Template.login.onRendered(function() {
->>>>>>> development
     FB.getLoginStatus(function(response) {
         console.log("FIRST CHECK FACE STATUS: ", response);
         if (response.status === "connected") {
             Router.go("/islandmap");
         }
     });
-<<<<<<< HEAD
 
 });*/
-=======
-});
->>>>>>> development

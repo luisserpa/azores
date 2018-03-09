@@ -19,3 +19,10 @@ Meteor.methods({
         Places.update({ _id: placeId }, { $set: { rating: newRate } });
     }
 });
+
+Meteor.methods({
+    findAll: function(typeName) {
+        return Places.find({ type: typeName}).fetch();
+    }
+});
+
