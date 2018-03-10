@@ -1,12 +1,13 @@
-import historicMonuments from "../json/historic-monuments.json";
+import historicMonuments from "../../import/json/historic-monuments.json";
 import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
 
 let hideCheckbox;
+let starsRating;
 
 Template.renderpage.onCreated(function onReder() {
     hideCheckbox = new ReactiveVar(false);
-    console.log("PASS BY HERE", hideCheckbox.get());
+    starsRating = new ReactiveVar(true);
 });
 
 Template.title.helpers({
@@ -39,11 +40,8 @@ Template.visited.rendered = function() {
     var tempPlaces = Session.get("sessionUser").places[
         Session.get("indexOfPlace")
     ];
-    console.log("USER PLACES: ", Session.get("sessionUser").places);
-    console.log("IS UNDIFINED?", tempPlaces);
-    console.log("INDEX OF PLACE: ", Session.get("indexOfPlace"));
+
     Object.keys(tempPlaces).forEach(function(key) {
-        console.log("THE PLACE TO SEE: ", tempPlaces);
         if (
             tempPlaces[key].pt.title === Session.get("placeToRender").pt.title
         ) {
@@ -56,7 +54,6 @@ Template.visited.rendered = function() {
 
 Template.visited.helpers({
     hideCheckbox() {
-        console.log("IN THE HELPERS: ", hideCheckbox.get());
         return hideCheckbox.get();
     }
 });
@@ -68,8 +65,6 @@ Template.visited.events({
         var tempPlaces = Session.get("sessionUser").places[
             Session.get("indexOfPlace")
         ];
-
-        console.log("USER PLACES: ", Session.get("sessionUser").places);
 
         //Then we need to find the place that we need to change
         var placeToChange = [];
@@ -88,7 +83,6 @@ Template.visited.events({
         });
 
         //Now update the place marking the visible to true
-        console.log("PLACE TO CHANGE: ", placeToChange);
         placeToChange.visited = true;
         Object.keys(tempPlaces).forEach(function(key, index) {
             if (tempPlaces[key].pt.title === placeToChange.pt.title) {
@@ -97,31 +91,12 @@ Template.visited.events({
             }
         });
 
-        /*
-        tempPlaces[indexPlace].forEach(function(element, index) {
-            if (element.titlePt === placeToChange[0].titlePt) {
-                tempPlaces[indexPlace].splice(index, 1, placeToChange[0]);
-            }
-        });
-        */
-
         //Increase the number of monuments founds
-        console.log("FOUNDS: ", Session.get("sessionUser").founds);
         var increaseFounds = Session.get("sessionUser").founds + 1;
 
-        console.log("ARRAY TO THE USER? ", tempPlaces);
-        console.log("INDEX PLACE: ", indexPlace);
-
-        console.log("HERE", Session.get("sessionUser").places);
-        console.log("THE TEMP PLACES: ", tempPlaces);
-
         var updating = Session.get("sessionUser").places;
-        console.log("PLACES OF USER  :", updating);
         updating.splice(Session.get("indexOfPlace"), 1);
-        console.log("PLACES UPDATED AFTER 1ST SPLICE: ", updating);
         updating.splice(Session.get("indexOfPlace"), 0, tempPlaces);
-
-        console.log("PLACES UPDATED: ", updating);
 
         //Now update this to the use
         Meteor.call(
@@ -148,6 +123,29 @@ Template.visited.events({
     }
 });
 
+Template.rating.rendered = function() {
+    //Check if the user has already voted in this monument
+    Meteor.call("findByNamePt", Session.get("placeToRender").pt.title, function(
+        error,
+        result
+    ) {
+        if (!error) {
+            console.log("RESULT.usersVoted", result);
+            result.usersVoted.forEach(function(userEmail) {
+                if (userEmail === Session.get("sessionUser").email) {
+                    starsRating.set(false);
+                }
+            });
+        }
+    });
+};
+
+Template.rating.helpers({
+    showStars() {
+        return starsRating.get();
+    }
+});
+
 Template.rating.events({
     "click .rate": function(event) {
         var userRate = event.target.value;
@@ -157,19 +155,27 @@ Template.rating.events({
             "findByNamePt",
             Session.get("placeToRender").pt.title,
             function(error, place) {
-                console.log("VALUE OF PLACE: ", place);
+                console.log("VALUE OF PLACE: ", JSON.stringify(place));
                 if (place !== undefined) {
                     if (!error) {
                         //Makes the update to the place with the new rate
-                        var updatePlace = place.rating;
-                        updatePlace.push(userRate);
+                        var updateRating = place.rating;
+                        console.log(
+                            "PLACE: ",
+                            JSON.stringify(place.usersVoted)
+                        );
+                        var voteFromUser = place.usersVoted;
+
+                        updateRating.push(parseInt(userRate));
+                        voteFromUser.push(Session.get("sessionUser").email);
                         Meteor.call(
                             "updatePlace",
                             place._id,
-                            updatePlace,
+                            updateRating,
+                            voteFromUser,
                             function(error, result) {
                                 if (!error) {
-                                    console.log(result);
+                                    starsRating.set(false);
                                 }
                             }
                         );

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import historicMonuments from "../json/historic-monuments.json";
-import naturalMonuments from "../json/natural-monuments.json";
-import hotels from "../json/hotels.js";
-import food from "../json/food.js";
+import historicMonuments from "../../import/json/historic-monuments.json";
+import naturalMonuments from "../../import/json/natural-monuments.json";
+import hotels from "../../import/json/hotels.js";
+import food from "../../import/json/food.js";
 import filterFunctions from "../utils/filter-functions.js";
 import startMap from "../map/mapRender.js";
 

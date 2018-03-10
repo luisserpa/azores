@@ -1,5 +1,5 @@
 import loginMessages from "../utils/login-messages.js";
-import loginLanguages from "../json/html-fields/login.json";
+import loginLanguages from "../../import/json/html-fields/login.json";
 
 Template.login.events({
 
