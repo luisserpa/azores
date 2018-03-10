@@ -10,38 +10,54 @@
 
     {{> header}}
 
-
-  <div class="container centeredLogin">
-    <div class="vertical-center">
-
-      MAP
-
       <style>
+        @media screen and (max-width: 5000px) and (min-width: 801px) {
+        #map {
+          height: 800px;
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 800px) and (min-width: 135px) {
         #map {
           height: 400px;
           width: 100%;
         }
-      </style>
+      }
 
-      {{> filter}}
+      </style> 
 
-      <div id="map"></div>
+
+<div class="col-md-10">
+      <div id="map">
 
       <div id="mapDisplay">
         <script>
           {{ markers }}
         </script>
+  </div> 
 
+</div>
+
+</div>
+
+
+
+<div id="row">
+    <div class="col-md-2">
+
+      {{> filter}}
       </div>
+    </div>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFesdr-q5keaEXasmMOJCphcrucwBWYH8&callback=initMap">
       </script>
 
-    </div>
-  </div>
+   
+ 
 </template>
 
 <template name="filter">
+  <a href="/counter">COUNTER</a>
   <form action="">
     <input class="allChecked" type="checkbox" name="allChecked" value="Yes">Uncheck all
     <br>
