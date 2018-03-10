@@ -15,7 +15,10 @@ Meteor.methods({
 });
 
 Meteor.methods({
-    updatePlace: function(placeId, newRate) {
-        Places.update({ _id: placeId }, { $set: { rating: newRate } });
+    updatePlace: function(placeId, newRate, usersVoted) {
+        Places.update(
+            { _id: placeId },
+            { $set: { rating: newRate, usersVoted: usersVoted } }
+        );
     }
 });

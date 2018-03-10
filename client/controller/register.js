@@ -1,9 +1,9 @@
 import registerMessages from "../utils/register-messages.js";
-import historicMonuments from "../json/historic-monuments.json";
-import naturalMonuments from "../json/natural-monuments.json";
-import hotels from "../json/hotels.js";
-import food from "../json/food.js";
-import registerLanguages from "../json/html-fields/register.json";
+import historicMonuments from "../../import/json/historic-monuments.json";
+import naturalMonuments from "../../import/json/natural-monuments.json";
+import hotels from "../../import/json/hotels.js";
+import food from "../../import/json/food.js";
+import registerLanguages from "../../import/json/html-fields/register.json";
 
 Template.register.events({
     "click .back": function(event) {
