@@ -22,3 +22,12 @@ Meteor.methods({
         );
     }
 });
+
+Meteor.methods({
+    updateCounter: function(userId, cowcounter) {
+        Users.update(
+            { _id: userId },
+            { $set: { cows: cowcounter } }
+        );
+    }
+});

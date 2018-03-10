@@ -57,13 +57,14 @@ Template.register.events({
                         email: registerEmail,
                         displayName: registerDisplayName,
                         password: registerPassword,
+                        founds: 0,
+                        cows: 0,
                         places: [
                             historicMonuments,
                             naturalMonuments,
                             hotels,
                             food
-                        ],
-                        founds: 0
+                        ]
                     };
                     Meteor.call("addUser", newUser);
                     registerMessages.createSuccess();

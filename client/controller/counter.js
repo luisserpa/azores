@@ -1,19 +1,28 @@
-if (Meteor.isClient) {
-    Session.setDefault("counter", 0);
+import { Template } from "meteor/templating";
+import { ReactiveVar } from "meteor/reactive-var";
 
-    Template.cowcounter.helpers({
-        counter: function() {
-            return Session.get("counter");
-        }
-    });
+let cowcounter;
 
-    Template.cowcounter.events({
-        "click button": function() {
-            Session.set("counter", Session.get("counter") + 1);
-        }
-    });
-}
+Template.counter.onCreated(function onReder() {
+    cowcounter = new ReactiveVar(Session.get("sessionUser").cows);
+    console.log("COUNTER", cowcounter.get());
+});
 
-if (Meteor.isServer) {
-    Meteor.startup(function() {});
-}
+Template.cowcounter.helpers({
+    counter: function() {
+        return cowcounter.get();
+    }
+});
+
+Template.cowcounter.events({
+    "click button": function() {
+        cowcounter.set(cowcounter.get() + 1);
+        user = Session.get("sessionUser");
+        user.cows = cowcounter.get();
+        Session.set("sessionUser", user);
+    }
+});
+
+
+
+

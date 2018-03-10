@@ -25,7 +25,15 @@ Template.login.events({
                             var newUser={
                                 email: response.email,
                                 displayName: response.name,
-                                password: ""
+                                password: "",
+                                founds: 0,
+                                cows: 0,
+                                places: [
+                                    historicMonuments,
+                                    naturalMonuments,
+                                    hotels,
+                                    food
+                                ]
                                 };
 
                             console.log("FACE USER: ", newUser);
