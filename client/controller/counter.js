@@ -5,7 +5,6 @@ let cowcounter;
 
 Template.counter.onCreated(function onReder() {
     cowcounter = new ReactiveVar(Session.get("sessionUser").cows);
-    console.log("COUNTER", cowcounter.get());
 });
 
 Template.cowcounter.helpers({
@@ -20,6 +19,7 @@ Template.cowcounter.events({
         user = Session.get("sessionUser");
         user.cows = cowcounter.get();
         Session.set("sessionUser", user);
+        Meteor.call("updateCounter",user._id,cowcounter.get());
     }
 });
 
