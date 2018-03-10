@@ -10,6 +10,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
+     <div class="pull-left">
           <a type="button" class="portuguese">
             <img id="ptsmall" src="http://localhost:3000/PT.png" />
           </a>
@@ -21,6 +22,11 @@
           <a href="#" type="text" class="logout">
             <img src="http://localhost:3000/PTshiny.png" />
           </a>
+
+          {{> displayUserName}}
+
+          {{> cowCounter}}
+        </div>
       </div>
     </div>
   </div>
@@ -29,12 +35,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<<<<<<< HEAD
-</template>
-=======
-  {{> displayUserName}}
+ 
 
-  {{> cowCounter}}
+
 
 </template>
 
@@ -44,6 +47,5 @@
 
 <template name="cowCounter">
     <a href="/counter">COUNTER</a>
-(Cow Counter - to update)
+
 </template>
->>>>>>> development

@@ -5,12 +5,14 @@
     margin-right: auto;
   }
 
-  button {
+  #cowbutton {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     height: 350px;
     width: 350px;
     border: none;
+    background-color: #82c6e600;
+    outline: none;
   }
 
   button span {
@@ -25,8 +27,15 @@
     margin-right: auto;
   }
 
-  img {
-    background-color: transparent;
+  #cowbutton {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
     border: none;
+    background-color: #82c6e600;
+    outline: none;
+  }
+
+  button span {
+    display: none;
   }
 }

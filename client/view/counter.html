@@ -5,9 +5,7 @@
 
 <template name="counter">
 
-
-  
-
+    {{> header}}
 
     Let's count some cows!
 
@@ -20,7 +18,7 @@
    
     <div id="row" style="background-color: transparent;">
         <div class="btn btn-xs button-cols" >
-  <button >
+  <button id="cowbutton" >
       
       <img src="http://localhost:3000/CowLogoCounter.png" class="img-responsive"  />
  
@@ -29,6 +27,6 @@
   </div>
 
 
-  You've pressed the button {{counter}} times.
+  You've seen {{counter}} cows so far.
 
 </template>
