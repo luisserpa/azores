@@ -3,7 +3,6 @@ import { Meteor } from "meteor/meteor";
 Meteor.methods({
     addPlace: function(placeData) {
         var placeId = Places.insert(placeData);
-        console.log("PLACE TO INSERT: ", placeData);
         return placeId;
     }
 });
@@ -11,13 +10,22 @@ Meteor.methods({
 Meteor.methods({
     findByNamePt: function(placeName) {
         var place = Places.findOne({ name: placeName });
-        console.log("PLACE FOUND: ", place);
         return place;
     }
 });
 
 Meteor.methods({
-    updatePlace: function(placeId, newRate) {
-        Places.update({ _id: placeId }, { $set: { rating: newRate } });
+    updatePlace: function(placeId, newRate, usersVoted) {
+        Places.update(
+            { _id: placeId },
+            { $set: { rating: newRate, usersVoted: usersVoted } }
+        );
     }
 });
+
+Meteor.methods({
+    findAll: function(typeName) {
+        return Places.find({ type: typeName}).fetch();
+    }
+});
+

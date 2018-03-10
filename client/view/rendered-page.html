@@ -38,7 +38,9 @@
     </div>
   </div>
 
-  {{> description}} {{> images}}
+  {{> description}} 
+  
+  {{> images}}
 
 
   <br/>
@@ -59,7 +61,8 @@
 
 <template name="checked">
   {{#if checkbox}}
-  <img src="http://localhost:3000/visited.png" /> {{/if}}
+  
+  {{/if}}
 </template>
 
 <template name="images">
@@ -74,6 +77,8 @@
 </template>
 
 <template name="rating">
+
+  {{#if showStars}}
 
   <fieldset class="rating">
     <input type="radio" id="star5" class="rate" name="rating" value="5" />
@@ -98,13 +103,17 @@
     <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
   </fieldset>
 
+  {{/if}}
+
   <br/>
 
 </template>
 
 <template name="visited">
 
-  {{#if hideCheckbox}} {{> checked}} {{else}}
+  {{#if hideCheckbox}} 
+  <img src="http://localhost:3000/visited.png" /> 
+  {{else}}
   <form id="hideCheckbox" action="">
     <input id="visitedPlace" class="visitedPlace" type="checkbox" name="visitedPlace" value="Yes">Mark as visited
     <br>

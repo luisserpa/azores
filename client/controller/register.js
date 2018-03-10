@@ -1,15 +1,12 @@
 import registerMessages from "../utils/register-messages.js";
-import historicMonuments from "../json/historic-monuments.js";
-import naturalMonuments from "../json/natural-monuments.js";
-import hotels from "../json/hotels.js";
-import food from "../json/food.js";
+import historicMonuments from "../../import/json/historic-monuments.json";
+import naturalMonuments from "../../import/json/natural-monuments.json";
+import hotels from "../../import/json/hotels.js";
+import food from "../../import/json/food.js";
+import registerLanguages from "../../import/json/html-fields/register.json";
 
 Template.register.events({
-    "click .backEn": function(event) {
-        Router.go("/login");
-    },
-
-    "click .backPt": function(event) {
+    "click .back": function(event) {
         Router.go("/login");
     },
 
@@ -60,13 +57,14 @@ Template.register.events({
                         email: registerEmail,
                         displayName: registerDisplayName,
                         password: registerPassword,
+                        founds: 0,
+                        cows: 0,
                         places: [
                             historicMonuments,
                             naturalMonuments,
                             hotels,
                             food
-                        ],
-                        founds: 0
+                        ]
                     };
                     Meteor.call("addUser", newUser);
                     registerMessages.createSuccess();
@@ -80,9 +78,9 @@ Template.register.events({
 Template.register.helpers({
     language() {
         if (Session.get("sessionLanguage") === "portuguese") {
-            return true;
+            return registerLanguages.pt;
         } else {
-            return false;
+            return registerLanguages.en;
         }
     }
 });
