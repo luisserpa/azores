@@ -15,6 +15,14 @@
   }
 }
 
+.parallax-container {
+  height: 700;
+}
+
+#language-icon {
+  size: 100px, 100px;
+}
+
 .col-centered {
   text-align: left;
   margin: 0 auto;
