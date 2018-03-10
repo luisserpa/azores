@@ -9,14 +9,16 @@ Meteor.methods({
 
 Meteor.methods({
     findByNamePt: function(placeName) {
-        console.log("IN THE DATABSAE");
         var place = Places.findOne({ name: placeName });
         return place;
     }
 });
 
 Meteor.methods({
-    updatePlace: function(placeId, newRate) {
-        Places.update({ _id: placeId }, { $set: { rating: newRate } });
+    updatePlace: function(placeId, newRate, usersVoted) {
+        Places.update(
+            { _id: placeId },
+            { $set: { rating: newRate, usersVoted: usersVoted } }
+        );
     }
 });

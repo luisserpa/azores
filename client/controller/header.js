@@ -20,3 +20,9 @@ Template.header.events({
         Router.go("/islandmap");
     }
 });
+
+Template.displayUserName.helpers({
+    showName() {
+        return Session.get("sessionUser").displayName;
+    }
+});
