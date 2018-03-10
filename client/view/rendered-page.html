@@ -78,6 +78,8 @@
 
 <template name="rating">
 
+  {{#if showStars}}
+
   <fieldset class="rating">
     <input type="radio" id="star5" class="rate" name="rating" value="5" />
     <label class="full" for="star5" title="Awesome - 5 stars"></label>
@@ -100,6 +102,8 @@
     <input type="radio" id="starhalf" class="rate" name="rating" value="0.5" />
     <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
   </fieldset>
+
+  {{/if}}
 
   <br/>
 

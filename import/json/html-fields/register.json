@@ -1,0 +1,18 @@
+{
+    "en": {
+        "email": "enter your email",
+        "displayName": "enter your display name",
+        "password": "enter your password",
+        "repeatPassword": "enter again your password",
+        "createCount": "Create Count",
+        "back": "Back"
+    },
+    "pt": {
+        "email": "insira o seu email",
+        "displayName": "insira o seu nome de uilizador",
+        "password": "insia a sua palavra passe",
+        "repeatPassword": "Repita a palavra passe",
+        "createCount": "Criar conta",
+        "back": "Retroceder"
+    }
+}

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import historicMonuments from "../json/historic-monuments.js";
-import naturalMonuments from "../json/natural-monuments.js";
-import hotels from "../json/hotels.js";
-import food from "../json/food.js";
+import historicMonuments from "../../import/json/historic-monuments.json";
+import naturalMonuments from "../../import/json/natural-monuments.json";
+import hotels from "../../import/json/hotels.js";
+import food from "../../import/json/food.js";
 import filterFunctions from "../utils/filter-functions.js";
 import startMap from "../map/mapRender.js";
 
@@ -19,7 +19,7 @@ Template.islandmap.rendered = function() {
     ];
     Session.set("mapPlaces", places);
     Session.set("filterPlaces", filterPlaces);
-    Session.set("mapZoom", 13);
+    Session.set("mapZoom", 11);
 };
 
 Template.islandmap.helpers({
@@ -32,7 +32,6 @@ Template.filter.events({
     "click .allChecked": function(event) {
         var filterPlaces = Session.get("filterPlaces");
         filterPlaces.forEach(function(value, i) {
-            console.log("VALUE: ", value);
             filterFunctions.checkAll(value, i);
         });
     },
@@ -57,19 +56,20 @@ Template.filter.events({
 Template.islandmap.events({
     "click .render": function(event) {
         var titleId = event.target.id;
-        console.log("VALUE ID: ", titleId);
         var placeToRender = [];
         Session.get("mapPlaces").forEach(function(element, index) {
-            //console.log("ENTERED HERE");
             if (placeToRender.length <= 0) {
-                placeToRender = element.filter(function(obj) {
-                    Session.set("indexOfPlace", index);
-                    return obj.titlePt == titleId;
+                Object.keys(element).forEach(function(key) {
+                    placeToRender = element[key];
+                    if (placeToRender.pt.title === titleId) {
+                        Session.set("indexOfPlace", index);
+                        console.log("INDEX OF PLACE: ", index);
+                        Session.set("placeToRender", placeToRender);
+                    }
                 });
             }
         });
 
-        Session.set("placeToRender", placeToRender[0]);
         Router.go("/renderpage");
     }
 });

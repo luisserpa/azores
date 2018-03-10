@@ -1,0 +1,18 @@
+{
+    "pt": {
+        "email": "insira o seu email",
+        "password": "insira a password",
+        "login": "Entrar",
+        "signIn": "Inscrever",
+        "emailLabel": "Email",
+        "passwordLabel": "Palavra Passe"
+    },
+    "en": {
+        "email": "insert your email",
+        "password": "insert your password",
+        "login": "Log In",
+        "signIn": "Sign In",
+        "emailLabel": "Email",
+        "passwordLabel": "Password"
+    }
+}

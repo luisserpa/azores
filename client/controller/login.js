@@ -1,57 +1,60 @@
 import loginMessages from "../utils/login-messages.js";
+import loginLanguages from "../../import/json/html-fields/login.json";
 
 Template.login.events({
-    "click .facebookLogin": function() {
-        FB.login(function(faceStatus) {
-            if (faceStatus.authResponse) {
-                console.log("STATUS: ", faceStatus);
-                console.log("Welcome!  Fetching your information.... ");
 
-                FB.api("/me", { fields: "name, email" }, function(response) {
-                    console.log("RESPONSE: ", response);
-                    console.log("MAIL: ", response.email);
-                    console.log("Good to see you, " + response.name + ".");
+  "click .facebookLogin": function() {
 
-                    if (response.email === undefined) {
-                        console.log("MAIL UNDEFINED");
-                        return;
-                    }
+    FB.login(function(faceStatus) {
+        console.log("STATUS: ",faceStatus);
+        if (faceStatus.authResponse) {
 
-                    Meteor.call("findByEmail", response.email, function(
-                        error,
-                        user
-                    ) {
-                        if (!error) {
-                            if (user === undefined) {
-                                var newUser = {
-                                    email: response.email,
-                                    displayName: response.name,
-                                    password: ""
+            FB.api('/me', {fields: 'name, email'}, function(response) {
+            console.log("RESPONSE: ", response);
+
+                if (response.email === undefined) {
+                return;
+                }
+
+                Meteor.call("findByEmail", response.email, function(error, user) {
+
+                    if(!error){
+
+                        if(user === undefined){
+
+                            var newUser={
+                                email: response.email,
+                                displayName: response.name,
+                                password: "",
+                                founds: 0,
+                                cows: 0,
+                                places: [
+                                    historicMonuments,
+                                    naturalMonuments,
+                                    hotels,
+                                    food
+                                ]
                                 };
 
-                                console.log("FACE USER: ", newUser);
+                            console.log("FACE USER: ", newUser);
 
-                                Meteor.call("addUser", newUser);
-                            }
-
-                            Session.set("sessionUser", user);
-                            Router.go("/islandmap");
+                            Meteor.call("addUser", newUser);
+                            user = newUser;
                         }
-                    });
-                });
-            } else {
-                console.log("User cancelled login or did not fully authorize.");
-            }
-        });
-    },
+
+                        Session.set("sessionUser", user);
+                        Router.go("/islandmap");
+                    }
+                }); 
+            });
+        } 
+    }); 
+   }, 
 
     "submit form": function(event) {
         event.preventDefault();
         var loginEmail = event.target.loginEmail.value;
         var loginPassword = event.target.loginPassword.value;
-
-        console.log("EMAIL: ", loginEmail);
-        console.log("PASS: ", loginPassword);
 
         if (
             loginPassword === "" ||
@@ -64,7 +67,7 @@ Template.login.events({
         }
 
         Meteor.call("findByEmail", loginEmail, function(error, user) {
-            console.log("SEARCHING DB");
+
             if (!error) {
                 if (user === undefined) {
                     loginMessages();
@@ -81,23 +84,26 @@ Template.login.events({
             }
         });
     }
-});
+
+}); 
 
 Template.login.helpers({
     language() {
         if (Session.get("sessionLanguage") === "portuguese") {
-            return true;
+            return loginLanguages.pt;
         } else {
-            return false;
+            return loginLanguages.en;
         }
     }
 });
 
-Template.login.onRendered(function() {
+/*Template.login.onRendered(function () {
+
     FB.getLoginStatus(function(response) {
         console.log("FIRST CHECK FACE STATUS: ", response);
         if (response.status === "connected") {
             Router.go("/islandmap");
         }
     });
-});
+
+});*/

@@ -36,3 +36,39 @@ Router.route("/counter", function (){
     this.render("counter");
   }
 });
+
+Router.route("/islandmap/historicmonuments", function() {
+    if (Session.get("sessionUser") === undefined) {
+        Session.set("sessionLanguage", undefined);
+        this.render("landingpage");
+    } else {
+        this.render("historicmonuments");
+    }
+});
+
+Router.route("/islandmap/naturalmonuments", function() {
+    if (Session.get("sessionUser") === undefined) {
+        Session.set("sessionLanguage", undefined);
+        this.render("landingpage");
+    } else {
+        this.render("naturalmonuments");
+    }
+});
+
+Router.route("/islandmap/accommodations", function() {
+    if (Session.get("sessionUser") === undefined) {
+        Session.set("sessionLanguage", undefined);
+        this.render("landingpage");
+    } else {
+        this.render("accommodations");
+    }
+});
+
+Router.route("/islandmap/restaurants", function() {
+    if (Session.get("sessionUser") === undefined) {
+        Session.set("sessionLanguage", undefined);
+        this.render("landingpage");
+    } else {
+        this.render("restaurants");
+    }
+});
