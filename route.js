@@ -37,6 +37,15 @@ Router.route("/counter", function (){
   }
 });
 
+Router.route("/achievements", function (){
+    if(Session.get("sessionUser")===undefined){
+      Session.set("sessionLanguage",undefined);
+      this.render("landingpage");
+    } else {
+      this.render("achievements");
+    }
+  });
+
 Router.route("/islandmap/historicmonuments", function() {
     if (Session.get("sessionUser") === undefined) {
         Session.set("sessionLanguage", undefined);
