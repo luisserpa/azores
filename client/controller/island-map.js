@@ -6,6 +6,8 @@ import hotels from "../../import/json/hotels.js";
 import food from "../../import/json/food.js";
 import filterFunctions from "../utils/filter-functions.js";
 import startMap from "../map/mapRender.js";
+import listChosenMonuments from "../utils/select-monument-type.js";
+import { placePage, sortPlaces } from "../utils/render-pages.js";
 
 Template.islandmap.rendered = function() {
     var filterMonuments = [true, true, true, true];
@@ -50,26 +52,18 @@ Template.filter.events({
 
     "click .food": function(event) {
         filterFunctions.filterMonuments("food", 3);
+    },
+
+    "click .listMonuments": function(event) {
+        var chooseList = event.target.id;
+        console.log("CHOOSE LIST: ", chooseList);
+        listChosenMonuments(chooseList);
     }
 });
 
 Template.islandmap.events({
     "click .render": function(event) {
-        var titleId = event.target.id;
-        var placeToRender = [];
-        Session.get("mapPlaces").forEach(function(element, index) {
-            if (placeToRender.length <= 0) {
-                Object.keys(element).forEach(function(key) {
-                    placeToRender = element[key];
-                    if (placeToRender.pt.title === titleId) {
-                        Session.set("indexOfPlace", index);
-                        console.log("INDEX OF PLACE: ", index);
-                        Session.set("placeToRender", placeToRender);
-                    }
-                });
-            }
-        });
-
+        placePage();
         Router.go("/renderpage");
     }
 });

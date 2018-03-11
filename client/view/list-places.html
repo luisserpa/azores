@@ -1,0 +1,13 @@
+<template name="listPlaces">
+<p>List of Places</p>
+    {{# each placesList}}
+    <p>
+        <label href="#" id="{{name}}" class="render">{{name}}</label>
+        {{> showStars}}
+    </p>
+    {{/each}}
+</template>
+
+<template name="showStars">
+        <span class="stars">4</span>
+</template>

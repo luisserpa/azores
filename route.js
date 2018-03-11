@@ -28,13 +28,13 @@ Router.route("/renderpage", function() {
     }
 });
 
-Router.route("/counter", function (){
-  if(Session.get("sessionUser")===undefined){
-    Session.set("sessionLanguage",undefined);
-    this.render("landingpage");
-  } else {
-    this.render("counter");
-  }
+Router.route("/counter", function() {
+    if (Session.get("sessionUser") === undefined) {
+        Session.set("sessionLanguage", undefined);
+        this.render("landingpage");
+    } else {
+        this.render("counter");
+    }
 });
 
 Router.route("/islandmap/historicmonuments", function() {
@@ -42,7 +42,7 @@ Router.route("/islandmap/historicmonuments", function() {
         Session.set("sessionLanguage", undefined);
         this.render("landingpage");
     } else {
-        this.render("historicmonuments");
+        this.render("listPlaces");
     }
 });
 
@@ -51,7 +51,7 @@ Router.route("/islandmap/naturalmonuments", function() {
         Session.set("sessionLanguage", undefined);
         this.render("landingpage");
     } else {
-        this.render("naturalmonuments");
+        this.render("listPlaces");
     }
 });
 
@@ -60,7 +60,7 @@ Router.route("/islandmap/accommodations", function() {
         Session.set("sessionLanguage", undefined);
         this.render("landingpage");
     } else {
-        this.render("accommodations");
+        this.render("listPlaces");
     }
 });
 
@@ -69,6 +69,6 @@ Router.route("/islandmap/restaurants", function() {
         Session.set("sessionLanguage", undefined);
         this.render("landingpage");
     } else {
-        this.render("restaurants");
+        this.render("listPlaces");
     }
 });
