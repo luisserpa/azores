@@ -1,5 +1,7 @@
 var placePage = function() {
     var titleId = event.target.id;
+    console.log("EVENT: ", event.target);
+    console.log("TITLE ID: ", titleId);
     var placeToRender = [];
     Session.get("mapPlaces").forEach(function(element, index) {
         if (placeToRender.length <= 0) {

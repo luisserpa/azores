@@ -2,12 +2,22 @@
 <p>List of Places</p>
     {{# each placesList}}
     <p>
-        <label href="#" id="{{name}}" class="render">{{name}}</label>
-        {{> showStars}}
+        <label >{{> placeText}} {{>showStars}} </label>
     </p>
     {{/each}}
 </template>
 
 <template name="showStars">
-        <span class="stars">4</span>
+    
+    <span class="rating" rating="{{averageScore}}">
+            <span class="star "></span>
+            <span class="star "></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            </span>
+</template>
+
+<template name="placeText">
+<h4 href="#" id="{{name}}" class="render">{{name}}</h4>
 </template>
