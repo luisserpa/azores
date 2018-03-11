@@ -1,5 +1,9 @@
 import loginMessages from "../utils/login-messages.js";
 import loginLanguages from "../../import/json/html-fields/login.json";
+import historicMonuments from "../../import/json/historic-monuments.json";
+import naturalMonuments from "../../import/json/natural-monuments.json";
+import hotels from "../../import/json/hotels.js";
+import food from "../../import/json/food.js";
 
 Template.login.events({
     "click .facebookLogin": function() {
@@ -21,7 +25,7 @@ Template.login.events({
                             if (user === undefined) {
                                 var newUser = {
                                     email: response.email,
-                                    displayName: response.name,
+                                    displayName: response.name.split(" ")[0],
                                     password: "",
                                     founds: 0,
                                     cows: 0,
@@ -33,14 +37,30 @@ Template.login.events({
                                     ]
                                 };
 
-                                console.log("FACE USER: ", newUser);
-
                                 Meteor.call("addUser", newUser);
-                                user = newUser;
-                            }
 
-                            Session.set("sessionUser", user);
-                            Router.go("/islandmap");
+                                Meteor.call(
+                                    "findByEmail",
+                                    newUser.email,
+                                    function(error, userWithId) {
+                                        if (!error) {
+                                            console.log(
+                                                "FACE USER WITH ID ",
+                                                userWithId
+                                            );
+
+                                            Session.set(
+                                                "sessionUser",
+                                                userWithId
+                                            );
+                                            Router.go("/islandmap");
+                                        }
+                                    }
+                                );
+                            } else {
+                                Session.set("sessionUser", user);
+                                Router.go("/islandmap");
+                            }
                         }
                     });
                 });

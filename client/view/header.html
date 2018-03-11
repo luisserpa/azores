@@ -26,15 +26,36 @@
   </nav>
 
   {{> displayUserName}}
- 
-  {{> cowCounter}}
- 
- </template>
- 
- <template name="displayUserName">
- {{showName}}
- </template>
- 
- <template name="cowCounter">
- (Cow Counter - to update)
- </template>
+  {{> goMap}}
+  {{> goCounter}}
+  {{> checks}}
+
+</template>
+
+<template name="displayUserName">
+{{showName}}
+</template>
+
+<template name="goMap">
+
+    <a href="/islandmap">MAP</a>
+
+</template>
+
+<template name="goCounter">
+
+    <a type="button" class="counter">
+        <img src="http://localhost:3000/cow.jpg" height="30" width="30"/>
+    </a>
+    {{showCounterNumber}}
+
+</template>
+
+<template name="checks">
+
+    <a type="button" class="achievements">
+        <img src="http://localhost:3000/visited.png" height="30" width="30"/>
+    </a>
+    {{showChecksNumber}}
+
+</template>

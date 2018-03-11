@@ -36,7 +36,12 @@ Template.register.events({
             return;
         }
 
-        if (registerPassword < 5) {
+        if (registerDisplayName.length > 12) {
+            registerMessages.nameCharacters();
+            return;
+        }
+
+        if (registerPassword.length < 5) {
             registerMessages.passwordCharacters();
             return;
         }
