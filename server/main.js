@@ -8,7 +8,8 @@ Meteor.startup(function() {
             name: historicMonuments[key].pt.title,
             type: "historicMonuments",
             rating: [],
-            usersVoted: []
+            usersVoted: [],
+            comments: []
         };
         var isPlace = Meteor.call(
             "findByNamePt",

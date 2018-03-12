@@ -4,10 +4,21 @@ import { ReactiveVar } from "meteor/reactive-var";
 
 let hideCheckbox;
 let starsRating;
+let placeComments;
 
 Template.renderpage.onCreated(function onReder() {
     hideCheckbox = new ReactiveVar(false);
     starsRating = new ReactiveVar(true);
+    placeCommnets = new ReactiveVar();
+    Meteor.call("findByNamePt", Session.get("placeToRender").pt.title, function(
+        error,
+        place
+    ) {
+        if (!error) {
+            placeComments.set(place);
+            console.log(place);
+        }
+    });
 });
 
 Template.title.helpers({
@@ -160,10 +171,6 @@ Template.rating.events({
                     if (!error) {
                         //Makes the update to the place with the new rate
                         var updateRating = place.rating;
-                        console.log(
-                            "PLACE: ",
-                            JSON.stringify(place.usersVoted)
-                        );
                         var voteFromUser = place.usersVoted;
 
                         updateRating.push(parseFloat(userRate));
@@ -173,16 +180,70 @@ Template.rating.events({
                             place._id,
                             updateRating,
                             voteFromUser,
-                            function(error, result) {
+                            function(error) {
                                 if (!error) {
                                     starsRating.set(false);
                                 }
                             }
                         );
                     }
-                } else {
-                    console.log("NOT IN THE DATABASE");
                 }
+            }
+        );
+    }
+});
+
+Template.commentSection.helpers({
+    showPlaceComments() {
+        return placeComments.get().comments;
+    }
+});
+
+Template.commentSection.events({
+    "submit .addComment": function(event, template) {
+        console.log("WHAT ");
+        event.preventDefault();
+        var newComment = event.target.userComment.value;
+
+        //Add the new comment to the database
+        Meteor.call(
+            "findByNamePt",
+            Session.get("placeToRender").pt.title,
+            function(error, placeToUpdate) {
+                if (error) {
+                    return;
+                }
+
+                console.log("PLACE.COMMENTS: ", placeToUpdate);
+
+                placeToUpdate.comments.splice(0, 0, newComment);
+
+                console.log("THE NEW COMMENT: ", placeToUpdate);
+
+                Meteor.call(
+                    "addComment",
+                    placeToUpdate._id,
+                    placeToUpdate.comments,
+                    function(error) {
+                        if (error) {
+                            return;
+                        }
+
+                        console.log("result");
+
+                        Meteor.call(
+                            "findByNamePt",
+                            placeToUpdate.name,
+                            function(error, commentPlace) {
+                                if (error) {
+                                    return;
+                                }
+                                template.find("form").reset();
+                                placeComments.set(commentPlace);
+                            }
+                        );
+                    }
+                );
             }
         );
     }

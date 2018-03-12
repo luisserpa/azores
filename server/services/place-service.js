@@ -24,6 +24,12 @@ Meteor.methods({
 });
 
 Meteor.methods({
+    addComment: function(placeId, comment) {
+        Places.update({ _id: placeId }, { $set: { comments: comment } });
+    }
+});
+
+Meteor.methods({
     findAll: function(typeName) {
         return Places.find({ type: typeName }).fetch();
     }
