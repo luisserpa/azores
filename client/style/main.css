@@ -45,11 +45,11 @@ html {
 }
 .section-light {
   background-color: #706d6d;
-  color: #666;
+  color: rgb(255, 255, 255);
 }
 .section-dark {
-  background-color: aquamarine;
-  color: #ba8b71;
+  background-color: #706d6d;
+  color: rgb(255, 255, 255);
 }
 
 .ptext {
@@ -78,9 +78,11 @@ html {
   margin: 0 auto;
   left: 50%;
   display: grid;
+  float: none;
+  margin: 0 auto;
 }
 
-.row {
+.footer {
   background-color: #111;
   text-align: center;
 }
