@@ -1,26 +1,78 @@
-@media screen and (max-width: 800px) {
-  body {
-    /*background-color: #6c5b7b;*/
-    background-image: url("http://localhost:3000/back.jpg");
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+/****** Parallax Styling *****/
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #666;
 }
 
-@media screen and (max-width: 5000px) and (min-width: 801px) {
-  body {
-    /*background-color: #355c7d;*/
-    background-image: url("http://localhost:3000/back.jpg");
-  }
+.pimg1,
+.pimg2,
+.pimg3 {
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /*
+  fixed = parallax
+  scroll = normal
+  */
+  background-attachment: fixed;
 }
 
-.parallax-container {
-  height: 900;
+.pimg1 {
+  background-image: url("../public/castelo.jpg");
+  min-height: 100%;
+}
+.pimg2 {
+  background-image: url("../public/hortencias.jpg");
+  min-height: 400px;
+}
+.pimg3 {
+  background-image: url("../public/baia.jpg");
+  min-height: 400px;
+}
+.section {
+  text-align: center;
+  padding: 50px 80px;
+}
+.section-light {
+  background-color: #706d6d;
+  color: #666;
+}
+.section-dark {
+  background-color: aquamarine;
+  color: #ba8b71;
 }
 
-#language-icon {
-  size: 50px, 50px;
+.ptext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.ptext .border {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  line-height: 70px;
+}
+
+.logo {
+  text-align: center;
+  size: 300px, 0, 300px;
 }
 
 .col-centered {
