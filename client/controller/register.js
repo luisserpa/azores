@@ -6,7 +6,7 @@ import food from "../../import/json/food.js";
 import registerLanguages from "../../import/json/html-fields/register.json";
 
 Template.register.events({
-    "click .back": function(event) {
+    "click .back": function() {
         Router.go("/login");
     },
 
