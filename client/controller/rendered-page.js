@@ -166,7 +166,7 @@ Template.rating.events({
                         );
                         var voteFromUser = place.usersVoted;
 
-                        updateRating.push(parseInt(userRate));
+                        updateRating.push(parseFloat(userRate));
                         voteFromUser.push(Session.get("sessionUser").email);
                         Meteor.call(
                             "updatePlace",
