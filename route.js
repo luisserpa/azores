@@ -1,3 +1,7 @@
+Router.route("/page", function() {
+    this.render("page");
+});
+
 Router.route("/", function() {
     this.render("landingpage");
 });
@@ -28,13 +32,13 @@ Router.route("/renderpage", function() {
     }
 });
 
-Router.route("/counter", function (){
-  if(Session.get("sessionUser")===undefined){
-    Session.set("sessionLanguage",undefined);
-    this.render("landingpage");
-  } else {
-    this.render("counter");
-  }
+Router.route("/counter", function() {
+    if (Session.get("sessionUser") === undefined) {
+        Session.set("sessionLanguage", undefined);
+        this.render("landingpage");
+    } else {
+        this.render("counter");
+    }
 });
 
 Router.route("/islandmap/historicmonuments", function() {
