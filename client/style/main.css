@@ -15,7 +15,7 @@ html {
 .pimg2,
 .pimg3 {
   position: relative;
-  opacity: 0.7;
+  opacity: 0.8;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -28,15 +28,15 @@ html {
 }
 
 .pimg1 {
-  background-image: url("../public/castelo.jpg");
+  background-image: url("cow.jpg");
   min-height: 100%;
 }
 .pimg2 {
-  background-image: url("../public/hortencias.jpg");
+  background-image: url("castelo.jpg");
   min-height: 400px;
 }
 .pimg3 {
-  background-image: url("../public/baia.jpg");
+  background-image: url("baia.jpeg");
   min-height: 400px;
 }
 .section {
@@ -71,8 +71,12 @@ html {
 }
 
 .logo {
+  background-color: transparent;
   text-align: center;
-  size: 300px, 0, 300px;
+  width: 200px;
+  height: 200px;
+  margin-left: 50%;
+  margin-right: 50%;
 }
 
 .col-centered {
