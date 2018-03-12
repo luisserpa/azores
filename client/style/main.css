@@ -72,11 +72,17 @@ html {
 
 .logo {
   background-color: transparent;
-  text-align: center;
   width: 200px;
   height: 200px;
-  margin-left: 50%;
-  margin-right: 50%;
+  text-align: left;
+  margin: 0 auto;
+  left: 50%;
+  display: grid;
+}
+
+.row {
+  background-color: #111;
+  text-align: center;
 }
 
 .col-centered {
