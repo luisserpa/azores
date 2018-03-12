@@ -1,5 +1,10 @@
 import achievementsLanguages from "../../import/json/html-fields/achievements.json";
 
+/**
+ * This module is for rendering the achievements view 
+ * only shows the rewards when the user has visited a determined number of places
+ */
+
 Template.achievements.helpers({
     language() {
         if (Session.get("sessionLanguage") === "portuguese") {

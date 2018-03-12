@@ -1,3 +1,7 @@
+/**
+ * This module is for rendering the navigation bar of the app
+ */
+
 Template.header.events({
     "click .logout": function(event) {
         event.preventDefault();

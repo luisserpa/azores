@@ -3,6 +3,12 @@ import naturalMonuments from "../../import/json/natural-monuments.json";
 import hotels from "../../import/json/hotels.js";
 import food from "../../import/json/food.js";
 
+/**
+ * This module is for the login with facebook button
+ * If user is not register, the user is register and then automatically logged in
+ * If user is already register, does only the login
+ */
+
 Template.facebookButton.events({
 
     "click .facebookLogin": function() {

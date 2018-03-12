@@ -1,6 +1,10 @@
 import loginMessages from "../utils/login-messages.js";
 import loginLanguages from "../../import/json/html-fields/login.json";
 
+/**
+ * This module is for handling the login process
+ */
+
 Template.login.events({
 
     "submit form": function(event) {

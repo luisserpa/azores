@@ -5,6 +5,10 @@ import hotels from "../../import/json/hotels.js";
 import food from "../../import/json/food.js";
 import registerLanguages from "../../import/json/html-fields/register.json";
 
+/**
+ * This module is for managing the register process
+ */
+
 Template.register.events({
     "click .back": function() {
         Router.go("/login");
