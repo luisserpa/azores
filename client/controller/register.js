@@ -11,10 +11,11 @@ import registerLanguages from "../../import/json/html-fields/register.json";
 
 Template.register.events({
     "click .back": function() {
-        Router.go("/login");
+        Router.go("/");
     },
 
     "submit .add-user": function(event) {
+        console.log("IN THE FORM");
         event.preventDefault();
         var registerEmail = event.target.registerEmail.value;
         var registerDisplayName = event.target.registerDisplayName.value;
@@ -77,7 +78,7 @@ Template.register.events({
                     };
                     Meteor.call("addUser", newUser);
                     registerMessages.createSuccess();
-                    Router.go("/login");
+                    Router.go("/");
                 }
             }
         });

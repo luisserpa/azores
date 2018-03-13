@@ -1,5 +1,5 @@
 
-<template class="body" name="register">
+<template class="body" name="registerPage">
 
    
 
@@ -11,7 +11,7 @@
          
               <row>
               <div class="newRegister">
-                  {{> registerContent}}
+                  {{> register}}
               </div>
                  
                     
@@ -92,12 +92,12 @@
 
 
 
-<template name="registerContent">
+<template name="register">
 
 
        
 
-      <form>
+      <form class="add-user">
   
         <p>
           Email
@@ -124,7 +124,7 @@
           <input type="password" name="repeatPassword" style="background-color: #cacdd3;" placeholder="{{language.repeatPassword}}">
         </p>
         <p>
-  <input href="/login" type="submit" class="register-button" value="{{language.createCount}}">  {{>facebookButton}}
+  <input href="/" type="submit" class="register-button" value="{{language.createCount}}">  {{>facebookButton}}
         </p>
         <p>
           <a type="button" style="color: inherit;" class="back">{{language.back}}</a>

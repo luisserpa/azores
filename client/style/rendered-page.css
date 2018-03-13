@@ -115,6 +115,7 @@
   .rating {
     border: none;
     float: left;
+    padding-left: 4%;
   }
 
   .rating > input {

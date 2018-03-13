@@ -186,3 +186,7 @@ html {
   margin-left: 25%;
   margin-right: 25%;
 }
+
+.map-box {
+  background-color: rgb(74, 43, 253);
+}
