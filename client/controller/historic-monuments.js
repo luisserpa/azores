@@ -1,7 +1,0 @@
-
-Template.historicmonuments.onRendered(function(){
-   
-    
-
-
-});
