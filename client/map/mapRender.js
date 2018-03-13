@@ -59,7 +59,7 @@ var startMap = function() {
                                     var t = document.createTextNode(
                                         description
                                     );
-                                    var visitHours = document.createTextNode(
+                                    var hours = document.createTextNode(
                                         visitHours
                                     );
                                     //Carefull with the set of the href
@@ -76,7 +76,7 @@ var startMap = function() {
                                     para.appendChild(
                                         document.createElement("P")
                                     );
-                                    para.appendChild(visitHours);
+                                    para.appendChild(hours);
                                     var infowindow = new google.maps.InfoWindow(
                                         {
                                             content: para

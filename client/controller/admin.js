@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Places } from '/lib/collections/database.js';
+import { Places } from "/import/lib/collections/database";
 import { Template } from 'meteor/templating';
 
 
