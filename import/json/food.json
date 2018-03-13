@@ -3,28 +3,52 @@
         "pt": {
             "title": "Beira Mar",
             "description":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
-            "visitHours": "09H00 to 12H00 and 14H00 to 17H00",
+                "Em São Mateus, a pouca distância de Angra do Heroísmo, o restaurante Beira Mar é um dos clássicos obrigatórios para quem procura comer o melhor peixe e marisco da ilha Terceira",
+            "visitHours": "11H00 até 23H00",
             "longDescription":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores. \n O actual templo terá sido construído sobre a anterior Igreja de São Salvador, datada provavelmente de 1496, ostentando um estilo Gótico contemporâneo da data da sua construção. A Igreja, contudo, revelou-se pequena para a crescente população de Angra do Heroísmo, que se afirmava como uma vila em franca expansão e riqueza. Da primitiva Igreja resta o altar mor, situado debaixo da Capela. "
+                "Em São Mateus, a pouca distância de Angra do Heroísmo, o restaurante Beira Mar é um dos clássicos obrigatórios para quem procura comer o melhor peixe e marisco da ilha Terceira. Com uma convidativa esplanada debruçada para o porto de pesca nada melhor do que sentir, também no prato, a frescura da oferta diária (exceto à segunda-feira, que encerra para descanso da simpática equipa). Lapas e cracas são obrigatórias, já que o peixe, da sopa aos grelhados, depende da generosidade do mar. Acompanhe com vinho dos Biscoitos. PM: €15. \nPorto de São Mateus, Angra do Heroísmo. Tel. 295 642 392"
         },
         "en": {
             "title": "Beira Mar",
             "description":
-                "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
-            "visitHours": "09H00 to 12H00 and 14H00 to 17H00",
+                "In São Mateus, a short distance from Angra do Heroísmo, Beira Mar restaurant is one of the obligatory classics for those looking to eat the best fish and seafood from Terceira Island",
+            "visitHours": "11H00 to 23H00",
             "longDescription":
-                "The Cathedral of Angra do Heroísmo is the largest temple and one of the main monuments of this beautiful World Heritage City, in full Terceira Island, in the wonderful Azores Archipelago. \n The current temple will have been built on the former Church of San Salvador, probably dated 1496, boasting a contemporary Gothic style of the date of its construction. The Church, however, proved small for the growing population of Angra do Heroísmo, which affirmed itself as a booming and wealthy village. Of the primitive Church remains the main altar, located under the Chapel."
+                "In São Mateus, a short distance from Angra do Heroísmo, Beira Mar restaurant is one of the obligatory classics for those looking to eat the best fish and seafood on Terceira Island. With an inviting terrace facing the fishing port, there is nothing better than to feel the freshness of the daily offer (except on Monday, which closes for the rest of the friendly team). Lapas and barracas are obligatory, since the fish, from the soup to the grilled ones, depends on the generosity of the sea. Accompany with Biscoitos wine. PM: € 15. \nPort of São Mateus, Angra do Heroísmo. Tel. 295 642 392"
         },
-        "lat": 38.65,
-        "lng": -27.234,
+        "lat": 38.657,
+        "lng": -27.268,
         "type": "Food",
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-        "image_1":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
-        "image_2":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_2.png"
+        "image_1": "http://localhost:3000/food/beira-mar/image_1.jpg",
+        "image_2": "http://localhost:3000/food/beira-mar/image_2.jpg"
+    },
+    "caneta": {
+        "pt": {
+            "title": "Caneta",
+            "description":
+                "Restaurante representante da boa comida típica terceirense, com destaque para os torresmos e a alcatra. \nTelefone: 295 989 162",
+            "visitHours": "11H00 até 22H00",
+            "longDescription":
+                "É neste complexo de restauração de base familiar, amplo, agradável, situado na zona Oeste da Ilha Terceira, onde a pecuária é rainha, que colocamos à disposição dos nossos clientes uma variedade de pratos de reconhecida qualidade, alguns deles provenientes da cozinha regional da zona onde estamos instalados, servidos em espaços dignos, com um toque regional e confeccionados em cozinha ampla e altamente equipada, onde todas as carnes de bovino e suíno são provenientes de produção própria."
+        },
+        "en": {
+            "title": "Caneta",
+            "description":
+                "Restaurant representative of the good food typical of Terceira Island, with emphasis on torresmos and alcatra.\nPhone: 295 989 162",
+            "visitHours": "11H00 to 22H00",
+            "longDescription":
+                "It is in this family-friendly, large and pleasant family-run restaurant located on the west side of Terceira Island, where livestock are queen, we offer our customers a variety of dishes of recognized quality, some of them from regional cuisine where we are installed, served in dignified spaces, with a regional touch and made in a large and highly equipped kitchen, where all the beef and pork meats come from own production."
+        },
+        "lat": 38.791,
+        "lng": -27.305,
+        "type": "Food",
+        "visited": false,
+        "icon":
+            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "image_1": "http://localhost:3000/food/caneta/image_1.jpg",
+        "image_2": "http://localhost:3000/food/caneta/image_2.jpg"
     }
 }

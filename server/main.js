@@ -47,7 +47,8 @@ Meteor.startup(function() {
                 lat: placeType[key].lat,
                 lng: placeType[key].lng,
                 image_1: placeType[key].image_1,
-                image_2: placeType[key].image_2
+                image_2: placeType[key].image_2,
+                icon: placeType[key].icon
             };
 
             Meteor.call("findByNamePt", placeType[key].pt.title, function(

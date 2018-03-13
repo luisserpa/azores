@@ -41,11 +41,11 @@ Template.filter.events({
     },
 
     "click .hotels": function() {
-        filterFunctions.filterMonuments("hotels", 2);
+        filterFunctions.filterMonuments("hotels", 3);
     },
 
     "click .food": function() {
-        filterFunctions.filterMonuments("food", 3);
+        filterFunctions.filterMonuments("food", 2);
     },
 
     "click .listMonuments": function(event) {
