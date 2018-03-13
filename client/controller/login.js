@@ -2,8 +2,8 @@ import loginMessages from "../utils/login-messages.js";
 import loginLanguages from "../../import/json/html-fields/login.json";
 import historicMonuments from "../../import/json/historic-monuments.json";
 import naturalMonuments from "../../import/json/natural-monuments.json";
-import hotels from "../../import/json/hotels.js";
-import food from "../../import/json/food.js";
+import hotels from "../../import/json/hotels.json";
+import food from "../../import/json/food.json";
 
 Template.login.events({
     "click .facebookLogin": function() {

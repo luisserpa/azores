@@ -1,13 +1,14 @@
-var placePage = function() {
-    var titleId = event.target.id;
-    console.log("EVENT: ", event.target);
-    console.log("TITLE ID: ", titleId);
+import { Meteor } from "meteor/meteor";
+
+var getClickedPlace = function(event, cb) {
+    /*
+    var id = event.target.id;
     var placeToRender = [];
     Session.get("mapPlaces").forEach(function(element, index) {
         if (placeToRender.length <= 0) {
             Object.keys(element).forEach(function(key) {
                 placeToRender = element[key];
-                if (placeToRender.pt.title === titleId) {
+                if (placeToRender.pt.title === id) {
                     Session.set("indexOfPlace", index);
                     console.log("INDEX OF PLACE: ", index);
                     Session.set("placeToRender", placeToRender);
@@ -15,9 +16,31 @@ var placePage = function() {
             });
         }
     });
+    */
+    //Variable with the type of places we have
+    var mapPlaces = ["Historic Monument", "Natural Monument", "Food", "Hotel"];
+
+    mapPlaces.forEach(function(placeType) {
+        Meteor.call("findAll", placeType, function(err, result) {
+            if (err) {
+                throw new Error("couldn't not find places with that category");
+            }
+
+            var id = result.find(function(place) {
+                return place._id === event.target.id;
+            });
+
+            if (!id) {
+                throw new Error("there's no such place");
+            }
+
+            cb(id);
+        });
+    });
 };
 
 var sortPlaces = function(listOfPlaces) {
+    console.log("LIST OF PLACES: ", listOfPlaces);
     //first create an obejct with the name of the place and the average rating
     var tempPlace = [
         {
@@ -27,6 +50,7 @@ var sortPlaces = function(listOfPlaces) {
     ];
     listOfPlaces.forEach(function(place) {
         //Then comes the calc of the avarege rating
+        console.log("PLAC:", place);
         var average = 0;
         place.rating.forEach(function(rate) {
             average += rate;
@@ -39,13 +63,16 @@ var sortPlaces = function(listOfPlaces) {
         }
 
         //Update the tempPlace with the calculated average
+        console.log;
+        console.log("TEMP PLACE: ", tempPlace[0].name);
         if (tempPlace[0].name === null) {
             console.log("TEMPPLACE NAME: ", tempPlace[0].name);
-            tempPlace[0].name = place.name;
+            //CHECK THIS FOR THE EN/PT
+            tempPlace[0].name = place.pt.title;
             tempPlace[0].averageScore = average;
         } else {
             var objetToAdd = {
-                name: place.name,
+                name: place.pt.title,
                 averageScore: average
             };
             tempPlace.push(objetToAdd);
@@ -53,7 +80,6 @@ var sortPlaces = function(listOfPlaces) {
     });
 
     tempPlace.sort(sortList);
-    console.log("TEMP PLACE: ", tempPlace);
     return tempPlace;
 };
 
@@ -67,4 +93,4 @@ function sortList(a, b) {
     return 0;
 }
 
-export { placePage, sortPlaces };
+export { getClickedPlace, sortPlaces };
