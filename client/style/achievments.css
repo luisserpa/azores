@@ -1,0 +1,38 @@
+/*#achievment1 {
+  position: absolute;
+  left: 50%;
+}
+
+#achievment2 {
+  position: absolute;
+  left: 50%;
+}
+#achievment3 {
+  position: absolute;
+  left: 50%;
+}
+
+#achievment4 {
+  position: absolute;
+  left: 50%;
+}
+
+#achievment5 {
+  position: absolute;
+  left: 50%;
+}
+
+#achievment6 {
+  position: absolute;
+  left: 50%;
+}*/
+
+.center-block {
+  left: 50%;
+  right: 50%;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -1,7 +1,7 @@
 import achievementsLanguages from "../../import/json/html-fields/achievements.json";
 
 /**
- * This module is for rendering the achievements view 
+ * This module is for rendering the achievements view
  * only shows the rewards when the user has visited a determined number of places
  */
 
@@ -14,27 +14,27 @@ Template.achievements.helpers({
         }
     },
 
-    firstAchievement(){
+    firstAchievement() {
         return Session.get("sessionUser").founds > 0;
     },
 
-    secondAchievement(){
-        return Session.get("sessionUser").founds > 4;
-    },
-    
-    thirdAchievement(){
-        return Session.get("sessionUser").founds > 9;
+    secondAchievement() {
+        return Session.get("sessionUser").founds > 3;
     },
 
-    fourthAchievement(){
+    thirdAchievement() {
+        return Session.get("sessionUser").founds > 4;
+    },
+
+    fourthAchievement() {
         return Session.get("sessionUser").founds > 19;
     },
 
-    fifthAchievement(){
+    fifthAchievement() {
         return Session.get("sessionUser").founds > 39;
     },
 
-    sixthAchievement(){
+    sixthAchievement() {
         return Session.get("sessionUser").founds > 79;
     }
 });
