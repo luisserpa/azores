@@ -1,0 +1,19 @@
+<template name="admin">
+ <h3>ADMIN</h3>
+
+ {{#each places}}
+  {{> place}}
+{{/each}}
+</template>
+
+<template name="place">
+    <form id="delete">
+            <input hidden name="mongoId" type="text" value="{{_id}}"/>
+            {{name}}
+            {{type}}
+            {{rating}}
+        <input type="submit" value="delete" />
+
+    </form>
+    
+</template>

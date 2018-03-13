@@ -33,6 +33,12 @@ Template.login.events({
                     return;
                 }
 
+                if (loginEmail === "admin@admin") {
+                    Session.set("admin", user);
+                    Router.go("/");
+                    return;
+                }
+
                 Session.set("sessionUser", user);
                 Router.go("/islandmap");
             }

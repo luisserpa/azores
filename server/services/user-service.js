@@ -1,4 +1,5 @@
 import { Meteor } from "meteor/meteor";
+import { Users } from '/lib/collections/database.js';
 
 Meteor.methods({
     addUser: function(userData) {

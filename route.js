@@ -3,7 +3,11 @@ Router.route("/page", function() {
 });
 
 Router.route("/", function() {
-    this.render("landingpage");
+    if(Session.get("admin")){
+        this.render("admin");
+    }else{
+        this.render("landingpage");
+    }
 });
 
 Router.route("/login", function() {

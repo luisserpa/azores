@@ -1,3 +1,6 @@
+import { Meteor } from 'meteor/meteor';
+import { Places, Users} from '/lib/collections/database.js';
+
 Meteor.publish("usersList", function() {
     return Users.find({});
 });

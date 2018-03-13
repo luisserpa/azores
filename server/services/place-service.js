@@ -1,4 +1,5 @@
 import { Meteor } from "meteor/meteor";
+import { Places } from '/lib/collections/database.js';
 
 Meteor.methods({
     addPlace: function(placeData) {
