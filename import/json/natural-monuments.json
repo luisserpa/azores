@@ -4,40 +4,57 @@
             "title": "Monte Brasil",
             "visitHours": "08h00 até 21h00",
             "description":
-                "O Monte Brasil é o resto de um vulcão (e península), que liga a costa sul da ilha Terceira, com uma vista sobre a cidade de Angra do Heroísmo."
+                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
+            "longDescription":
+                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores. \n O actual templo terá sido construído sobre a anterior Igreja de São Salvador, datada provavelmente de 1496, ostentando um estilo Gótico contemporâneo da data da sua construção. A Igreja, contudo, revelou-se pequena para a crescente população de Angra do Heroísmo, que se afirmava como uma vila em franca expansão e riqueza. Da primitiva Igreja resta o altar mor, situado debaixo da Capela. "
         },
         "en": {
             "title": "Monte Brasil",
             "visitHours": "08h00 to 21h00",
             "description":
-                "Monte Brasil is the remnants of a tuff volcano (and peninsula) connecting the south coast of Terceira in the central Azores, overlooking the city of Angra do Heroísmo."
+                "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
+            "longDescription":
+                "The Cathedral of Angra do Heroísmo is the largest temple and one of the main monuments of this beautiful World Heritage City, in full Terceira Island, in the wonderful Azores Archipelago. \n The current temple will have been built on the former Church of San Salvador, probably dated 1496, boasting a contemporary Gothic style of the date of its construction. The Church, however, proved small for the growing population of Angra do Heroísmo, which affirmed itself as a booming and wealthy village. Of the primitive Church remains the main altar, located under the Chapel."
         },
         "lat": 38.646,
         "lng": -27.226,
         "type": "Natural Monument",
         "visited": false,
         "icon":
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "image_1":
+            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
+        "image_2":
+            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_2.png"
     },
-
-    "algarDoCarvao": {
+    "algarCarvao": {
         "pt": {
             "title": "Algar do Carvão",
             "visitHours": "14h00 até 18h00",
             "description":
-                "O Algar do Carvão situa-se no interior de um vulcão adormecido, constituído por um cone vulcânico com cerca de 90 metros de altura, contendo no seu interior também uma lindíssima lagoa de águas cristalinas e tranquilas."
+                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
+            "longDescription":
+                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores. \n O actual templo terá sido construído sobre a anterior Igreja de São Salvador, datada provavelmente de 1496, ostentando um estilo Gótico contemporâneo da data da sua construção. A Igreja, contudo, revelou-se pequena para a crescente população de Angra do Heroísmo, que se afirmava como uma vila em franca expansão e riqueza. Da primitiva Igreja resta o altar mor, situado debaixo da Capela. "
         },
         "en": {
             "title": "Algar do Carvão",
             "visitHours": "14h00 to 18h00",
             "description":
-                "Algar do Carvão is located inside a dormain volcano, constituted by a volcanic cone with 90 metters high, having inside a beautiful lagoon with cristaline and calm waters."
+                "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
+            "longDescription":
+                "The Cathedral of Angra do Heroísmo is the largest temple and one of the main monuments of this beautiful World Heritage City, in full Terceira Island, in the wonderful Azores Archipelago. \n The current temple will have been built on the former Church of San Salvador, probably dated 1496, boasting a contemporary Gothic style of the date of its construction. The Church, however, proved small for the growing population of Angra do Heroísmo, which affirmed itself as a booming and wealthy village. Of the primitive Church remains the main altar, located under the Chapel."
         },
+
         "lat": 38.728,
         "lng": -27.216,
         "type": "Natural Monument",
         "visited": false,
         "icon":
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+
+        "image_1":
+            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
+        "image_2":
+            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_2.png"
     }
 }

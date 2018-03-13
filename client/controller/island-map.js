@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import historicMonuments from "../../import/json/historic-monuments.json";
-import naturalMonuments from "../../import/json/natural-monuments.json";
-import hotels from "../../import/json/hotels.js";
-import food from "../../import/json/food.json";
+import { Template } from "meteor/templating";
+import { Session } from "meteor/session";
+import { Router } from "meteor/iron:router";
+
 import filterFunctions from "../utils/filter-functions.js";
 import startMap from "../map/mapRender.js";
 import listChosenMonuments from "../utils/select-monument-type.js";
-import { placePage, sortPlaces } from "../utils/render-pages.js";
+import { getClickedPlace } from "../utils/render-pages.js";
+
+var filterPlaces = ["historicMonuments", "naturalMonuments", "hotels", "food"];
 
 /**
  * This module is for rendering the map view of the app
@@ -16,15 +16,6 @@ import { placePage, sortPlaces } from "../utils/render-pages.js";
 Template.islandmap.rendered = function() {
     var filterMonuments = [true, true, true, true];
     Session.set("filterMonuments", filterMonuments);
-    var places = [historicMonuments, naturalMonuments, hotels, food];
-    var filterPlaces = [
-        "historicMonuments",
-        "naturalMonuments",
-        "hotels",
-        "food"
-    ];
-    Session.set("mapPlaces", places);
-    Session.set("filterPlaces", filterPlaces);
     Session.set("mapZoom", 11);
 };
 
@@ -35,39 +26,38 @@ Template.islandmap.helpers({
 });
 
 Template.filter.events({
-    "click .allChecked": function(event) {
-        var filterPlaces = Session.get("filterPlaces");
+    "click .allChecked": function() {
         filterPlaces.forEach(function(value, i) {
             filterFunctions.checkAll(value, i);
         });
     },
 
-    "click .historicMonuments": function(event) {
+    "click .historicMonuments": function() {
         filterFunctions.filterMonuments("historicMonuments", 0);
     },
 
-    "click .naturalMonuments": function(event) {
+    "click .naturalMonuments": function() {
         filterFunctions.filterMonuments("naturalMonuments", 1);
     },
 
-    "click .hotels": function(event) {
+    "click .hotels": function() {
         filterFunctions.filterMonuments("hotels", 2);
     },
 
-    "click .food": function(event) {
+    "click .food": function() {
         filterFunctions.filterMonuments("food", 3);
     },
 
     "click .listMonuments": function(event) {
         var chooseList = event.target.id;
-        console.log("CHOOSE LIST: ", chooseList);
         listChosenMonuments(chooseList);
     }
 });
 
 Template.islandmap.events({
     "click .render": function(event) {
-        placePage();
-        Router.go("/renderpage");
+        getClickedPlace(event, function(place) {
+            Router.go("/renderpage/" + place._id);
+        });
     }
 });

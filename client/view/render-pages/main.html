@@ -1,0 +1,51 @@
+<head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="main.css">
+      
+      </head>
+      
+      
+      
+      <template name="renderpage">
+      
+        {{id}}
+      
+      
+      
+        <div style="display:inline" class="row">
+          <div id="flags" class="col-xs-3">
+            {{> header}}
+          </div>
+          <div class="col-xs-3">
+            {{> visited}}
+          </div>
+          <div class="col-xs-3">
+            {{> rating}}
+          </div>
+      
+      
+        </div>
+      
+        <div class="col-3 .text-truncate">
+          <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
+            <span>{{> title}}</span>
+          </div>
+        </div>
+      
+        <div class="col-3 .text-truncate">
+          <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
+      
+      
+          </div>
+        </div>
+      
+        {{> description}} 
+        
+        {{> images}}
+      
+        <br/>
+      
+        {{> commentSection}}
+      
+      </template>
