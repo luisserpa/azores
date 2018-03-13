@@ -1,16 +1,17 @@
-@media screen and (max-width: 800px) {
+/*@media screen and (max-width: 800px) {
   body {
-    /*background-color: #6c5b7b;*/
-    background-image: url("http://localhost:3000/cow.jpg");
+    background-color: #6c5b7b;
+    
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
+
 @media screen and (max-width: 5000px) and (min-width: 801px) {
   body {
-    /*background-color: #355c7d;*/
-    background-image: url("http://localhost:3000/cow.jpg");
+    background-color: #355c7d;
   }
 }
+*/
