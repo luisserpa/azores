@@ -1,3 +1,6 @@
+import { Meteor } from "meteor/meteor";
+import { Session } from "meteor/session";
+import { Router } from "meteor/iron:router";
 Router.route("/page", function() {
     this.render("page");
 });
@@ -27,12 +30,26 @@ Router.route("/islandmap", function() {
     }
 });
 
-Router.route("/renderpage", function() {
+Router.route("/renderpage/:_id", function() {
     if (Session.get("sessionUser") === undefined) {
         Session.set("sessionLanguage", undefined);
         this.render("landingpage");
     } else {
-        this.render("renderpage");
+        Meteor.call(
+            "findPlaceById",
+            this.params._id,
+            function(err, result) {
+                if (err) {
+                    throw new Error("place not found");
+                }
+
+                this.render("renderpage", {
+                    data: function() {
+                        return result;
+                    }
+                });
+            }.bind(this)
+        );
     }
 });
 
@@ -45,14 +62,14 @@ Router.route("/counter", function() {
     }
 });
 
-Router.route("/achievements", function (){
-    if(Session.get("sessionUser")===undefined){
-      Session.set("sessionLanguage",undefined);
-      this.render("landingpage");
+Router.route("/achievements", function() {
+    if (Session.get("sessionUser") === undefined) {
+        Session.set("sessionLanguage", undefined);
+        this.render("landingpage");
     } else {
-      this.render("achievements");
+        this.render("achievements");
     }
-  });
+});
 
 Router.route("/islandmap/historicmonuments", function() {
     if (Session.get("sessionUser") === undefined) {

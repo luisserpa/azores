@@ -1,6 +1,6 @@
 import historicMonuments from "../../import/json/historic-monuments.json";
 import naturalMonuments from "../../import/json/natural-monuments.json";
-import hotels from "../../import/json/hotels.js";
+import hotels from "../../import/json/hotels.json";
 import food from "../../import/json/food.json";
 
 /**

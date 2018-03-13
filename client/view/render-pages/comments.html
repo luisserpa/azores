@@ -1,0 +1,23 @@
+<template name="commentSection">
+        <form class="addComment">
+            <p>    
+              <input type="text" name="userComment">
+            </p> 
+            <p>
+              <input href="#" type="submit" value="Submit">
+            </p>
+          </form>
+    
+          <table>
+            <tr>
+              <th>Comments</th>
+            </tr>
+            {{#each showPlaceComments}}
+            <tr>
+            <td>
+              {{displayUserName}} {{this}}
+            </td>
+          </tr>
+            {{/each}}
+          </table>
+    </template>
