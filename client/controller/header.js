@@ -1,9 +1,21 @@
+/**
+ * This module is for rendering the navigation bar of the app
+ */
+
 Template.header.events({
     "click .logout": function(event) {
         event.preventDefault();
         //To log out
         Session.set("sessionUser", undefined);
         Router.go("/login");
+    },
+
+    "click .counter": function(event) {
+        Router.go("/counter");
+    },
+
+    "click .achievements": function(event) {
+        Router.go("/achievements");
     },
 
     "click .portuguese": function(event) {
@@ -24,5 +36,17 @@ Template.header.events({
 Template.displayUserName.helpers({
     showName() {
         return Session.get("sessionUser").displayName;
+    }
+});
+
+Template.goCounter.helpers({
+    showCounterNumber() {
+        return Session.get("sessionUser").cows;
+    }
+});
+
+Template.checks.helpers({
+    showChecksNumber() {
+        return Session.get("sessionUser").founds;
     }
 });

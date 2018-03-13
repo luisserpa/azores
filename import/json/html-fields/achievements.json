@@ -1,0 +1,20 @@
+{
+    "pt": {
+        "title": "Pontos por lugares visitados",
+        "first": "Mereces um biscoito!",
+        "second": "Uma concha para a colecção!",
+        "third": "Olha uma rocha vulcânica!",
+        "fourth": "Podes tocar o chocalho!",
+        "fifth": "Não podes sair dos Açores sem isto!",
+        "sixth": "Agora conheces muito dos Açores!"
+    },
+    "en": {
+        "title": "Points per visited place",
+        "first": "You deserve a biscuit!",
+        "second": "Look a sea shell!",
+        "third": "You rock!",
+        "fourth": "You can ring the bell!",
+        "fifth": "Can't leave Azores without this one!",
+        "sixth": "Now you are an Azores master!"
+    }
+}

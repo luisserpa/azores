@@ -25,7 +25,6 @@ Meteor.methods({
 
 Meteor.methods({
     findAll: function(typeName) {
-        return Places.find({ type: typeName}).fetch();
+        return Places.find({ type: typeName }).fetch();
     }
 });
-

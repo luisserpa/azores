@@ -6,9 +6,18 @@ Meteor.startup(function() {
     Object.keys(historicMonuments).forEach(function(key) {
         var placeData = {
             name: historicMonuments[key].pt.title,
+            type: "historicMonuments",
             rating: [],
             usersVoted: []
         };
-        Meteor.call("addPlace", placeData);
+        var isPlace = Meteor.call(
+            "findByNamePt",
+            historicMonuments[key].pt.title
+        );
+        console.log("IS PLACE?: ", isPlace);
+        if (isPlace === undefined) {
+            console.log("ENTERED HERE: ", historicMonuments[key].pt.title);
+            Meteor.call("addPlace", placeData);
+        }
     });
 });

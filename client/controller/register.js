@@ -5,8 +5,12 @@ import hotels from "../../import/json/hotels.js";
 import food from "../../import/json/food.js";
 import registerLanguages from "../../import/json/html-fields/register.json";
 
+/**
+ * This module is for managing the register process
+ */
+
 Template.register.events({
-    "click .back": function(event) {
+    "click .back": function() {
         Router.go("/login");
     },
 
@@ -36,7 +40,12 @@ Template.register.events({
             return;
         }
 
-        if (registerPassword < 5) {
+        if (registerDisplayName.length > 12) {
+            registerMessages.nameCharacters();
+            return;
+        }
+
+        if (registerPassword.length < 5) {
             registerMessages.passwordCharacters();
             return;
         }

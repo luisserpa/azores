@@ -1,0 +1,58 @@
+<template name="achievements">
+    {{>header}}
+    
+    <table>
+            <caption>{{language.title}}</caption>
+        <tr>
+          <th>1</th>
+          <th>5</th> 
+          <th>10</th>
+        </tr>
+        <tr>
+            <td>
+                {{# if firstAchievement}}
+                <p><img src="http://localhost:3000/biscuit.png" height="100" width="100"/></p>
+                <p>{{language.first}}</p>
+                {{/if}}
+            </td>
+            <td>
+                {{# if secondAchievement}}
+                <p><img src="http://localhost:3000/shell.jpg" height="110" width="110"/></p>
+                <p>{{language.second}}</p>
+                {{/if}}
+            </td>
+            <td>
+                {{# if thirdAchievement}}
+                <p><img src="http://localhost:3000/basalt.png" height="100" width="80"/></p>
+                <p>{{language.third}}</p>
+                {{/if}}
+            </td>
+        </tr>
+        <tr>
+            <th>20</th>
+            <th>40</th> 
+            <th>80</th>
+          </tr>
+          <tr>
+            <td>
+                {{# if fourthAchievement}}
+                <p><img src="http://localhost:3000/bell.jpeg" height="100" width="100"/></p>
+                <p>{{language.fourth}}</p>
+                {{/if}}
+            </td>
+            <td>
+                {{# if fifthAchievement}}
+                <p><img src="http://localhost:3000/pineapple.jpg" height="110" width="75"/></p>
+                <p>{{language.fifth}}</p>
+                {{/if}}
+            </td>
+            <td>
+                {{# if sixthAchievement}}
+                <p><img src="http://localhost:3000/hydrangea.jpeg" height="120" width="120"/></p>
+                <p>{{language.sixth}}</p>
+                {{/if}}
+            </td>
+          </tr>
+      </table>
+
+</template>
