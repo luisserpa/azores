@@ -9,6 +9,10 @@ import startMap from "../map/mapRender.js";
 import listChosenMonuments from "../utils/select-monument-type.js";
 import { placePage, sortPlaces } from "../utils/render-pages.js";
 
+/**
+ * This module is for rendering the map view of the app
+ */
+
 Template.islandmap.rendered = function() {
     var filterMonuments = [true, true, true, true];
     Session.set("filterMonuments", filterMonuments);

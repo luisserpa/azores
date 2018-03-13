@@ -1,5 +1,9 @@
 import { placePage, sortPlaces } from "../utils/render-pages.js";
 
+/**
+ * This module is for listing the points of interest sorted by user given rates
+ */
+
 Template.listPlaces.rendered = function() {
     var placeType = Session.get("placeType");
     console.log("PLACETYPE: ", placeType);

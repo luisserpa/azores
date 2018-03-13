@@ -1,32 +1,101 @@
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="main.css">
+
+
 </head>
 
 
 <template class="body" name="landingpage">
 
-    <img src="http://localhost:3000/captain.jpg" />
+   
 
-  <div class="row">
-    <div class="col-xs-6 col-centered">
-      <a type="button" class="portuguese">
-        <img style="border-radius: 50%;" src="http://localhost:3000/PT.png" />
-      </a>
+  <body>
+
+    <div class="pimg1">
+
+      <div class="ptext">
+        <row>
+          <img src="logo.png" alt="Cow Advisot" class="logo">
+        </row>
+        <span class="border">
+          Welcome to Cow Advisor
+
+        </span>
+
+      </div>
     </div>
 
-    <div class="col-xs-6 push-to-bottom">
-      <a type="button" class="english">
-        <img src="http://localhost:3000/EN.png" />
-      </a>
+    <section class="section section-light">
+
+      <div class="language icon">
+        <a type="button" class="portuguese">
+          <img src="http://localhost:3000/PT-Lg_icon.png" alt="Portuguese" width="50" height="50" />
+        </a>
+
+        <a type="button" class="english">
+          <img src="http://localhost:3000/EN-Lg_icon.png" alt="English" width="50" height="50" />
+        </a>
+      </div>
+      <h2> CHOOSE YOUR LANGUAGE </h2>
+    </section>
+
+    <div class="pimg2">
+      <div class="ptext">
+        <span class="border">
+          Image TWO text
+        </span>
+      </div>
     </div>
-  </div>
+    <section class="section section-dark">
+      <h2>Section Two</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quasi ut dolore deserunt magnam voluptates dignissimos dolorum
+        sed ipsam? Animi ipsum quibusdam nam, similique repudiandae impedit cum blanditiis eaque reprehenderit!
+      </p>
+    </section>
+
+    <div class="pimg3">
+      <div class="ptext">
+        <span class="border">
+          Image THREE text
+        </span>
+      </div>
+    </div>
+    <section class="section section-dark">
+      <h2>Section Three</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quasi ut dolore deserunt magnam voluptates dignissimos dolorum
+        sed ipsam? Animi ipsum quibusdam nam, similique repudiandae impedit cum blanditiis eaque reprehenderit!
+      </p>
+    </section>
+
+    <div class="pimg1">
+      <div class="ptext">
+        <span class="border">
+          Enjoy your visit!
+        </span>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="footer">
+      <p>Welcome to the page where you can get advice about where to go where to be </p>
+    </div>
+
+  </body>
+
 
 </template>
 
 
 
 <template class="container" name="login">
+
+
   <div class="container centeredLogin">
     <div class="vertical-center">
 
@@ -52,7 +121,7 @@
           <a style="color: inherit;" href="/register">{{language.signIn}}</a>
         </p>
 
-        <button type="button" class="facebookLogin">Facebook Login</button>
+        {{>facebookButton}}
 
       </form>
 
@@ -64,6 +133,4 @@
 
    
   </div>
-  
-
 </template>
