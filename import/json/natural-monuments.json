@@ -2,6 +2,7 @@
     "monteBrasil": {
         "pt": {
             "title": "Monte Brasil",
+            "visitHours": "08h00 até 21h00",
             "description":
                 "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
             "longDescription":
@@ -9,6 +10,7 @@
         },
         "en": {
             "title": "Monte Brasil",
+            "visitHours": "08h00 to 21h00",
             "description":
                 "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
             "longDescription":
@@ -28,6 +30,7 @@
     "algarCarvao": {
         "pt": {
             "title": "Algar do Carvão",
+            "visitHours": "14h00 até 18h00",
             "description":
                 "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
             "longDescription":
@@ -35,6 +38,7 @@
         },
         "en": {
             "title": "Algar do Carvão",
+            "visitHours": "14h00 to 18h00",
             "description":
                 "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
             "longDescription":

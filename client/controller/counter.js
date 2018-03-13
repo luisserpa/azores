@@ -1,6 +1,10 @@
 import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
 
+/**
+ * This module is for the cow counter with persistence of data associated to a user
+ */
+
 let cowcounter;
 
 Template.counter.onCreated(function onReder() {
@@ -22,7 +26,3 @@ Template.cowcounter.events({
         Meteor.call("updateCounter",user._id,cowcounter.get());
     }
 });
-
-
-
-

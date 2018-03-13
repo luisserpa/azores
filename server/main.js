@@ -31,11 +31,13 @@ Meteor.startup(function() {
                 pt: {
                     title: placeType[key].pt.title,
                     description: placeType[key].pt.description,
+                    visitHours: placeType[key].pt.visitHours,
                     longDescription: placeType[key].pt.longDescription
                 },
                 en: {
                     title: placeType[key].en.title,
                     description: placeType[key].en.description,
+                    visitHours: placeType[key].en.visitHours,
                     longDescription: placeType[key].en.longDescription
                 },
                 type: typeString,

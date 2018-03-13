@@ -1,16 +1,41 @@
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) and (min-width: 135px) {
   body {
-    /*background-color: #6c5b7b;*/
-    background-image: url("http://localhost:3000/cow.jpg");
-    display: block;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #cowbutton {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 350px;
+    width: 350px;
+    border: none;
+    background-color: #82c6e600;
+    outline: none;
+  }
+
+  button span {
+    display: none;
   }
 }
 
 @media screen and (max-width: 5000px) and (min-width: 801px) {
   body {
-    /*background-color: #355c7d;*/
-    background-image: url("http://localhost:3000/cow.jpg");
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #cowbutton {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: none;
+    background-color: #82c6e600;
+    outline: none;
+  }
+
+  button span {
+    display: none;
   }
 }

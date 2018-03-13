@@ -1,6 +1,9 @@
 import { Meteor } from "meteor/meteor";
 import { Session } from "meteor/session";
 import { Router } from "meteor/iron:router";
+Router.route("/page", function() {
+    this.render("page");
+});
 
 Router.route("/", function() {
     this.render("landingpage");

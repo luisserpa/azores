@@ -9,6 +9,10 @@ import { getClickedPlace } from "../utils/render-pages.js";
 
 var filterPlaces = ["historicMonuments", "naturalMonuments", "hotels", "food"];
 
+/**
+ * This module is for rendering the map view of the app
+ */
+
 Template.islandmap.rendered = function() {
     var filterMonuments = [true, true, true, true];
     Session.set("filterMonuments", filterMonuments);

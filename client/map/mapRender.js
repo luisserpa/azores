@@ -29,15 +29,18 @@ var startMap = function() {
                             // TODO: remember to put back the description in google marker
                             var title;
                             var description;
+                            var visitHours;
 
                             if (
                                 Session.get("sessionLanguage") === "portuguese"
                             ) {
                                 title = place.pt.title;
                                 description = place.pt.description;
+                                visitHours = place.pt.visitHours;
                             } else {
                                 title = place.en.title;
                                 description = place.en.description;
+                                visitHours = place.en.visitHours;
                             }
 
                             var marker = new google.maps.Marker({
@@ -56,6 +59,9 @@ var startMap = function() {
                                     var t = document.createTextNode(
                                         description
                                     );
+                                    var visitHours = document.createTextNode(
+                                        visitHours
+                                    );
                                     //Carefull with the set of the href
                                     aTag.setAttribute("href", "#");
                                     aTag.setAttribute("class", "render");
@@ -67,6 +73,10 @@ var startMap = function() {
                                         document.createElement("P")
                                     );
                                     para.appendChild(t);
+                                    para.appendChild(
+                                        document.createElement("P")
+                                    );
+                                    para.appendChild(visitHours);
                                     var infowindow = new google.maps.InfoWindow(
                                         {
                                             content: para
