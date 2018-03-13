@@ -35,6 +35,7 @@ Template.header.events({
 
 Template.displayUserName.helpers({
     showName() {
+        console.log("USER NAME: ", Session.get("sessionUser").displayName);
         return Session.get("sessionUser").displayName;
     }
 });

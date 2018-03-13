@@ -102,3 +102,15 @@ Template.visited.events({
         );
     }
 });
+
+Template.canCheck.helpers({
+    checkbox() {
+        var placeType = this.type;
+        if (
+            placeType === "Historic Monument" ||
+            placeType === "Natural Monument"
+        ) {
+            return true;
+        }
+    }
+});

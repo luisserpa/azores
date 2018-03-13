@@ -32,7 +32,11 @@ Template.commentSection.events({
                 return;
             }
 
-            placeToUpdate.comments.splice(0, 0, newComment);
+            placeToUpdate.comments.splice(
+                0,
+                0,
+                Session.get("sessionUser").displayName + ": " + newComment
+            );
 
             Meteor.call(
                 "addComment",

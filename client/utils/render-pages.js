@@ -1,22 +1,6 @@
 import { Meteor } from "meteor/meteor";
 
 var getClickedPlace = function(event, cb) {
-    /*
-    var id = event.target.id;
-    var placeToRender = [];
-    Session.get("mapPlaces").forEach(function(element, index) {
-        if (placeToRender.length <= 0) {
-            Object.keys(element).forEach(function(key) {
-                placeToRender = element[key];
-                if (placeToRender.pt.title === id) {
-                    Session.set("indexOfPlace", index);
-                    console.log("INDEX OF PLACE: ", index);
-                    Session.set("placeToRender", placeToRender);
-                }
-            });
-        }
-    });
-    */
     //Variable with the type of places we have
     var mapPlaces = ["Historic Monument", "Natural Monument", "Food", "Hotel"];
 
