@@ -6,17 +6,26 @@
 <template name="counter">
 {{>header}}
 
-  <body>
-
-
-    <h1>Let's count some cows!</h1>
+    Let's count some cows!
 
     {{> cowcounter}}
-  </body>
+  
 
 </template>
 
 <template name="cowcounter">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+   
+    <div id="row" style="background-color: transparent;">
+        <div class="btn btn-xs button-cols" >
+  <button id="cowbutton" >
+      
+      <img src="http://localhost:3000/CowLogoCounter.png" class="img-responsive"  />
+ 
+  </button>
+  </div>
+  </div>
+
+
+  You've seen {{counter}} cows so far.
+
 </template>

@@ -2,11 +2,13 @@
     "monteBrasil": {
         "pt": {
             "title": "Monte Brasil",
+            "visitHours": "08h00 até 21h00",
             "description":
                 "O Monte Brasil é o resto de um vulcão (e península), que liga a costa sul da ilha Terceira, com uma vista sobre a cidade de Angra do Heroísmo."
         },
         "en": {
             "title": "Monte Brasil",
+            "visitHours": "08h00 to 21h00",
             "description":
                 "Monte Brasil is the remnants of a tuff volcano (and peninsula) connecting the south coast of Terceira in the central Azores, overlooking the city of Angra do Heroísmo."
         },
@@ -21,11 +23,13 @@
     "algarDoCarvao": {
         "pt": {
             "title": "Algar do Carvão",
+            "visitHours": "14h00 até 18h00",
             "description":
                 "O Algar do Carvão situa-se no interior de um vulcão adormecido, constituído por um cone vulcânico com cerca de 90 metros de altura, contendo no seu interior também uma lindíssima lagoa de águas cristalinas e tranquilas."
         },
         "en": {
             "title": "Algar do Carvão",
+            "visitHours": "14h00 to 18h00",
             "description":
                 "Algar do Carvão is located inside a dormain volcano, constituted by a volcanic cone with 90 metters high, having inside a beautiful lagoon with cristaline and calm waters."
         },

@@ -16,12 +16,15 @@ var startMap = function() {
                     //Initial condition to choose language
                     var title;
                     var description;
+                    var visitHours;
                     if (Session.get("sessionLanguage") === "portuguese") {
                         title = element.pt.title;
                         description = element.pt.description;
+                        visitHours = element.pt.visitHours;
                     } else {
                         title = element.en.title;
                         description = element.en.description;
+                        visitHours = element.en.visitHours;
                     }
 
                     var marker = new google.maps.Marker({
@@ -35,6 +38,7 @@ var startMap = function() {
                         var para = document.createElement("P");
                         var aTag = document.createElement("button");
                         var t = document.createTextNode(description);
+                        var visitHourss = document.createTextNode(visitHours);
                         //Carefull with the set of the href
                         aTag.setAttribute("href", "#");
                         aTag.setAttribute("class", "render");
@@ -44,6 +48,8 @@ var startMap = function() {
                         para.appendChild(aTag);
                         para.appendChild(document.createElement("P"));
                         para.appendChild(t);
+                        para.appendChild(document.createElement("P"));
+                        para.appendChild(visitHourss);
                         var infowindow = new google.maps.InfoWindow({
                             content: para
                         });

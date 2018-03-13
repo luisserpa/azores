@@ -6,7 +6,6 @@ import loginLanguages from "../../import/json/html-fields/login.json";
  */
 
 Template.login.events({
-
     "submit form": function(event) {
         event.preventDefault();
         var loginEmail = event.target.loginEmail.value;

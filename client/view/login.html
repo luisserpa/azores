@@ -8,6 +8,7 @@
 
 <template class="body" name="landingpage">
 
+   
 
   <body>
 
@@ -98,33 +99,38 @@
   <div class="container centeredLogin">
     <div class="vertical-center">
 
-      {{>facebookButton}}
+     
 
-      <form>
+      <form class="loginForm">
 
         <p>
 
           {{language.emailLabel}}
         </p>
-        <input type="email" name="loginEmail" placeholder="{{language.email}}">
+        <input type="email" name="loginEmail" style="background-color: #cacdd3;" placeholder="{{language.email}}">
         <p>
           {{language.passwordLabel}}
         </p>
         <p>
-          <input type="password" name="loginPassword" placeholder="{{language.password}}">
+          <input type="password" style="background-color: #cacdd3;" name="loginPassword" placeholder="{{language.password}}">
         </p>
         <p>
-          <input href="#" type="submit" value="{{language.login}}">
+          <input href="#" type="submit" class="login-button" value="{{language.login}}">
         </p>
         <p>
-          <a href="/register">{{language.signIn}}</a>
+          <a style="color: inherit;" href="/register">{{language.signIn}}</a>
         </p>
 
+        {{>facebookButton}}
 
       </form>
 
       {{> flashMessages}}
 
+      
+
     </div>
+
+   
   </div>
 </template>

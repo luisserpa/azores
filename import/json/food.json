@@ -1,0 +1,26 @@
+{
+    "beiraMar": {
+        "pt": {
+            "title": "Beira-Mar",
+            "description": "O melhor restaurante de peixe e marisco na ilha",
+            "visitHours": "12h00 até 14h00 e 19h00 até 00h00",
+            "longDescription":
+                "O melhor restaurante de peixe e marisco na ilha. Tem lá o Drake a servir e tudo"
+        },
+        "en": {
+            "title": "Beira-Mar",
+            "description":
+                "The most famous fish and seafood restaurant in the island",
+            "visitHours": "12h00 to 14h00 and 19h00 até 00h00",
+            "longDescription":
+                "The most famous fish and seafood restaurant in the island. Drake works there and everything"
+        },
+
+        "lat": 48.7,
+        "lng": -27.4,
+        "type": "Food",
+        "visited": false,
+        "icon":
+            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+    }
+}

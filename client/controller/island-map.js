@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import historicMonuments from "../../import/json/historic-monuments.json";
 import naturalMonuments from "../../import/json/natural-monuments.json";
 import hotels from "../../import/json/hotels.js";
-import food from "../../import/json/food.js";
+import food from "../../import/json/food.json";
 import filterFunctions from "../utils/filter-functions.js";
 import startMap from "../map/mapRender.js";
 import listChosenMonuments from "../utils/select-monument-type.js";
