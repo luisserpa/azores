@@ -1,55 +1,11 @@
 import loginMessages from "../utils/login-messages.js";
 import loginLanguages from "../../import/json/html-fields/login.json";
 
+/**
+ * This module is for handling the login process
+ */
+
 Template.login.events({
-
-  "click .facebookLogin": function() {
-
-    FB.login(function(faceStatus) {
-        console.log("STATUS: ",faceStatus);
-        if (faceStatus.authResponse) {
-
-            FB.api('/me', {fields: 'name, email'}, function(response) {
-            console.log("RESPONSE: ", response);
-
-                if (response.email === undefined) {
-                return;
-                }
-
-                Meteor.call("findByEmail", response.email, function(error, user) {
-
-                    if(!error){
-
-                        if(user === undefined){
-
-                            var newUser={
-                                email: response.email,
-                                displayName: response.name,
-                                password: "",
-                                founds: 0,
-                                cows: 0,
-                                places: [
-                                    historicMonuments,
-                                    naturalMonuments,
-                                    hotels,
-                                    food
-                                ]
-                                };
-
-                            console.log("FACE USER: ", newUser);
-
-                            Meteor.call("addUser", newUser);
-                            user = newUser;
-                        }
-
-                        Session.set("sessionUser", user);
-                        Router.go("/islandmap");
-                    }
-                }); 
-            });
-        } 
-    }); 
-   }, 
 
     "submit form": function(event) {
         event.preventDefault();
@@ -67,7 +23,6 @@ Template.login.events({
         }
 
         Meteor.call("findByEmail", loginEmail, function(error, user) {
-
             if (!error) {
                 if (user === undefined) {
                     loginMessages();
@@ -84,8 +39,7 @@ Template.login.events({
             }
         });
     }
-
-}); 
+});
 
 Template.login.helpers({
     language() {
@@ -96,14 +50,3 @@ Template.login.helpers({
         }
     }
 });
-
-/*Template.login.onRendered(function () {
-
-    FB.getLoginStatus(function(response) {
-        console.log("FIRST CHECK FACE STATUS: ", response);
-        if (response.status === "connected") {
-            Router.go("/islandmap");
-        }
-    });
-
-});*/
