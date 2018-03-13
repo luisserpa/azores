@@ -6,6 +6,14 @@ Template.header.events({
         Router.go("/login");
     },
 
+    "click .counter": function(event) {
+        Router.go("/counter");
+    },
+
+    "click .achievements": function(event) {
+        Router.go("/achievements");
+    },
+
     "click .portuguese": function(event) {
         var language = "portuguese";
         Session.set("sessionLanguage", language);
@@ -24,5 +32,17 @@ Template.header.events({
 Template.displayUserName.helpers({
     showName() {
         return Session.get("sessionUser").displayName;
+    }
+});
+
+Template.goCounter.helpers({
+    showCounterNumber() {
+        return Session.get("sessionUser").cows;
+    }
+});
+
+Template.checks.helpers({
+    showChecksNumber() {
+        return Session.get("sessionUser").founds;
     }
 });
