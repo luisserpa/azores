@@ -15,9 +15,15 @@
     <div class="pimg1">
 
       <div class="ptext">
-        <row>
+       
+            <row>
+            <div class="newLogin">
+                {{> login}}
+            </div>
+               
+                  
           <img src="logo.png" alt="Cow Advisot" class="logo">
-        </row>
+          </row>
         <span class="border">
           Welcome to Cow Advisor
 
@@ -96,12 +102,11 @@
 <template class="container" name="login">
 
 
-  <div class="container centeredLogin">
-    <div class="vertical-center">
+
 
      
 
-      <form class="loginForm">
+      <form >
 
         <p>
 
@@ -118,10 +123,10 @@
           <input href="#" type="submit" class="login-button" value="{{language.login}}">
         </p>
         <p>
-          <a style="color: inherit;" href="/register">{{language.signIn}}</a>
+         <a style="color: inherit; font-size: 16px;" href="/register">{{language.signIn}}</a>   {{>facebookButton}}
         </p>
 
-        {{>facebookButton}}
+        
 
       </form>
 
@@ -129,8 +134,4 @@
 
       
 
-    </div>
-
-   
-  </div>
 </template>

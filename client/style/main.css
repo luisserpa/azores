@@ -54,7 +54,7 @@ html {
 
 .ptext {
   position: absolute;
-  top: 50%;
+  top: 20%;
   width: 100%;
   text-align: center;
   color: black;
@@ -137,14 +137,6 @@ html {
   width: 300px;
 }
 
-.loginForm {
-  position: relative;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 7px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  background: linear-gradient(#3a3a3a79, #29292977 60%);
-  border-bottom: 10px solid #3a3a3a79;
-}
-
 .add-user {
   position: relative;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 7px rgba(0, 0, 0, 0.3);
@@ -171,4 +163,15 @@ html {
   width: 239px;
   height: 46px;
   border: 1px solid #3b5998;
+}
+
+.newLogin {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 7px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background: linear-gradient(#3a3a3a79, #29292977 60%);
+  border-bottom: 10px solid #3a3a3a79;
+  margin-left: 25%;
+  margin-right: 25%;
 }
