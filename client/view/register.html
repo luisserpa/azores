@@ -1,10 +1,103 @@
-<template name="register">
-  <div class="container centeredLogin">
-    <div class="vertical-center">
 
-        {{>facebookButton}}
+<template class="body" name="register">
 
-      <form class="add-user">
+   
+
+    <body>
+  
+      <div class="pimg1">
+  
+        <div class="ptext">
+         
+              <row>
+              <div class="newRegister">
+                  {{> registerContent}}
+              </div>
+                 
+                    
+            <img src="logo.png" alt="Cow Advisot" class="logo">
+            </row>
+          <span class="border">
+            Welcome to Cow Advisor
+  
+          </span>
+  
+        </div>
+      </div>
+  
+      <section class="section section-light">
+  
+        <div class="language icon">
+          <a type="button" class="portuguese">
+            <img src="http://localhost:3000/PT-Lg_icon.png" alt="Portuguese" width="50" height="50" />
+          </a>
+  
+          <a type="button" class="english">
+            <img src="http://localhost:3000/EN-Lg_icon.png" alt="English" width="50" height="50" />
+          </a>
+        </div>
+        <h2> CHOOSE YOUR LANGUAGE </h2>
+      </section>
+  
+      <div class="pimg2">
+        <div class="ptext">
+          <span class="border">
+            Image TWO text
+          </span>
+        </div>
+      </div>
+      <section class="section section-dark">
+        <h2>Section Two</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quasi ut dolore deserunt magnam voluptates dignissimos dolorum
+          sed ipsam? Animi ipsum quibusdam nam, similique repudiandae impedit cum blanditiis eaque reprehenderit!
+        </p>
+      </section>
+  
+      <div class="pimg3">
+        <div class="ptext">
+          <span class="border">
+            Image THREE text
+          </span>
+        </div>
+      </div>
+      <section class="section section-dark">
+        <h2>Section Three</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quasi ut dolore deserunt magnam voluptates dignissimos dolorum
+          sed ipsam? Animi ipsum quibusdam nam, similique repudiandae impedit cum blanditiis eaque reprehenderit!
+        </p>
+      </section>
+  
+      <div class="pimg1">
+        <div class="ptext">
+          <span class="border">
+            Enjoy your visit!
+          </span>
+        </div>
+      </div>
+  
+  
+  
+  
+  
+      <div class="footer">
+        <p>Welcome to the page where you can get advice about where to go where to be </p>
+      </div>
+  
+    </body>
+  
+  
+  </template>
+
+
+
+<template name="registerContent">
+
+
+       
+
+      <form>
   
         <p>
           Email
@@ -31,17 +124,16 @@
           <input type="password" name="repeatPassword" style="background-color: #cacdd3;" placeholder="{{language.repeatPassword}}">
         </p>
         <p>
-          <input href="/login" type="submit" class="register-button" value="{{language.createCount}}">
+  <input href="/login" type="submit" class="register-button" value="{{language.createCount}}">  {{>facebookButton}}
         </p>
         <p>
           <a type="button" style="color: inherit;" class="back">{{language.back}}</a>
         </p>
-
+       
 
       </form>
 
       {{> flashMessages}}
 
-    </div>
-  </div>
+  
 </template>
