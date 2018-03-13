@@ -34,7 +34,7 @@
       <div id="mapDisplay">
 
         <script>
-        
+
           {{ mapMarker }}
         </script>
   </div> 
@@ -54,6 +54,8 @@
     </div>
     <footer></footer>
  
+    
+
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFesdr-q5keaEXasmMOJCphcrucwBWYH8&callback=initMap">
       </script>
 
@@ -62,17 +64,21 @@
 </template>
 
 <template name="filter">
-    
+
   <form action="">
     <input class="allChecked" type="checkbox" name="allChecked" value="Yes">Uncheck all
     <br>
-    <input id="historicMonuments" class="historicMonuments" checked="checked" type="checkbox" name="historicMonuments" value="Yes"><a id="refHistoricMonuments" class="listMonuments">Historic Monuments</a>
+    <input id="historicMonuments" class="historicMonuments" checked="checked" type="checkbox" name="historicMonuments" value="Yes">
+    <a id="refHistoricMonuments" class="listMonuments">Historic Monuments</a>
     <br>
-    <input id="naturalMonuments" class="naturalMonuments" checked="checked" type="checkbox" name="naturalMonuments" value="Yes"><a id="refNaturalMonuments" class="listMonuments">Natural Monuments</a>
+    <input id="naturalMonuments" class="naturalMonuments" checked="checked" type="checkbox" name="naturalMonuments" value="Yes">
+    <a id="refNaturalMonuments" class="listMonuments">Natural Monuments</a>
     <br>
-    <input id="hotels" class="hotels" checked="checked" type="checkbox" name="hotels" value="Yes"><a id="refAccomodations" class="listMonuments">Accommodations</a>
+    <input id="hotels" class="hotels" checked="checked" type="checkbox" name="hotels" value="Yes">
+    <a id="refAccomodations" class="listMonuments">Accommodations</a>
     <br>
-    <input id="food" class="food" checked="checked" type="checkbox" name="food" value="Yes"><a id="refRestaurants" class="listMonumentsx">Restaurants</a>
+    <input id="food" class="food" checked="checked" type="checkbox" name="food" value="Yes">
+    <a id="refRestaurants" class="listMonuments">Restaurants</a>
     <br>
   </form>
 

@@ -1,3 +1,7 @@
+Router.route("/page", function() {
+    this.render("page");
+});
+
 Router.route("/", function() {
     this.render("landingpage");
 });
