@@ -19,22 +19,22 @@ Template.achievements.helpers({
     },
 
     secondAchievement() {
-        return Session.get("sessionUser").founds > 3;
+        return Session.get("sessionUser").founds > 1;
     },
 
     thirdAchievement() {
-        return Session.get("sessionUser").founds > 4;
+        return Session.get("sessionUser").founds > 2;
     },
 
     fourthAchievement() {
-        return Session.get("sessionUser").founds > 19;
+        return Session.get("sessionUser").founds > 3;
     },
 
     fifthAchievement() {
-        return Session.get("sessionUser").founds > 39;
+        return Session.get("sessionUser").founds > 4;
     },
 
     sixthAchievement() {
-        return Session.get("sessionUser").founds > 79;
+        return Session.get("sessionUser").founds > 4;
     }
 });

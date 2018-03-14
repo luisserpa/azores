@@ -1,6 +1,29 @@
 @media screen and (max-width: 800px) and (min-width: 135px) {
   body {
     background-image: url("cow.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .logo {
+    height: 50%;
+    width: 50%;
+  }
+
+  .border {
+    display: none;
+  }
+
+  .section-dark {
+    display: none;
+  }
+
+  h2 {
+    display: none;
+  }
+
+  .footer {
+    display: none;
   }
 }
 @media screen and (max-width: 5000px) and (min-width: 801px) {
