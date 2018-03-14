@@ -2,7 +2,7 @@
  <h3>ADMIN</h3>
 
  {{#each places}}
-  {{> place}}
+  {{> place}}<br>
 {{/each}}
 <br>
 <button type="button" class="addPlace">Add place</button>
@@ -12,12 +12,10 @@
 </template>
 
 <template name="place">
-    <form id="delete">
-            <input hidden name="mongoId" type="text" value="{{_id}}"/>
-            {{en.title}}
-            {{type}}
-        <input type="submit" value="delete" />
-    </form>
+
+    <label>{{en.title}} - {{type}}</label>
+    <button id={{_id}} class="updt">uptade</button>
+    <button id={{_id}} class="del">delete</button>
     
 </template>
 

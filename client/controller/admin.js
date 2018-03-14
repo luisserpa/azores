@@ -31,15 +31,20 @@ Template.admin.events({
 });
 
 Template.place.events({
-    'submit #delete'(event) {
-        event.preventDefault();
+
+    'click .del'(event) {
         var confirmDelete = confirm("You want to delete " + '\"' +
-         Places.findOne({ _id: event.target.mongoId.value }).en.title 
+         Places.findOne({ _id: event.target.id }).en.title 
          + '\"' + " from database?");
         if (confirmDelete) {
-            Meteor.call("deletePlace", event.target.mongoId.value);
+            Meteor.call("deletePlace", event.target.id);
         }
+    },
+
+    'click .updt'(event) {
+        console.log("BUTTON UP TARGET", event.target.id);
     }
+
 });
 
 Template.newPlace.events({
