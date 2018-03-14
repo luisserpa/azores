@@ -7,7 +7,7 @@ Template.header.events({
         event.preventDefault();
         //To log out
         Session.set("sessionUser", undefined);
-        Router.go("/login");
+        Router.go("/");
     },
 
     "click .counter": function(event) {

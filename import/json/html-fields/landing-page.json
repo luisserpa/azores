@@ -1,0 +1,28 @@
+{
+    "pt": {
+        "welcome": "Bem Vindo ao Cow Advisor",
+        "language": "Escolha a sua língua",
+        "imageTwo": "Venha conhecer os Açores",
+        "sectionTwo":
+            "Um mundo de beleza escondido nas montanhas da Atlântida. Reinado pelo mar azul cristalino e prados verdejantes.",
+        "imageThree": "Uma Beleza Ímpar",
+        "sectionThree":
+            "Com actividades e lugares para visitar a pensar em todos os gostos.",
+        "enjoy": "Desfrute da sua visita!",
+        "footer":
+            "Bem vindo à página onde pode encontrar conselhos sobre que visitar"
+    },
+    "en": {
+        "welcome": "Welcome to Cow Advisor",
+        "language": "Choose your language",
+        "imageTwo": "Come visit the Azores",
+        "sectionTwo":
+            "A world of hidden beauty in the mountains of Atlantis. Reingned by crystalin blue ocean e green meadows. ",
+        "imageThree": "A remarkable beauty",
+        "sectionThree":
+            "With activities and places to visit for every kind of taste.",
+        "enjoy": "Enjoy your visit!",
+        "footer":
+            "Welcome to the page where you can get advice about where to go and where to be"
+    }
+}
