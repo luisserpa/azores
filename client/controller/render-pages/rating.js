@@ -2,6 +2,8 @@ import { Template } from "meteor/templating";
 import { Meteor } from "meteor/meteor";
 import { Session } from "meteor/session";
 import { ReactiveVar } from "meteor/reactive-var";
+import renderScore from "./score.js";
+import languageSelect from "./language-select.js";
 
 let starsRating;
 
@@ -51,6 +53,8 @@ Template.rating.events({
                         function(error) {
                             if (!error) {
                                 starsRating.set(false);
+                                //Update the score in the view
+                                renderScore(updateRating);
                             }
                         }
                     );

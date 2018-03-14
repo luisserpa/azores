@@ -1,22 +1,7 @@
 import { Meteor } from "meteor/meteor";
+import { Session } from "meteor/session";
 
 var getClickedPlace = function(event, cb) {
-    /*
-    var id = event.target.id;
-    var placeToRender = [];
-    Session.get("mapPlaces").forEach(function(element, index) {
-        if (placeToRender.length <= 0) {
-            Object.keys(element).forEach(function(key) {
-                placeToRender = element[key];
-                if (placeToRender.pt.title === id) {
-                    Session.set("indexOfPlace", index);
-                    console.log("INDEX OF PLACE: ", index);
-                    Session.set("placeToRender", placeToRender);
-                }
-            });
-        }
-    });
-    */
     //Variable with the type of places we have
     var mapPlaces = ["Historic Monument", "Natural Monument", "Food", "Hotel"];
 
@@ -40,7 +25,6 @@ var getClickedPlace = function(event, cb) {
 };
 
 var sortPlaces = function(listOfPlaces) {
-    console.log("LIST OF PLACES: ", listOfPlaces);
     //first create an obejct with the name of the place and the average rating
     var tempPlace = [
         {
@@ -50,7 +34,6 @@ var sortPlaces = function(listOfPlaces) {
     ];
     listOfPlaces.forEach(function(place) {
         //Then comes the calc of the avarege rating
-        console.log("PLAC:", place);
         var average = 0;
         place.rating.forEach(function(rate) {
             average += rate;
@@ -62,17 +45,23 @@ var sortPlaces = function(listOfPlaces) {
             average = average / place.rating.length;
         }
 
+        var nameOfPlace;
+
+        if (Session.get("sessionLanguage") === "portuguese") {
+            nameOfPlace = place.pt.title;
+        } else {
+            nameOfPlace = place.en.title;
+        }
+        console.log("NAME OF PLACE: ", nameOfPlace);
+
         //Update the tempPlace with the calculated average
-        console.log;
-        console.log("TEMP PLACE: ", tempPlace[0].name);
         if (tempPlace[0].name === null) {
-            console.log("TEMPPLACE NAME: ", tempPlace[0].name);
             //CHECK THIS FOR THE EN/PT
-            tempPlace[0].name = place.pt.title;
+            tempPlace[0].name = nameOfPlace;
             tempPlace[0].averageScore = average;
         } else {
             var objetToAdd = {
-                name: place.pt.title,
+                name: nameOfPlace,
                 averageScore: average
             };
             tempPlace.push(objetToAdd);

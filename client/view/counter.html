@@ -7,8 +7,10 @@
 
     {{> header}}
 
-    Let's count some cows!
-
+  
+<p>
+    {{language.welcome}}
+</p>
     {{> cowcounter}}
   
 
@@ -27,6 +29,6 @@
   </div>
 
 
-  You've seen {{counter}} cows so far.
+  {{language.first}} {{counter}} {{language.last}}
 
 </template>

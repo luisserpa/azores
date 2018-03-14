@@ -2,19 +2,19 @@
     "monteBrasil": {
         "pt": {
             "title": "Monte Brasil",
-            "visitHours": "08h00 até 21h00",
+            "visitHours": "08h00 às 21h00",
             "description":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
+                "A península do Monte Brasil localiza-se na freguesia da Sé, na cidade e concelho de Angra do Heroísmo, na costa sul da ilha Terceira, nos Açores.",
             "longDescription":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores. \n O actual templo terá sido construído sobre a anterior Igreja de São Salvador, datada provavelmente de 1496, ostentando um estilo Gótico contemporâneo da data da sua construção. A Igreja, contudo, revelou-se pequena para a crescente população de Angra do Heroísmo, que se afirmava como uma vila em franca expansão e riqueza. Da primitiva Igreja resta o altar mor, situado debaixo da Capela. "
+                "A península do Monte Brasil localiza-se na freguesia da Sé, na cidade e concelho de Angra do Heroísmo, na costa sul da ilha Terceira, nos Açores. \nAssenta no cone abatido de um antigo vulcão extinto, com origem no mar, composto por uma caldeira rodeada por quatro picos: o Pico das Cruzinhas, o Pico do Facho, o Pico da Quebrada (onde se situa a vigia da baleia) e o Pico do Zimbreiro. Mantém restos da cobertura vegetal original e encontra-se classificada como Reserva Florestal de Recreio. \nForma duas baías: a baía de Angra, a Leste, que deu o nome à cidade, e a baía do Fanal, a Oeste. \nDo seu alto descortina-se uma vista panorâmica sobre a cidade, sua baía e marina, o Porto Judeu, a Ribeirinha, os Ilhéus e, para Poente, desde a baía do Fanal, passando pela baía de Villa Maria até à freguesia São Mateus da Calheta. Do seu topo, em dias limpos pode-se ver, para o Poente, a ilha de São Jorge e a ilha do Pico, a freguesia piscatória de São Mateus da Calheta; o Caminho de Baixo, a localidade de São Carlos, a zona balnear da Silveira e toda a cidade de Angra. A Este, subindo a Serra da Ribeirinha, vê-se a freguesia do mesmo nome, mais abaixo, junto ao mar o Porto Judeu surge, juntamente com a vista dos Ilhéus das Cabras. Olhando para o interior, descortina-se a maior elevação da ilha, a serra de Santa Bárbara, ao lado da Serra do Morião ou da Nasce Água. \nEntre o final do século XVI e o início do XVII, foi quase que inteiramente rodeada pelos espanhóis por uma das maiores fortificações atlânticas da época: a Fortaleza de São João Baptista. Era esta que, juntamente com o Forte de São Sebastião, defendia a cidade e o porto de Angra dos ataques dos piratas e corsários que tentavam apoderar-se das riquezas trazidas pelas naus da Carreira da Índia."
         },
         "en": {
             "title": "Monte Brasil",
             "visitHours": "08h00 to 21h00",
             "description":
-                "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
+                "Monte Brasil peninsula's is located in the parish of Sé, in the city and county of Angra do Heroísmo, on the southern coast of Terceira Island, in the Azores.",
             "longDescription":
-                "The Cathedral of Angra do Heroísmo is the largest temple and one of the main monuments of this beautiful World Heritage City, in full Terceira Island, in the wonderful Azores Archipelago. \n The current temple will have been built on the former Church of San Salvador, probably dated 1496, boasting a contemporary Gothic style of the date of its construction. The Church, however, proved small for the growing population of Angra do Heroísmo, which affirmed itself as a booming and wealthy village. Of the primitive Church remains the main altar, located under the Chapel."
+                "The Monte Brasil peninsula is located in the parish of Sé, in the city and county of Angra do Heroísmo, on the southern coast of Terceira Island, in the Azores.  \nPeaches in the crumpled cone of an extinct ancient volcano, originating in the sea, composed by a caldera surrounded by four peaks: the Peak of the Cross, the Peak of the Facho, the Peak of Quebrada (where the whale watch is located) and Peak of Zimbreiro. Maintains remnants of the original vegetation cover and is classified as Recreational Forest Reserve.  \nFor two bays: the bay of Angra, to the east, that gave the name to the city, and the bay of the Fanal, to the West.  \nHis panoramic view of the city, its bay and marina, the Jewish Port, the Ribeirinha, the Ilhéus and, to the west, from Fanal Bay, passing through the bay of Villa Maria to the parish of São Mateus of Calheta. From its top, on clean days one can see, for the West, the island of São Jorge and the island of Pico, the fishing parish of São Mateus da Calheta; the Caminho de Baixo, the town of São Carlos, the bathing area of ​​Silveira and the whole city of Angra. \nTo the east, climbing the Serra da Ribeirinha, you can see the parish of the same name, below, by the sea, the Jewish Port arises, together with the view of the Goht Islanders. Looking inland, one can see the highest elevation of the island, the Serra de Santa Bárbara, next to Serra do Morião or Nasce Água. \nBetween the end of the 16th century and the beginning of the 17th century, it was almost completely surrounded by the Spanish for one of the greatest Atlantic fortifications of the time: the Fortress of St. John the Baptist. It was this that, together with the Fort of San Sebastian, defended the city and the port of Angra from the attacks of the pirates and corsairs that tried to seize the riches brought by the ships of the Race of India."
         },
         "lat": 38.646,
         "lng": -27.226,
@@ -23,26 +23,26 @@
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         "image_1":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
+            "http://localhost:3000/natural-monuments/monte-brasil/image_1.jpg",
         "image_2":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_2.png"
+            "http://localhost:3000/natural-monuments/monte-brasil/image_2.jpg"
     },
     "algarCarvao": {
         "pt": {
             "title": "Algar do Carvão",
             "visitHours": "14h00 até 18h00",
             "description":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
+                "O Algar do Carvão situa-se no interior de um vulcão adormecido, constituído por um cone vulcânico com cerca de 90 metros de altura, contendo no seu interior também uma lindíssima lagoa de águas cristalinas e tranquilas a cerca de 100 metros de profundidade. ",
             "longDescription":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores. \n O actual templo terá sido construído sobre a anterior Igreja de São Salvador, datada provavelmente de 1496, ostentando um estilo Gótico contemporâneo da data da sua construção. A Igreja, contudo, revelou-se pequena para a crescente população de Angra do Heroísmo, que se afirmava como uma vila em franca expansão e riqueza. Da primitiva Igreja resta o altar mor, situado debaixo da Capela. "
+                "O fenómeno vulcânico do Algar do Carvão situa-se no coração da maravilhosa Ilha Terceira, Arquipélago dos Açores, no interior da Caldeira Guilherme Moniz. \nO Algar do Carvão situa-se no interior de um vulcão adormecido, constituído por um cone vulcânico com cerca de 90 metros de altura, contendo no seu interior também uma lindíssima lagoa de águas cristalinas e tranquilas a cerca de 100 metros de profundidade. \nO Algar do Carvão terá tido origem na grande erupção do Pico Alto que lançou lava a grande distância. Posteriormente, uma outra erupção basáltica iniciou o processo da formação de um outro vulcão, o Pico do Carvão. Numa primeira fase, formou-se a zona da bonita lagoa e as duas abóbadas sobre ela, e só numa fase sinal, aquando das descidas mais profundas do magma, se formou o Algar. \nOs derrames de lava muito efusiva, produziram rios de lava ácida muito fluidas que carbonizaram vegetação existente. \nO acesso ao Algar do Carvão está hoje facilitado, com a construção de escadarias no seu interior, que permitem uma mais cómoda visualização deste fenómeno natural, onde é possível observar o trajecto percorrido pelo rio de lava, e as curiosas estalactites e estalagmites vulcânicas. "
         },
         "en": {
             "title": "Algar do Carvão",
             "visitHours": "14h00 to 18h00",
             "description":
-                "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
+                "The Algar do Carvão is located in the interior of a dormant volcano, consisting of a volcanic cone with about 90 meters in height, containing in its interior also a beautiful lagoon of crystalline and calm waters to about 100 meters of depth.",
             "longDescription":
-                "The Cathedral of Angra do Heroísmo is the largest temple and one of the main monuments of this beautiful World Heritage City, in full Terceira Island, in the wonderful Azores Archipelago. \n The current temple will have been built on the former Church of San Salvador, probably dated 1496, boasting a contemporary Gothic style of the date of its construction. The Church, however, proved small for the growing population of Angra do Heroísmo, which affirmed itself as a booming and wealthy village. Of the primitive Church remains the main altar, located under the Chapel."
+                "The volcanic phenomenon of Algar do Carvão is located in the heart of the wonderful Terceira Island, Azores Archipelago, inside the Caldeira Guilherme Moniz.  \nThe Algar do Carvão is located in the interior of a dormant volcano, consisting of a volcanic cone about 90 meters high, containing inside it a beautiful lagoon with crystalline and calm water about 100 meters deep.  \nThe Algar do Carvão will have originated in the great eruption of Pico Alto that launched lava at a great distance. Later, another basaltic eruption began the process of forming another volcano, the Pico do Carvão. In a first phase, the zone of the beautiful lagoon and the two vaults on it were formed, and only at a signal phase, during the deeper descents of the magma, the Algar was formed.  \nThe very effusive lava spills produced very flowing acidic lava rivers that charred existing vegetation.  \nThe access to the Algar do Carmo is now facilitated by the construction of staircases inside, which allow a more comfortable visualization of this natural phenomenon, where it is possible to observe the route traveled by the lava river, and the curious stalactites and volcanic stalagmites."
         },
 
         "lat": 38.728,
@@ -53,8 +53,8 @@
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
 
         "image_1":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
+            "http://localhost:3000/natural-monuments/algar-carvao/image_1.jpg",
         "image_2":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_2.png"
+            "http://localhost:3000/natural-monuments/algar-carvao/image_2.jpg"
     }
 }

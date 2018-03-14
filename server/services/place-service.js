@@ -37,5 +37,9 @@ Meteor.methods({
 
     findAll: function(typeName) {
         return Places.find({ type: typeName }).fetch();
+    },
+    
+    deletePlace: function(placeId) {
+        return Places.remove( { _id : placeId} );
     }
 });

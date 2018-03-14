@@ -1,24 +1,22 @@
 import { Template } from "meteor/templating";
 import { Meteor } from "meteor/meteor";
 import { ReactiveVar } from "meteor/reactive-var";
+import languageSelect from "./language-select.js";
 
 let placeComments;
 
 Template.commentSection.onCreated(function onRender() {
     placeComments = new ReactiveVar(this.data.comments);
-    console.log("COMMENTS: ", placeComments);
 });
 
 Template.commentSection.helpers({
     showPlaceComments() {
         return placeComments.get();
-    }
+    },
 
-    /*
-    displayUserName() {
-        return Session.get("sessionUser").displayName;
+    language() {
+        return languageSelect();
     }
-    */
 });
 
 Template.commentSection.events({
@@ -32,7 +30,11 @@ Template.commentSection.events({
                 return;
             }
 
-            placeToUpdate.comments.splice(0, 0, newComment);
+            placeToUpdate.comments.splice(
+                0,
+                0,
+                Session.get("sessionUser").displayName + ": " + newComment
+            );
 
             Meteor.call(
                 "addComment",

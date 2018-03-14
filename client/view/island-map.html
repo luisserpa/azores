@@ -67,19 +67,19 @@
 <template name="filter">
 
   <form action="">
-    <input class="allChecked" type="checkbox" name="allChecked" value="Yes">Uncheck all
+    <input class="allChecked" type="checkbox" name="allChecked" value="Yes">{{language.checkAll}}
     <br>
     <input id="historicMonuments" class="historicMonuments" checked="checked" type="checkbox" name="historicMonuments" value="Yes">
-    <a id="refHistoricMonuments" class="listMonuments">Historic Monuments</a>
+    <a id="refHistoricMonuments" class="listMonuments">{{language.historicMouments}}</a>
     <br>
     <input id="naturalMonuments" class="naturalMonuments" checked="checked" type="checkbox" name="naturalMonuments" value="Yes">
-    <a id="refNaturalMonuments" class="listMonuments">Natural Monuments</a>
+    <a id="refNaturalMonuments" class="listMonuments">{{language.naturalMonuments}}</a>
     <br>
     <input id="hotels" class="hotels" checked="checked" type="checkbox" name="hotels" value="Yes">
-    <a id="refAccomodations" class="listMonuments">Accommodations</a>
+    <a id="refAccomodations" class="listMonuments">{{language.hotels}}</a>
     <br>
     <input id="food" class="food" checked="checked" type="checkbox" name="food" value="Yes">
-    <a id="refRestaurants" class="listMonuments">Restaurants</a>
+    <a id="refRestaurants" class="listMonuments">{{language.food}}</a>
     <br>
   </form>
 
