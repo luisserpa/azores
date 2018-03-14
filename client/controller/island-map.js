@@ -28,7 +28,6 @@ Template.islandmap.helpers({
 
 Template.filter.helpers({
     language() {
-        console.log("LANGAUGE: ", islandMapLanguages);
         if (Session.get("sessionLanguage") === "portuguese") {
             return islandMapLanguages.pt;
         } else {

@@ -22,6 +22,7 @@
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "checkedIcon": "http://localhost:3000/visited.png",
         "image_1": "http://localhost:3000/food/beira-mar/image_1.jpg",
         "image_2": "http://localhost:3000/food/beira-mar/image_2.jpg"
     },
@@ -48,6 +49,7 @@
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "checkedIcon": "http://localhost:3000/visited.png",
         "image_1": "http://localhost:3000/food/caneta/image_1.jpg",
         "image_2": "http://localhost:3000/food/caneta/image_2.jpg"
     }

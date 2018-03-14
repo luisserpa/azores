@@ -22,6 +22,7 @@
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "checkedIcon": "http://localhost:3000/visited.png",
         "image_1":
             "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
         "image_2":
@@ -51,6 +52,7 @@
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "checkedIcon": "http://localhost:3000/visited.png",
 
         "image_1":
             "http://localhost:3000/historic-monuments/igreja-matriz-praia-victoria/image_1.jpg",
