@@ -2,6 +2,7 @@ import { Template } from "meteor/templating";
 import { Meteor } from "meteor/meteor";
 import { Session } from "meteor/session";
 import { ReactiveVar } from "meteor/reactive-var";
+import languageSelect from "./language-select.js";
 
 let hideCheckbox;
 
@@ -32,6 +33,10 @@ Template.visited.rendered = function() {
 Template.visited.helpers({
     hideCheckbox() {
         return hideCheckbox.get();
+    },
+
+    language() {
+        return languageSelect();
     }
 });
 

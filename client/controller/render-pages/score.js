@@ -1,6 +1,7 @@
 import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
 import { Session } from "meteor/session";
+import languageSelect from "./language-select.js";
 
 let updateScore;
 Template.score.onCreated(function() {
@@ -19,6 +20,10 @@ Template.score.helpers({
         } else {
             return updateScore.get();
         }
+    },
+
+    language() {
+        return languageSelect();
     }
 });
 

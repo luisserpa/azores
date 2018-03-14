@@ -3,6 +3,7 @@ import { Meteor } from "meteor/meteor";
 import { Session } from "meteor/session";
 import { ReactiveVar } from "meteor/reactive-var";
 import renderScore from "./score.js";
+import languageSelect from "./language-select.js";
 
 let starsRating;
 

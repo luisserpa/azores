@@ -1,0 +1,12 @@
+{
+    "pt": {
+        "welcome": "Vamos contar algumas vacas!",
+        "first": "Já viste ",
+        "last": " vacas até agora!"
+    },
+    "en": {
+        "welcome": "Let's count some cows!",
+        "first": "You've seen ",
+        "last": " cows so far!"
+    }
+}

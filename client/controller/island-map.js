@@ -23,9 +23,12 @@ Template.islandmap.rendered = function() {
 Template.islandmap.helpers({
     mapMarker() {
         return startMap();
-    },
+    }
+});
 
+Template.filter.helpers({
     language() {
+        console.log("LANGAUGE: ", islandMapLanguages);
         if (Session.get("sessionLanguage") === "portuguese") {
             return islandMapLanguages.pt;
         } else {
