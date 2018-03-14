@@ -68,7 +68,8 @@ function startMap() {
                                 icon = place.checkedIcon;
                             } else {
                                 if (
-                                    icon !== "http://localhost:3000/visited.png"
+                                    icon !==
+                                    "http://localhost:3000/visited-map.png"
                                 ) {
                                     console.log("FALSE: ", isVisited[key]);
                                     icon = place.icon;

@@ -20,9 +20,8 @@
         "lng": -27.236,
         "type": "Hotel",
         "visited": false,
-        "icon":
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-        "checkedIcon": "http://localhost:3000/visited.png",
+        "icon": "http://localhost:3000/map-icons/hotel.png",
+        "checkedIcon": "http://localhost:3000/visited-map.png",
         "image_1": "http://localhost:3000/hotels/caracol/image_1.jpg",
         "image_2": "http://localhost:3000/hotels/caracol/image_2.jpg"
     }
