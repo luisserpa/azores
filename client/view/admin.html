@@ -1,14 +1,12 @@
 <template name="admin">
- <h3>ADMIN</h3>
+    <h3>ADMIN</h3>
 
- {{#each places}}
-  {{> place}}<br>
-{{/each}}
-<br>
-<button type="button" class="addPlace">Add place</button>
-{{#if showAddPlace}}
-{{>newPlace}}
-{{/if}}
+    {{#each places}} {{> place}}
+    <br> {{/each}}
+    
+    <button type="button" class="addPlace">add place</button>
+ 
+    {{#if showAddPlace}} {{>newPlace}} {{/if}} {{#if showEditPlace}} {{>editPlace}} {{/if}}
 </template>
 
 <template name="place">
@@ -16,33 +14,83 @@
     <label>{{en.title}} - {{type}}</label>
     <button id={{_id}} class="updt">uptade</button>
     <button id={{_id}} class="del">delete</button>
-    
+
 </template>
 
 <template name="newPlace">
     <form id="createPlace">
-        <p>Category of place:</p>
-            <label>Historic Monument</label>
-            <input type="radio" name="category" id="historic" value="Historic Monument">
-            <label>Natural Monument</label>
-            <input type="radio" name="category" id="natural" value="Natural Monument">
-            <label>Food</label>
-            <input type="radio" name="category" id="food" value="Food">
-            <label>Hotel</label>
-            <input type="radio" name="category" id="hotel" value="Hotel"><br>
-        <input name="titleEn" type="text" placeholder="en-title"/>
-        <input name="titlePt" type="text" placeholder="pt-title"/><br>
-        <input name="summaryEn" type="text" placeholder="en-summary description"/>
-        <input name="summaryPt" type="text" placeholder="pt-summary description"/><br>
-        <input name="descEn" type="text" placeholder="en-long description"/>
-        <input name="descPt" type="text" placeholder="pt-long description"/><br>
-        <input name="hoursEn" type="text" placeholder="en-long visit hours"/>
-        <input name="hoursPt" type="text" placeholder="pt-long visit hours"/><br>
-        <input name="latitude" type="text" placeholder="latitude"/>
-        <input name="longitude" type="text" placeholder="longitude"/><br>
-        <input name="img1" type="text" placeholder="image 1 url"/>
-        <input name="img2" type="text" placeholder="image 2 url"/><br>
+        <p><h4>Create new place</h4></p>
 
-        <input type="submit" value="Create new place" />
+        <label>Historic Monument</label>
+        <input type="radio" name="category" id="historic" value="Historic Monument">
+        <label>Natural Monument</label>
+        <input type="radio" name="category" id="natural" value="Natural Monument">
+        <label>Food</label>
+        <input type="radio" name="category" id="food" value="Food">
+        <label>Hotel</label>
+        <input type="radio" name="category" id="hotel" value="Hotel">
+        <br>
+        <input name="titleEn" type="text" placeholder="en-title" />
+        <input name="titlePt" type="text" placeholder="pt-title" />
+        <br>
+        <input name="summaryEn" type="text" placeholder="en-summary description" />
+        <input name="summaryPt" type="text" placeholder="pt-summary description" />
+        <br>
+        <input name="descEn" type="text" placeholder="en-long description" />
+        <input name="descPt" type="text" placeholder="pt-long description" />
+        <br>
+        <input name="hoursEn" type="text" placeholder="en-long visit hours" />
+        <input name="hoursPt" type="text" placeholder="pt-long visit hours" />
+        <br>
+        <input name="latitude" type="text" placeholder="latitude" />
+        <input name="longitude" type="text" placeholder="longitude" />
+        <br>
+        <input name="img1" type="text" placeholder="image 1 url" />
+        <input name="img2" type="text" placeholder="image 2 url" />
+        <br>
+
+        <input type="submit" value="create new place" />
     </form>
+</template>
+
+<template name="editPlace">
+
+    <form class="updatePlace">
+
+            <p><h4>Edit place</h4></p>
+
+        <label>Historic Monument</label>
+        <input type="radio" name="category" id="Historic" value="Historic Monument">
+        <label>Natural Monument</label>
+        <input type="radio" name="category" id="Natural" value="Natural Monument">
+        <label>Food</label>
+        <input type="radio" name="category" id="Food" value="Food">
+        <label>Hotel</label>
+        <input type="radio" name="category" id="Hotel" value="Hotel">
+        <br>
+
+        <input name="titleEn" type="text" placeholder="en-title" value="{{place.en.title}}" />
+        <input name="titlePt" type="text" placeholder="pt-title" value="{{place.pt.title}}" />
+        <br>
+        <input name="summaryEn" type="text" placeholder="en-summary description" value="{{place.en.description}}" />
+        <input name="summaryPt" type="text" placeholder="pt-summary description" value="{{place.pt.description}}" />
+        <br>
+        <input name="descEn" type="text" placeholder="en-long description" value="{{place.en.longDescription}}" />
+        <input name="descPt" type="text" placeholder="pt-long description" value="{{place.pt.longDescription}}" />
+        <br>
+        <input name="hoursEn" type="text" placeholder="en-long visit hours" value="{{place.en.visitHours}}"/>
+        <input name="hoursPt" type="text" placeholder="pt-long visit hours" value="{{place.pt.visitHours}}"/>
+        <br>
+        <input name="latitude" type="text" placeholder="latitude" value="{{place.lat}}"/>
+        <input name="longitude" type="text" placeholder="longitude" value="{{place.lng}}"/>
+        <br>
+        <input name="img1" type="text" placeholder="image 1 url" value="{{place.image_1}}"/>
+        <input name="img2" type="text" placeholder="image 2 url" value="{{place.image_2}}"/>
+        <br>
+        <input name="comments" type="text" placeholder="comments" value="{{place.comments}}"/>
+        <br>
+
+        <input type="submit" value="update place" />
+    </form>
+
 </template>

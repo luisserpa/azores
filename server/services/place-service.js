@@ -31,6 +31,13 @@ Meteor.methods({
         );
     },
 
+    editPlace: function(placeId, editPt, editEn, editType, editComments, editLat, editLng, editImg1, editImg2) {
+        Places.update(
+            { _id: placeId },
+            { $set: { pt: editPt, en: editEn, type: editType, comments: editComments, lat: editLat, lng: editLng, image_1: editImg1, image_2: editImg2 } }
+        );
+    },
+
     addComment: function(placeId, comment) {
         Places.update({ _id: placeId }, { $set: { comments: comment } });
     },
