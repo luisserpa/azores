@@ -10,7 +10,7 @@
     <div class="row">
     <table class="board">
 
-            
+            <div style="background-color:rgba(255, 255, 255, 0.514); border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
             <caption>{{language.title}}</caption>
         <tr>
           <th>1</th>
@@ -73,7 +73,7 @@
             </td>
             <td>
                 {{# if sixthAchievement}}
-                <p><img id="achievment6" src="http://localhost:3000/hydrangea.png" height="120" width="120"/></p>
+                <p><img id="achievment6" src="http://localhost:3000/hydrangea.png" height="120" width="110"/></p>
                 <p>{{language.sixth}}</p>
                 {{else}}
                 <p><img src="http://localhost:3000/AwardQuestion.png" height="100" width="100"/></p>
@@ -81,10 +81,11 @@
                 {{/if}}
             </td>
           </tr>
-
+        </div>
        
       </table>
     </div>
 </div>
+
 
 </template>

@@ -1,7 +1,8 @@
 @media screen and (max-width: 5000px) and (min-width: 801px) {
   body {
-    background-image: url("backbig.jpg");
+    background-image: url("cow.png");
     background-size: cover;
+    background-color: #111;
   }
 }
 

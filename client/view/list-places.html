@@ -1,11 +1,13 @@
 <template name="listPlaces">
     {{>header}}
+    <div style="background-color:rgba(255, 255, 255, 0.514); border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
 <p>List of Places</p>
     {{# each placesList}}
     <p>
         <label >{{> placeText}} {{>showStars}} </label>
     </p>
     {{/each}}
+</div>
 </template>
 
 <template name="showStars">

@@ -10,8 +10,8 @@
     "en": {
         "email": "insert your email",
         "password": "insert your password",
-        "login": "Log In",
-        "signIn": "Sign In",
+        "login": "Login",
+        "signIn": "Register",
         "emailLabel": "Email",
         "passwordLabel": "Password"
     }

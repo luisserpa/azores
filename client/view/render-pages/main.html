@@ -47,24 +47,32 @@
         
       
         <div class="col-3 .text-truncate">
-          <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
+          <div class="container" style="background-color:rgba(255, 255, 255, 0.473); border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
       
       
           </div>
         </div>
-        <div class="text">
+        <div class="text" style="background-color:rgba(255, 255, 255, 0.514); border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
         {{> description}} 
       </div>
-        {{> images}}
-      
-        <br/>
+     
+    
+      <br/>
 
+      <div>
+          {{> images}}
 
+      </div>
+
+      <div>
+    
+      <p style="background-color:rgba(255, 255, 255, 0.473); border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
+      {{> commentSection}}
       
-        <p>
-        {{> commentSection}}
-       
-         </p>
-       
+        </p>
+      </div>
+      
 
       </template>
+
+     
