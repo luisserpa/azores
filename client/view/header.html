@@ -14,18 +14,9 @@
       <div class="col-xs-12">
      <div class="pull-left">
 
-      
-          <a type="button" class="portuguese">
-            <img id="ptsmall" style="height:40px; width: 40px" src="http://localhost:3000/PT-Lg_icon.png" />
-          </a>
+        {{> displayUserName}}
 
-          <a type="button" class="english">
-            <img style="height:40px; width: 40px" src="http://localhost:3000/EN-Lg_icon.png" />
-          </a>
-
-          {{> displayUserName}}
-
-          <a href="#" type="text" class="logout">
+         <a href="#" type="text" class="logout">
             <img style="height: 40px; width: 40px;" src="http://localhost:3000/logout.png" />
           </a>
 
@@ -33,6 +24,19 @@
           {{> goMap}}
           {{> goCounter}}
           {{> checks}}
+
+          <a type="button" class="portuguese">
+              <img id="ptsmall" style="height:40px; width: 40px" src="http://localhost:3000/PT-Lg_icon.png" />
+            </a>
+  
+            <a type="button" class="english">
+              <img style="height:40px; width: 40px" src="http://localhost:3000/EN-Lg_icon.png" />
+            </a>
+  
+
+          <p>
+            
+          </p>
 
       
         </div>
@@ -75,7 +79,7 @@
 <template name="checks">
 
     <a type="button" class="achievements">
-        <img src="http://localhost:3000/visited.png" height="40" width="40"/>
+        <img src="http://localhost:3000/Award.png" height="40" width="40"/>
     </a>
     {{showChecksNumber}}
 

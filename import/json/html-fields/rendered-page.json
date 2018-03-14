@@ -1,13 +1,13 @@
 {
     "pt": {
         "commenst": "Comentários",
-        "check": " Marcar como visitado",
+        "check": " Visitado",
         "rating": "Classificação média",
         "addComment": "Adicionar Comentário"
     },
     "en": {
         "commenst": "Comments",
-        "check": " Mark as visited",
+        "check": "Visited",
         "rating": "Average Rating",
         "addComment": "Add comment"
     }

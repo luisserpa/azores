@@ -6,9 +6,9 @@
       margin: 0;
       padding: 0;
     }
-    body {
+    /* body {
       margin: 20px;
-    }
+    } */
     h1 {
       font-size: 1.5em;
       margin: 10px;
@@ -78,6 +78,10 @@
     width: auto;
 
     height: auto;
+  }
+
+  #input {
+    width: 300px;
   }
 }
 

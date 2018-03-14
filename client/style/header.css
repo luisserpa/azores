@@ -2,10 +2,12 @@
   display: block;
   max-width: 100%;
   height: auto;
+  margin-bottom: 10%;
 }
 
 @media screen and (max-width: 5000px) and (min-width: 801px) {
   display: block;
   max-width: 100%;
   height: auto;
+  margin-bottom: 10%;
 }

@@ -6,7 +6,8 @@
         "third": "Olha uma rocha vulcânica!",
         "fourth": "Podes tocar o chocalho!",
         "fifth": "Não podes sair dos Açores sem isto!",
-        "sixth": "Agora conheces muito dos Açores!"
+        "sixth": "Agora conheces muito dos Açores!",
+        "locked": "Continua a visitar!"
     },
     "en": {
         "title": "Points per visited place",
@@ -15,6 +16,7 @@
         "third": "You rock!",
         "fourth": "You can ring the bell!",
         "fifth": "Can't leave Azores without this one!",
-        "sixth": "Now you are an Azores master!"
+        "sixth": "Now you are an Azores master!",
+        "locked": "Keep Visiting!"
     }
 }

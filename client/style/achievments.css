@@ -1,32 +1,40 @@
-/*#achievment1 {
-  position: absolute;
-  left: 50%;
-}
+@media screen and (max-width: 5000px) and (min-width: 801px) {
+  .left-block {
+    left: 35%;
+    right: 30%;
+    width: 50%;
+  }
 
-#achievment2 {
-  position: absolute;
-  left: 50%;
-}
-#achievment3 {
-  position: absolute;
-  left: 50%;
-}
+  #achievment1 {
+    height: 150px;
+    width: 150px;
+  }
 
-#achievment4 {
-  position: absolute;
-  left: 50%;
+  #achievment2 {
+    height: 150px;
+    width: 150px;
+  }
+
+  #achievment3 {
+    height: 150px;
+    width: 150px;
+  }
+
+  #achievment4 {
+    height: 150px;
+    width: 150px;
+  }
+
+  #achievment5 {
+    height: 150px;
+    width: 150px;
+  }
+
+  #achievment6 {
+    height: 150px;
+    width: 150px;
+  }
 }
-
-#achievment5 {
-  position: absolute;
-  left: 50%;
-}
-
-#achievment6 {
-  position: absolute;
-  left: 50%;
-}*/
-
 .center-block {
   left: 50%;
   right: 50%;
