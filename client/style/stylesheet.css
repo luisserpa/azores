@@ -1,6 +1,6 @@
 /* CSS Variables */
 :root {
-  --primary: #f7b9ea;
+  --primary: #f122c5;
   --dark: rgba(52, 53, 53, 0.2);
   --light: #fff;
   --shadow: 0 1px 5px rgba(104, 104, 0, 8);
@@ -11,12 +11,6 @@ html {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: var(--dark);
-}
-
-body {
-  background: #f57ddb;
-  margin: 30px 50px;
-  line-height: 1.4;
 }
 
 .btn {
@@ -43,7 +37,7 @@ img {
   grid-gap: 20px;
   padding: 0;
   list-style: none;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .main-nav a {
@@ -79,8 +73,8 @@ img {
   grid-area: showcase;
   min-height: 400px;
   /*background: url(logo.png);*/
-  background-size: cover;
-  background-position: center;
+  /*background-size: cover;
+  background-position: center;*/
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -94,7 +88,9 @@ img {
   margin-bottom: 0;
   color: var(--light);
 }
-
+.form {
+  text-align: center;
+}
 .showcase p {
   font-size: 1.3rem;
   margin-top: 0;
@@ -117,6 +113,7 @@ img {
 
 .top-box-a {
   grid-area: top-box-a;
+  text-align: left;
 }
 .top-box-b {
   grid-area: top-box-b;
