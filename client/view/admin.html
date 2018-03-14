@@ -1,0 +1,48 @@
+<template name="admin">
+ <h3>ADMIN</h3>
+
+ {{#each places}}
+  {{> place}}<br>
+{{/each}}
+<br>
+<button type="button" class="addPlace">Add place</button>
+{{#if showAddPlace}}
+{{>newPlace}}
+{{/if}}
+</template>
+
+<template name="place">
+
+    <label>{{en.title}} - {{type}}</label>
+    <button id={{_id}} class="updt">uptade</button>
+    <button id={{_id}} class="del">delete</button>
+    
+</template>
+
+<template name="newPlace">
+    <form id="createPlace">
+        <p>Category of place:</p>
+            <label>Historic Monument</label>
+            <input type="radio" name="category" id="historic" value="Historic Monument">
+            <label>Natural Monument</label>
+            <input type="radio" name="category" id="natural" value="Natural Monument">
+            <label>Food</label>
+            <input type="radio" name="category" id="food" value="Food">
+            <label>Hotel</label>
+            <input type="radio" name="category" id="hotel" value="Hotel"><br>
+        <input name="titleEn" type="text" placeholder="en-title"/>
+        <input name="titlePt" type="text" placeholder="pt-title"/><br>
+        <input name="summaryEn" type="text" placeholder="en-summary description"/>
+        <input name="summaryPt" type="text" placeholder="pt-summary description"/><br>
+        <input name="descEn" type="text" placeholder="en-long description"/>
+        <input name="descPt" type="text" placeholder="pt-long description"/><br>
+        <input name="hoursEn" type="text" placeholder="en-long visit hours"/>
+        <input name="hoursPt" type="text" placeholder="pt-long visit hours"/><br>
+        <input name="latitude" type="text" placeholder="latitude"/>
+        <input name="longitude" type="text" placeholder="longitude"/><br>
+        <input name="img1" type="text" placeholder="image 1 url"/>
+        <input name="img2" type="text" placeholder="image 2 url"/><br>
+
+        <input type="submit" value="Create new place" />
+    </form>
+</template>

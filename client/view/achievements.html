@@ -1,29 +1,38 @@
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="achievments.css">
+      </head>
+
 <template name="achievements">
     {{>header}}
     
+    <div class="col-xs-12 center-block text-center">
+    <div class="row">
     <table>
+
+            
             <caption>{{language.title}}</caption>
         <tr>
           <th>1</th>
-          <th>5</th> 
-          <th>10</th>
+          <th>2</th> 
+          <th>3</th>
         </tr>
         <tr>
             <td>
                 {{# if firstAchievement}}
-                <p><img src="http://localhost:3000/biscuit.png" height="100" width="100"/></p>
+                <p><img id="achievment1" src="http://localhost:3000/biscuit.png" height="100" width="100"/></p>
                 <p>{{language.first}}</p>
                 {{/if}}
             </td>
             <td>
                 {{# if secondAchievement}}
-                <p><img src="http://localhost:3000/shell.jpg" height="110" width="110"/></p>
+                <p><img id="achievment2" src="http://localhost:3000/shell.png" height="110" width="110"/></p>
                 <p>{{language.second}}</p>
                 {{/if}}
             </td>
             <td>
                 {{# if thirdAchievement}}
-                <p><img src="http://localhost:3000/basalt.png" height="100" width="80"/></p>
+                <p><img id="achievment3" src="http://localhost:3000/basalt.png" height="100" width="80"/></p>
                 <p>{{language.third}}</p>
                 {{/if}}
             </td>
@@ -36,23 +45,27 @@
           <tr>
             <td>
                 {{# if fourthAchievement}}
-                <p><img src="http://localhost:3000/bell.jpeg" height="100" width="100"/></p>
+                <p><img id="achievment4" src="http://localhost:3000/bell.jpeg" height="100" width="100"/></p>
                 <p>{{language.fourth}}</p>
                 {{/if}}
             </td>
             <td>
                 {{# if fifthAchievement}}
-                <p><img src="http://localhost:3000/pineapple.jpg" height="110" width="75"/></p>
+                <p><img id="achievment5" src="http://localhost:3000/pineapple.jpg" height="110" width="75"/></p>
                 <p>{{language.fifth}}</p>
                 {{/if}}
             </td>
             <td>
                 {{# if sixthAchievement}}
-                <p><img src="http://localhost:3000/hydrangea.jpeg" height="120" width="120"/></p>
+                <p><img id="achievment6" src="http://localhost:3000/hydrangea.jpeg" height="120" width="120"/></p>
                 <p>{{language.sixth}}</p>
                 {{/if}}
             </td>
           </tr>
+
+       
       </table>
+    </div>
+</div>
 
 </template>

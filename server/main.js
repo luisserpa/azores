@@ -7,7 +7,16 @@ import { Places } from "../import/lib/collections/database.js";
 
 Meteor.startup(function() {
     // code to run on server at startup
+    var admin = {
+        email: "admin@admin",
+        displayName: "Admin",
+        password: "admin"
+    }
+
+    Meteor.call("addUser", admin);
+
     var mapPlace = [historicMonuments, naturalMonuments, food, hotels];
+    
     mapPlace.forEach(function(placeType, index) {
         var typeString;
         switch (index) {
@@ -47,7 +56,8 @@ Meteor.startup(function() {
                 lat: placeType[key].lat,
                 lng: placeType[key].lng,
                 image_1: placeType[key].image_1,
-                image_2: placeType[key].image_2
+                image_2: placeType[key].image_2,
+                icon: placeType[key].icon
             };
 
             Meteor.call("findByNamePt", placeType[key].pt.title, function(

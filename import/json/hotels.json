@@ -3,28 +3,26 @@
         "pt": {
             "title": "Hotel Caracol",
             "description":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
+                "O Hotel Do Caracol dispõe de um amplo terraço de madeira com uma piscina com vistas sobre o Oceano Atlântico.",
             "visitHours": "",
             "longDescription":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores. \n O actual templo terá sido construído sobre a anterior Igreja de São Salvador, datada provavelmente de 1496, ostentando um estilo Gótico contemporâneo da data da sua construção. A Igreja, contudo, revelou-se pequena para a crescente população de Angra do Heroísmo, que se afirmava como uma vila em franca expansão e riqueza. Da primitiva Igreja resta o altar mor, situado debaixo da Capela. "
+                "O Hotel Do Caracol dispõe de um amplo terraço de madeira com uma piscina com vistas sobre o Oceano Atlântico. A propriedade está localizada em Angra do Heroísmo, a poucos passos da praia, e providencia um spa de serviço completo com tratamentos holísticos. A propriedade oferece acesso Wi-Fi gratuito em todas as suas áreas, incluindo o jardim e as áreas de piscina.\nCada acomodação do Hotel Do Caracol foi renovada em 2016 e possui um quarto espaçoso que se abre para uma varanda mobilada, a maioria com vistas para o oceano. Cada quarto tem ar condicionado, um mini-bar bem abastecido, uma televisão de ecrã plano com canais por cabo e uma casa de banho privativa.\nOs hóspedes podem fazer mergulho e explorar os coloridos recifes perto da costa. Para um dia tranquilo, o hotel também tem uma piscina interior aquecida e uma banheira de hidromassagem.\nO Hotel Do Caracol situa-se a 1 km da Fortaleza de São João Baptista, um monumento histórico localizado perto da beira-mar. A propriedade fica a 3 km de São Mateus da Calheta e a 20 km do Aeroporto das Lajes. "
         },
         "en": {
             "title": "Caracol hotel",
             "description":
-                "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
+                "Hotel Do Caracol has a large wooden terrace with a pool overlooking the Atlantic Ocean.",
             "visitHours": "",
             "longDescription":
-                "The Cathedral of Angra do Heroísmo is the largest temple and one of the main monuments of this beautiful World Heritage City, in full Terceira Island, in the wonderful Azores Archipelago. \n The current temple will have been built on the former Church of San Salvador, probably dated 1496, boasting a contemporary Gothic style of the date of its construction. The Church, however, proved small for the growing population of Angra do Heroísmo, which affirmed itself as a booming and wealthy village. Of the primitive Church remains the main altar, located under the Chapel."
+                "Hotel Do Caracol features a large wooden terrace with a pool overlooking the Atlantic Ocean. The property is located in Angra do Heroísmo, a short walk from the beach, and offers a full-service spa with holistic treatments. The property offers free Wi-Fi in all its areas, including the garden and pool areas.\nEach accommodation at Hotel Do Caracol was renovated in 2016 and features a spacious bedroom that opens onto a furnished balcony, most with views of the ocean. Each air-conditioned room has a well-stocked minibar, flat-screen cable TV and a private bathroom.\nGuests can go scuba diving and explore the colorful reefs near the coast. For a quiet day, the hotel also has an indoor heated pool and hot tub.\n Hotel Do Caracol is located 1 km from Fortaleza de São João Baptista, a historical monument located near the seafront. The property is 3 km from São Mateus da Calheta and 20 km from Lajes Airport."
         },
-        "lat": 38.653,
-        "lng": -27.244,
+        "lat": 38.657,
+        "lng": -27.236,
         "type": "Hotel",
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-        "image_1":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
-        "image_2":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_2.png"
+        "image_1": "http://localhost:3000/hotels/caracol/image_1.jpg",
+        "image_2": "http://localhost:3000/hotels/caracol/image_2.jpg"
     }
 }

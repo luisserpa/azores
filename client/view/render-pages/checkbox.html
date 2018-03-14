@@ -1,7 +1,7 @@
 
-<template name="checked">
+<template name="canCheck">
         {{#if checkbox}}
-        
+        {{> visited}}
         {{/if}}
       </template>
 
@@ -9,10 +9,10 @@
 <template name="visited">
 
         {{#if hideCheckbox}} 
-        <img src="http://localhost:3000/visited.png" /> 
+        <img style="height: 40px; width:40px" src="http://localhost:3000/visited.png" /> 
         {{else}}
         <form id="hideCheckbox" action="">
-          <input id="visitedPlace" class="visitedPlace" type="checkbox" name="visitedPlace" value="Yes">Mark as visited
+          <input id="visitedPlace" class="visitedPlace" type="checkbox" name="visitedPlace" value="Yes">{{language.check}}
           <br>
         </form>
         {{/if}}

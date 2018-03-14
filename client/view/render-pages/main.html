@@ -11,25 +11,32 @@
       
         {{id}}
       
-      
-      
-        <div style="display:inline" class="row">
-          <div id="flags" class="col-xs-3">
+        
             {{> header}}
-          </div>
+
+          <div id="row">
+             
           <div class="col-xs-3">
-            {{> visited}}
+            {{> canCheck}}
           </div>
           <div class="col-xs-3">
             {{> rating}}
           </div>
+
+          {{> score}}
+
+          </div>
       
       
-        </div>
+    
       
         <div class="col-3 .text-truncate">
           <div class="container" style="background-color:white; border-radius: 10px; margin-bottom: 4%; margin-left: 3%; margin-right: 3%">
-            <span>{{> title}}</span>
+              <p>
+            
+              
+              {{> title}}     {{> visited}}</p>
+           
           </div>
         </div>
       
@@ -45,7 +52,7 @@
         {{> images}}
       
         <br/>
-      
+        <p>
         {{> commentSection}}
-      
+        </p>
       </template>

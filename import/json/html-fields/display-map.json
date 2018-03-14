@@ -1,0 +1,16 @@
+{
+    "pt": {
+        "checkAll": "Nenhum Selecionado",
+        "historicMouments": "Monumentos Históricos",
+        "naturalMonuments": "Monumentos Naturais",
+        "food": "Restaurantes",
+        "hotels": "Alojamentos"
+    },
+    "en": {
+        "checkAll": "Uncheck All",
+        "historicMouments": "Historic Monuments",
+        "naturalMonuments": "Natural Monuments",
+        "food": "Restaurants",
+        "hotels": "Accommodations"
+    }
+}
