@@ -81,7 +81,8 @@ Template.newPlace.events({
             lng: parseFloat(event.target.longitude.value),
             image_1: event.target.img1.value,
             image_2: event.target.img2.value,
-            icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+            icon: "http://localhost:3000/map-icons/" + event.target.category.value.split(" ")[0].toLowerCase() + ".png",
+            checkedIcon: "http://localhost:3000/visited-map.png"
         };
 
         Meteor.call("findByNamePt", event.target.titlePt.value, function(err, result) {
@@ -116,9 +117,10 @@ Template.editPlace.events({
             lng: event.target.longitude.value,
             image_1: event.target.img1.value,
             image_2: event.target.img2.value,
+            icon: "http://localhost:3000/map-icons/" + event.target.category.value.split(" ")[0].toLowerCase() + ".png",
         };
 
-        Meteor.call("editPlace", updateId.get(), placeEdit.pt, placeEdit.en, placeEdit.type, placeEdit.comments, parseFloat(placeEdit.lat), parseFloat(placeEdit.lng), placeEdit.image_1, placeEdit.image_2);
+        Meteor.call("editPlace", updateId.get(), placeEdit.pt, placeEdit.en, placeEdit.type, placeEdit.comments, parseFloat(placeEdit.lat), parseFloat(placeEdit.lng), placeEdit.image_1, placeEdit.image_2, placeEdit.icon);
 
         clickedUpdate.set(false);
     }
