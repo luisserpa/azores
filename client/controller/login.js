@@ -1,5 +1,11 @@
+import { Meteor } from "meteor/meteor";
+import { Template } from "meteor/templating";
+import { Session } from "meteor/session";
+import { Router } from "meteor/iron:router";
+
 import loginMessages from "../utils/login-messages.js";
 import loginLanguages from "../../import/json/html-fields/login.json";
+import landingPageLanguage from "../../import/json/html-fields/landing-page.json";
 
 /**
  * This module is for handling the login process
@@ -53,5 +59,27 @@ Template.login.helpers({
         } else {
             return loginLanguages.en;
         }
+    }
+});
+
+Template.landingpage.helpers({
+    language() {
+        if (Session.get("sessionLanguage") === "portuguese") {
+            return landingPageLanguage.pt;
+        } else {
+            return landingPageLanguage.en;
+        }
+    }
+});
+
+Template.landingpage.events({
+    "click .portuguese": function() {
+        Session.set("sessionLanguage", "portuguese");
+        Router.go("/");
+    },
+
+    "click .english": function() {
+        Session.set("sessionLanguage", "english");
+        Router.go("/");
     }
 });
