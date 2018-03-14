@@ -46,7 +46,7 @@ var startMap = function() {
                             var marker = new google.maps.Marker({
                                 position: { lat: place.lat, lng: place.lng },
                                 title: title,
-                                //icon: place.icon,
+                                icon: place.icon,
                                 map: map
                             });
 

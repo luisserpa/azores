@@ -1,0 +1,14 @@
+{
+    "pt": {
+        "commenst": "Comentários",
+        "check": " Marcar como visitado",
+        "rating": "Classificação média",
+        "addComment": "Adicionar Comentário"
+    },
+    "en": {
+        "commenst": "Comments",
+        "check": " Mark as visited",
+        "rating": "Average Rating",
+        "addComment": "Add comment"
+    }
+}

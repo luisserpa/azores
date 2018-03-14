@@ -6,6 +6,7 @@ import filterFunctions from "../utils/filter-functions.js";
 import startMap from "../map/mapRender.js";
 import listChosenMonuments from "../utils/select-monument-type.js";
 import { getClickedPlace } from "../utils/render-pages.js";
+import islandMapLanguages from "../../import/json/html-fields/display-map.json";
 
 var filterPlaces = ["historicMonuments", "naturalMonuments", "hotels", "food"];
 
@@ -22,6 +23,17 @@ Template.islandmap.rendered = function() {
 Template.islandmap.helpers({
     mapMarker() {
         return startMap();
+    }
+});
+
+Template.filter.helpers({
+    language() {
+        console.log("LANGAUGE: ", islandMapLanguages);
+        if (Session.get("sessionLanguage") === "portuguese") {
+            return islandMapLanguages.pt;
+        } else {
+            return islandMapLanguages.en;
+        }
     }
 });
 

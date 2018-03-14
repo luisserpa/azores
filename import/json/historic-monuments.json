@@ -27,34 +27,34 @@
         "image_2":
             "http://localhost:3000/historic-monuments/igreja-se/igreja_se_2.png"
     },
-    "teste": {
+    "igrejaMatrizPraiaVictoria": {
         "pt": {
-            "title": "Teste",
+            "title": "Igreja Matriz Praia Victória",
             "description":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores.",
+                "A bonita Igreja de Santa Cruz da Praia da Vitória situa-se no concelho de Praia da Vitória, em plena Ilha Terceira, Arquipélago dos Açores, datando o inicio da sua construção, provavelmente, de 1456, sendo uma das mais antigas do território. ",
             "visitHours": "09H00 às 12H00 e das 14H00 às 17H00",
             "longDescription":
-                "A Sé Catedral de Angra do Heroísmo é o maior templo e um dos principais monumentos desta bonita cidade Património da Humanidade, em plena Ilha Terceira, no maravilhoso Arquipélago dos Açores. \n O actual templo terá sido construído sobre a anterior Igreja de São Salvador, datada provavelmente de 1496, ostentando um estilo Gótico contemporâneo da data da sua construção. A Igreja, contudo, revelou-se pequena para a crescente população de Angra do Heroísmo, que se afirmava como uma vila em franca expansão e riqueza. Da primitiva Igreja resta o altar mor, situado debaixo da Capela. "
+                "A bonita Igreja de Santa Cruz da Praia da Vitória situa-se no concelho de Praia da Vitória, em plena Ilha Terceira, Arquipélago dos Açores, datando o inicio da sua construção, provavelmente, de 1456, sendo uma das mais antigas do território. \n Não obstante, a Igreja terá sofrido grandes alterações ainda no século XVI e posteriormente, nomeadamente no século XIX, dado as catástrofes naturais da Ilha, nomeadamente sismos e tempestades. \nA Igreja prima pelos seus vários portais de influência Manuelina, com arcos quebrados com decoração vegetalista, tão típica deste estilo decorativo e arquitectónico. Igualmente em estilo Manuelino, são as abóbadas das capelas laterais. \nO edifício é constituído pela nave central, duas torres sineiras e por diversos corpos rectangulares. \nO interior é rico, destacando-se o seu tecto de madeira, um retábulo de madeira com oito painéis, tipicamente Renascentista, bem como duas pias de água benta oferecidas pelo rei D. Manuel I, uma importante colecção escultórica do século XVI, ricas custódias, para além do tesouro sacro com ricas peças litúrgicas. \nNo adro da Igreja de Santa Cruz está um monumento de homenagem à Restauração da República Portuguesa. "
         },
         "en": {
-            "title": "Teste",
+            "title": "Praia Victótia's Matriz Church",
             "description":
-                "Sé Cathedral in Angra do Heroísmo is the biggest temple, and one of the main monuments in this beautiful city, heritage of mankind, in Terceira Island, in the wonderfull Azores Archipelago.",
+                "The beautiful Santa Cruz Church of Praia da Vitória is located in the municipality of Praia da Vitória, in the heart of Terceira Island, Archipelago of the Azores, probably dating from 1456, being one of the oldest in the territory.",
             "visitHours": "09H00 to 12H00 and 14H00 to 17H00",
             "longDescription":
-                "The Cathedral of Angra do Heroísmo is the largest temple and one of the main monuments of this beautiful World Heritage City, in full Terceira Island, in the wonderful Azores Archipelago. \n The current temple will have been built on the former Church of San Salvador, probably dated 1496, boasting a contemporary Gothic style of the date of its construction. The Church, however, proved small for the growing population of Angra do Heroísmo, which affirmed itself as a booming and wealthy village. Of the primitive Church remains the main altar, located under the Chapel."
+                "The beautiful Santa Cruz Church of Praia da Vitória is located in the municipality of Praia da Vitória, in the heart of the Terceira Island, Azores Archipelago, probably dating from 1456, one of the oldest in the territory.  \n However, the Church has undergone major changes in the 16th century and later, especially in the 19th century, given the island's natural disasters, including earthquakes and storms.  \nThe Church stands out for its various portals of Manueline influence, with broken arches with vegetable decoration, so typical of this decorative and architectural style. Also in Manueline style, are the vaults of the side chapels.  \nThe building consists of the central nave, two bell towers and several rectangular bodies.  \nThe interior is rich, with its wooden ceiling, a wooden panel with eight panels, typically Renaissance, as well as two holy water basins offered by King D. Manuel I, an important sculptural collection of the sixteenth century, rich custody, in addition to the sacred treasure with rich liturgical pieces.  \nIn the church of Santa Cruz stands a monument honoring the Restoration of the Portuguese Republic."
         },
 
-        "lat": 38.7,
-        "lng": -27.4,
+        "lat": 38.732,
+        "lng": -27.061,
         "type": "Historic Monument",
         "visited": false,
         "icon":
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
 
         "image_1":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
+            "http://localhost:3000/historic-monuments/igreja-matriz-praia-victoria/image_1.jpg",
         "image_2":
-            "http://localhost:3000/historic-monuments/igreja-se/igreja_se_2.png"
+            "http://localhost:3000/historic-monuments/igreja-matriz-praia-victoria/image_2.jpg"
     }
 }
