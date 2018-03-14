@@ -2,7 +2,7 @@ import { Template } from "meteor/templating";
 import { Meteor } from "meteor/meteor";
 import { Session } from "meteor/session";
 import { Router } from "meteor/iron:router";
-import { placePage, sortPlaces } from "../utils/render-pages.js";
+import { getClickedPlace, sortPlaces } from "../utils/render-pages.js";
 
 Template.listPlaces.created = function() {
     var placeType = Session.get("placeType");
@@ -43,8 +43,8 @@ Template.showStars.rendered = function() {
 };
 
 Template.listPlaces.events({
-    "click .render": function() {
-        placePage();
-        Router.go("/renderpage");
+    "click .render": function(event) {
+        console.log("EVENT: ", event);
+        Router.go("/renderpage/" + event.target.id);
     }
 });

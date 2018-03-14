@@ -20,8 +20,8 @@
         "lng": -27.268,
         "type": "Food",
         "visited": false,
-        "icon":
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "icon": "http://localhost:3000/map-icons/food.png",
+        "checkedIcon": "http://localhost:3000/visited-map.png",
         "image_1": "http://localhost:3000/food/beira-mar/image_1.jpg",
         "image_2": "http://localhost:3000/food/beira-mar/image_2.jpg"
     },
@@ -46,8 +46,8 @@
         "lng": -27.305,
         "type": "Food",
         "visited": false,
-        "icon":
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "icon": "http://localhost:3000/map-icons/food.png",
+        "checkedIcon": "http://localhost:3000/visited-map.png",
         "image_1": "http://localhost:3000/food/caneta/image_1.jpg",
         "image_2": "http://localhost:3000/food/caneta/image_2.jpg"
     }

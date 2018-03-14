@@ -20,8 +20,8 @@
         "lng": -27.221,
         "type": "Historic Monument",
         "visited": false,
-        "icon":
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "icon": "http://localhost:3000/map-icons/historic.png",
+        "checkedIcon": "http://localhost:3000/visited-map.png",
         "image_1":
             "http://localhost:3000/historic-monuments/igreja-se/igreja_se_1.jpg",
         "image_2":
@@ -49,8 +49,8 @@
         "lng": -27.061,
         "type": "Historic Monument",
         "visited": false,
-        "icon":
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        "icon": "http://localhost:3000/map-icons/historic.png",
+        "checkedIcon": "http://localhost:3000/visited-map.png",
 
         "image_1":
             "http://localhost:3000/historic-monuments/igreja-matriz-praia-victoria/image_1.jpg",

@@ -11,12 +11,12 @@ Meteor.startup(function() {
         email: "admin@admin",
         displayName: "Admin",
         password: "admin"
-    }
+    };
 
     Meteor.call("addUser", admin);
 
     var mapPlace = [historicMonuments, naturalMonuments, food, hotels];
-    
+
     mapPlace.forEach(function(placeType, index) {
         var typeString;
         switch (index) {
@@ -57,7 +57,8 @@ Meteor.startup(function() {
                 lng: placeType[key].lng,
                 image_1: placeType[key].image_1,
                 image_2: placeType[key].image_2,
-                icon: placeType[key].icon
+                icon: placeType[key].icon,
+                checkedIcon: placeType[key].checkedIcon
             };
 
             Meteor.call("findByNamePt", placeType[key].pt.title, function(

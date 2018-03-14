@@ -11,6 +11,8 @@ var getClickedPlace = function(event, cb) {
                 throw new Error("couldn't not find places with that category");
             }
 
+            console.log("EHNTERED HERE");
+
             var id = result.find(function(place) {
                 return place._id === event.target.id;
             });
@@ -29,7 +31,8 @@ var sortPlaces = function(listOfPlaces) {
     var tempPlace = [
         {
             name: null,
-            averageScore: null
+            averageScore: null,
+            _id: null
         }
     ];
     listOfPlaces.forEach(function(place) {
@@ -59,10 +62,12 @@ var sortPlaces = function(listOfPlaces) {
             //CHECK THIS FOR THE EN/PT
             tempPlace[0].name = nameOfPlace;
             tempPlace[0].averageScore = average;
+            tempPlace[0]._id = place._id;
         } else {
             var objetToAdd = {
                 name: nameOfPlace,
-                averageScore: average
+                averageScore: average,
+                _id: place._id
             };
             tempPlace.push(objetToAdd);
         }
