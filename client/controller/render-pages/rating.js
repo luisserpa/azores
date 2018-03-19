@@ -34,6 +34,7 @@ Template.rating.events({
     "click .rate": function(event) {
         var userRate = event.target.value;
         var data = this;
+        console.log("THIS OBJECT: ", this);
 
         //Then it checks if the place is already in the database
         Meteor.call("findPlaceById", data._id, function(error, place) {

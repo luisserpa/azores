@@ -38,8 +38,6 @@ var renderScore = function(dataScore) {
     if (averageScore === 0) {
         updateScore.set(0);
     } else {
-        console.log("UPDATED SCORE: ", updateScore.get());
-        console.log("UPDATED: ", averageScore / dataScore.length);
         updateScore.set(averageScore / dataScore.length);
     }
 };

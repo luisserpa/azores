@@ -10,7 +10,7 @@
     "pt": {
         "email": "insira o seu email",
         "displayName": "insira o seu nome de uilizador",
-        "password": "insia a sua palavra passe",
+        "password": "insira a sua palavra passe",
         "repeatPassword": "Repita a palavra passe",
         "createCount": "Criar conta",
         "back": "Retroceder"
