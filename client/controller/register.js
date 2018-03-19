@@ -4,6 +4,7 @@ import naturalMonuments from "../../import/json/natural-monuments.json";
 import hotels from "../../import/json/hotels.json";
 import food from "../../import/json/food.json";
 import registerLanguages from "../../import/json/html-fields/register.json";
+import landingPageLanguage from "../../import/json/html-fields/landing-page.json";
 
 /**
  * This module is for managing the register process
@@ -92,5 +93,25 @@ Template.register.helpers({
         } else {
             return registerLanguages.en;
         }
+    }
+});
+
+Template.registerPage.helpers({
+    language() {
+        if (Session.get("sessionLanguage") === "portuguese") {
+            return landingPageLanguage.pt;
+        } else {
+            return landingPageLanguage.en;
+        }
+    }
+});
+
+Template.registerPage.events({
+    "click .portuguese": function() {
+        Session.set("sessionLanguage", "portuguese");
+    },
+
+    "click .english": function() {
+        Session.set("sessionLanguage", "english");
     }
 });

@@ -9,23 +9,6 @@ function startMap() {
             center: centerIsland
         });
 
-        /*function hello(isVisited, place) {
-            console.log(">atjt");
-            Object.keys(isVisited).forEach(function(key) {
-                if (
-                    isVisited[key].visited === true &&
-                    isVisited[key].pt.title === place.pt.title
-                ) {
-                    console.log("TRUE: ", isVisited[key]);
-                    return place.checkedIcon;
-                } else {
-                    console.log("FALSE: ", isVisited[key]);
-                    return place.icon;
-                }
-            });
-        }
-        */
-
         // Variable with the type of places we have
         var mapPlaces = [
             "Historic Monument",
@@ -39,39 +22,28 @@ function startMap() {
                 if (err) {
                     throw new Error("no places found for this type");
                 }
-                console.log("result. ", result);
                 var userPlaces = Session.get("sessionUser").places;
                 var isVisited = userPlaces[index];
 
                 result.forEach(function eachPlace(place) {
                     if (Session.get("filterMonuments")[index] === true) {
                         //Start the loop to show the icons in the map, that only are checked
-                        // TODO: remember to put back the description in google marker
                         var title;
                         var description;
                         var visitHours;
-
-                        //hello(isVisited, place);
-                        console.log("HERE");
                         var icon;
 
                         Object.keys(isVisited).forEach(function(key) {
-                            console.log("VISITED? ,", isVisited[key].visited);
-                            console.log("KEY TITLE: ", isVisited[key].pt.title);
-                            console.log("PLACE TITLE: ", place.pt.title);
                             if (
                                 isVisited[key].visited === true &&
                                 isVisited[key].pt.title === place.pt.title
                             ) {
-                                console.log("TRUE: ", isVisited[key]);
-                                console.log("PLACE: ", place.checkedIcon);
                                 icon = place.checkedIcon;
                             } else {
                                 if (
                                     icon !==
                                     "http://localhost:3000/visited-map.png"
                                 ) {
-                                    console.log("FALSE: ", isVisited[key]);
                                     icon = place.icon;
                                 }
                             }
@@ -135,9 +107,6 @@ function startMap() {
             });
         });
     };
-
-    //This starts with all the 4 type of places that the app has
-    //Then it checks if the filter checkbox are selected
 }
 
 export default startMap;

@@ -11,8 +11,6 @@ var getClickedPlace = function(event, cb) {
                 throw new Error("couldn't not find places with that category");
             }
 
-            console.log("EHNTERED HERE");
-
             var id = result.find(function(place) {
                 return place._id === event.target.id;
             });
@@ -55,7 +53,6 @@ var sortPlaces = function(listOfPlaces) {
         } else {
             nameOfPlace = place.en.title;
         }
-        console.log("NAME OF PLACE: ", nameOfPlace);
 
         //Update the tempPlace with the calculated average
         if (tempPlace[0].name === null) {
