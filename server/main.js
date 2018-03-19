@@ -3,7 +3,6 @@ import historicMonuments from "../import/json/historic-monuments.json";
 import naturalMonuments from "../import/json/natural-monuments.json";
 import food from "../import/json/food.json";
 import hotels from "../import/json/hotels.json";
-import { Places } from "../import/lib/collections/database.js";
 
 Meteor.startup(function() {
     // code to run on server at startup
@@ -13,6 +12,7 @@ Meteor.startup(function() {
         password: "admin"
     };
 
+    //This is used to add the places to the databse, right when the server starts
     Meteor.call("addUser", admin);
 
     var mapPlace = [historicMonuments, naturalMonuments, food, hotels];

@@ -1,6 +1,5 @@
+//This function is used to select the language displayed in the html
 function languageSelected(element, language) {
-    console.log("ELEMENT: ", element);
-    console.log("LANGUAGE:", language);
     var keys = {
         title: undefined,
         description: undefined

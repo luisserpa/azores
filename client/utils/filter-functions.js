@@ -1,5 +1,6 @@
-import startMap from "../map/mapRender.js";
+import { Session } from "meteor/session";
 
+//This is used to filter the monuments in the island-map view with the checkboxs
 var filterFunctions = {
     checkAll: function(classFilter, index) {
         $("." + classFilter).prop("checked", false);

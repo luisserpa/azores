@@ -1,3 +1,6 @@
+import { Session } from "meteor/sessions";
+
+//Messages to show up in the log in view
 function loginMessages() {
     if (Session.get("sessionLanguage") === "portuguese") {
         FlashMessages.sendError("Autenticação falhou");

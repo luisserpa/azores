@@ -1,3 +1,5 @@
+import { Session } from "meteor/session";
+
 var registerMessages = {
     emptyEmail: function() {
         if (Session.get("sessionLanguage") === "portuguese") {
@@ -17,9 +19,13 @@ var registerMessages = {
 
     nameCharacters: function() {
         if (Session.get("sessionLanguage") === "portuguese") {
-            FlashMessages.sendError("Nome de utlizador deve ter no máximo 12 caracteres.");
+            FlashMessages.sendError(
+                "Nome de utlizador deve ter no máximo 12 caracteres."
+            );
         } else {
-            FlashMessages.sendError("The maximum display name length is 12 characters.");
+            FlashMessages.sendError(
+                "The maximum display name length is 12 characters."
+            );
         }
     },
 

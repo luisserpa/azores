@@ -27,6 +27,7 @@ Template.login.events({
             return;
         }
 
+        //This is to check if the user already exists in the databse
         Meteor.call("findByEmail", loginEmail, function(error, user) {
             if (!error) {
                 if (user === undefined) {
