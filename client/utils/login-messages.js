@@ -1,4 +1,4 @@
-import { Session } from "meteor/sessions";
+import { Session } from "meteor/session";
 
 //Messages to show up in the log in view
 function loginMessages() {
