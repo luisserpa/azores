@@ -1,5 +1,7 @@
+import {Session} from "meteor/session";
+import {Router} from "meteor/iron:router";
+
 var listChosenMonuments = function(monumentId) {
-    console.log("MONUMENT ID: ", monumentId);
     switch (monumentId) {
     case "refHistoricMonuments":
         Session.set("placeType", "Historic Monument");

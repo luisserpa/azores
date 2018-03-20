@@ -29,7 +29,6 @@ Template.score.helpers({
 
 var renderScore = function(dataScore) {
     var averageScore = 0;
-    console.log("DATA: ", dataScore);
 
     dataScore.forEach(function(score) {
         averageScore += parseFloat(score);

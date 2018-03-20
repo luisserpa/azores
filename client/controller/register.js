@@ -16,7 +16,6 @@ Template.register.events({
     },
 
     "submit .add-user": function(event) {
-        console.log("IN THE FORM");
         event.preventDefault();
         var registerEmail = event.target.registerEmail.value;
         var registerDisplayName = event.target.registerDisplayName.value;
